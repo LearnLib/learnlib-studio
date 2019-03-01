@@ -1,0 +1,30 @@
+cincoProduct LearnLibStudio {
+	
+	// The Models
+	mgl "model/Mealy.mgl"
+	mgl "model/SibLibrary.mgl"
+	mgl "model/Symbol.mgl"
+	mgl "model/Experiment.mgl"
+	mgl "model/DiscriminationTree.mgl"
+	
+	splashScreen "branding/splash.bmp" {
+	    progressBar (37, 289, 190, 10)
+	    progressMessage (37, 280, 190, 18)
+	}
+	
+	about {
+	    text "This is the LearnLib Studio. The easy way to use the LearnLib for Active Automata Learning."
+	}
+	
+	plugins {		
+		// Code Generator
+		de.learnlib.studio.generator,
+		
+		// More Wizards
+        de.learnlib.studio.wizards,
+        
+		// Tracer View
+        de.learnlib.studio.tracer
+	}
+	
+}		

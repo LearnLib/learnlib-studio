@@ -1,0 +1,151 @@
+appearance default {
+	lineWidth 2
+	background (245, 245, 245)
+}
+
+appearance labelFont {
+    font ("Sans",10)
+}
+
+appearance labelFontItalics {
+    font ("Sans", ITALIC, 10)
+}
+
+nodeStyle start {
+    roundedRectangle {
+        appearance {
+            background (245, 245, 245)
+        }
+        size (100, 65)
+        corner (10, 10)
+        text {
+            appearance labelFontItalics
+            position ( CENTER, TOP 4 )  
+            value "start"
+        }
+        image {
+            position (CENTER, TOP 24)
+            size (fix 32, fix 32)   
+            path ("icons/startSIB.png")
+        }
+    }
+}
+
+nodeStyle labeledNode (1) {
+    roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        text {
+            appearance labelFont
+//            position ( CENTER, TOP 4 )
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
+        /*
+        image {
+            position (CENTER, TOP 24)
+            size (fix 32, fix 32)   
+            path ("icons/atomicSIB.png")
+        }
+        */
+    }
+}
+
+nodeStyle complexNode (1) {
+    roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        text {
+            appearance labelFont
+            position ( CENTER, TOP 4 )
+            value "%s"
+        }
+        /*
+        image {
+            position (CENTER, TOP 24)
+            size (fix 32, fix 32)   
+            path ("icons/atomicSIB.png")
+        }
+        */
+    }
+}
+
+nodeStyle symbol (1) {
+	appearanceProvider ("de.learnlib.studio.experiment.aps.SymbolAppearance")
+    roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )  
+            value "%s"
+        }
+        /*
+        image {
+            position (CENTER, TOP 24)
+            size (fix 32, fix 32)   
+            path ("icons/atomicSIB.png")
+        }
+        */
+    }
+}
+
+nodeStyle commentNode (1) {
+    rectangle {
+        appearance {
+            background (255, 255, 0)
+            foreground (  0,   0, 0)
+        }
+        size (120, 65)
+        text {
+            position (LEFT 10, TOP 10)
+            value "%s"
+        }
+    }
+}
+
+edgeStyle simpleArrow (1) {	
+	appearance default
+	
+	decorator {
+        location (0.5)
+        text {
+            appearance default
+            value "%s"
+        }
+    }
+	
+	decorator {
+		location (1.0) // at the end of the edge
+		ARROW
+		appearance default 
+	}
+}
+
+edgeStyle queryEdge (1) { 
+    appearance extends default {
+        foreground (144, 144, 144)
+        
+        lineStyle DASHDOT
+    }
+    
+    decorator {
+        location (0.5)
+        text {
+            appearance default
+            value "%s"
+        }
+    }
+    
+    decorator {
+        location (0.0) // at the beginning of the edge
+        ARROW
+        appearance default 
+    }
+    
+    decorator {
+        location (1.0) // at the end of the edge
+        ARROW
+        appearance default 
+    }
+}

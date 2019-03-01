@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="lib/animal-sniffer-annotations-1.17.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/automata-api-0.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/automata-commons-smartcollections-0.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/automata-commons-util-0.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/automata-core-0.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/automata-serialization-core-0.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/automata-serialization-taf-0.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/automata-util-0.8.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/checker-qual-2.5.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/error_prone_annotations-2.2.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/failureaccess-1.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/guava-27.0-jre.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/j2objc-annotations-1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/javassist-3.21.0-GA.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jsr305-3.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/reflections-0.9.11.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/slf4j-api-1.7.25.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

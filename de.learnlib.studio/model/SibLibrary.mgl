@@ -1,0 +1,110 @@
+@style("model/SibLibrary.style")
+@mcam
+@mcam_checkmodule("de.learnlib.studio.siblibrary.checks.ActivitiesNameCheck")
+@mcam_checkmodule("de.learnlib.studio.siblibrary.checks.ActivityBranchesCheck")
+@mcam_checkmodule("de.learnlib.studio.siblibrary.checks.ActivityInputParameterCheck")
+@mcam_checkmodule("de.learnlib.studio.siblibrary.checks.ActivityOutputParameterCheck")
+graphModel SibLibrary {
+	package de.learnlib.studio.siblibrary
+	nsURI "http://learnlib.de/learnlib-studio/siblibrary"
+	diagramExtension "sibs"
+	
+	containableElements (Activity)
+	
+	attr EString as name := ""
+	attr MavenArtifact as mavenArtifacts [0, *]
+	
+	enum DataType {
+	    Text
+	    Integer
+	    Real
+	    Boolean
+	    Object
+	}
+	
+	@label("artifactId")
+	type MavenArtifact {
+		attr EString as groupId := ""
+		attr EString as artifactId := ""
+		attr EString as version := ""
+	}
+	
+	/*
+	 * Rules for the Code:
+	 * - no function declaration, just the pure lines of code
+	 * - input parameters are already defined (incl. type) and have the corresponding value
+	 * - output parameters are already defined (incl. type), but set to null. Override these values to the desired values.
+	 * - the code must always return a branch. All posible branches are already defined 
+	 */
+	type Code {
+		@multiLine
+		attr EString as code := ""
+	}
+	
+	@style(activityStyle, "${name}")
+	@disable(move)
+	@postCreate("de.learnlib.studio.siblibrary.hooks.ActivityPostCreateHook")
+	@postResize("de.learnlib.studio.siblibrary.hooks.ActivityPostResizeHook")
+	@postDelete("de.learnlib.studio.siblibrary.hooks.ActivityPostDeleteHook")
+	container Activity {
+	    containableElements (
+	        BranchesList [1, 1],
+	        InputParametersList [1, 1],
+	        OutputParametersList [1, 1]
+	    )
+	    
+		attr EString as name := ""
+		
+		attr Code as code [1, 1]
+	}
+	
+	@postResize("de.learnlib.studio.siblibrary.hooks.ListPostResizeHook")
+	abstract container List {}
+	
+	@style(listStyle, "Input Parameters")
+	@disable(create, move, resize, delete)
+	container InputParametersList extends List {
+		containableElements (InputParameter)
+	}
+	
+	@style(listStyle, "Output Parameters")
+	@disable(create, move, resize, delete)
+	container OutputParametersList extends List {
+		containableElements (OutputParameter)
+	}
+	
+	@style(listStyle, "Outputs")
+	@disable(create, move, resize, delete)
+	container BranchesList extends List {
+		containableElements (Branch)
+	}
+	
+	@style(port, "${name}")
+	@disable(move, resize)
+	@postCreate("de.learnlib.studio.siblibrary.hooks.BranchPostCreateHook")
+	@postDelete("de.learnlib.studio.siblibrary.hooks.BranchPostDeleteHook")
+	node Branch {
+		attr EString as name := ""
+		attr EBoolean as error := false
+	}
+	
+	abstract node Parameter {
+		attr DataType as dataType := TEXT
+		attr EString as name := ""	
+	}
+	
+	@style(inputPort, "${name}", "${dataType}")
+	@disable(move, resize)
+	@postCreate("de.learnlib.studio.siblibrary.hooks.InputParameterPostCreateHook")
+    @postDelete("de.learnlib.studio.siblibrary.hooks.InputParameterPostDeleteHook")
+	node InputParameter extends Parameter {
+	}
+	
+	@style(outputPort, "${name}", "${dataType}")
+	@disable(move, resize)
+	@postCreate("de.learnlib.studio.siblibrary.hooks.OutputParameterPostCreateHook")
+    @postDelete("de.learnlib.studio.siblibrary.hooks.OutputParameterPostDeleteHook")
+	node OutputParameter extends Parameter {
+	}
+
+}

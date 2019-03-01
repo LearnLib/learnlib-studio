@@ -1,0 +1,260 @@
+import "platform:/resource/de.learnlib.studio/model/Mealy.mgl" as mealy
+import "platform:/resource/de.learnlib.studio/model/Symbol.mgl" as symbol
+
+
+@style("model/Experiment.style")
+@mcam("check")
+@mcam_checkmodule("de.learnlib.studio.experiment.checks.ExperimentAttributesCheck")
+@mcam_checkmodule("de.learnlib.studio.experiment.checks.SymbolTypeAmountCheck")
+@mcam_checkmodule("de.learnlib.studio.experiment.checks.IncomingChecks")
+@mcam_checkmodule("de.learnlib.studio.experiment.checks.OutgoingChecks")
+//@wizard("New LearnLib Experiment", "de.learnlib.studio.wizards.experiments.ExperimentWizard")
+@postCreate("de.learnlib.studio.experiment.hooks.ExperimentPostCreateHook")
+@generatable("de.learnlib.studio.generator", "de.learnlib.studio.experiment.codegen.Generator", "/src-gen/")
+graphModel Experiment {
+	package de.learnlib.studio.experiment
+	nsURI "http://learnlib.de/learnlib-studio/experiment"
+	diagramExtension "ll"
+	
+	containableElements (Start [1, 1],
+						 Filter,
+		                 Oracle,
+						 Learner,
+		                 EQOracle,
+		                 ShowModel, ShowInternalData,
+		                 Comment
+	)
+	
+	attr EString as Name
+	attr EString as Package
+	
+	enum SULMebembershipOracleSymbolType {
+        GlobalSetUp
+        SetUp
+        Normal
+        TearDown
+        GlobalTearDown
+    }
+    
+    enum AcexAnalyzer {
+        LinearBackward
+        LinearForward
+        BinarySearchBackward
+        BinarySearchForward
+        ExponentialBackward
+        ExponentialForward
+    }
+    
+    @label("name")
+    type EnvironmentProperty {
+        attr EString as name := ""
+        attr EString as value := ""
+    }
+    
+    
+	/* Nodes */
+	/* Start */
+	@style(start)
+	@disable(resize)
+	node Start {
+		outgoingEdges (StartEdge[1, 1])
+	}
+	
+	/* Member Ship Oracles */
+	abstract node Oracle {
+		incomingEdges (QueryEdge[0, *])
+	}
+	
+	abstract node NonComplexOracle extends Oracle {
+	}
+		
+	@palette("Membership Oracles")
+	@style(labeledNode, "Mealy Membership Oracle")
+	@contextMenuAction("de.learnlib.studio.experiment.hooks.OpenMealy")
+	@doubleClickAction("de.learnlib.studio.experiment.hooks.OpenMealy")
+	node MealyMembershipOracle extends NonComplexOracle {
+		prime mealy::Mealy as mealyReference
+	}
+	
+	@palette("Membership Oracles")
+	@style(complexNode, "SUL Membership Oracle")
+	container SULMembershipOracle extends NonComplexOracle {
+		containableElements (SULMembershipOracleSymbol)
+		
+		attr EnvironmentProperty as properties [0, *]
+	}
+	
+	@style(symbol, "${symbolReference.name}")
+	@contextMenuAction("de.learnlib.studio.experiment.hooks.OpenSymbol")
+    @doubleClickAction("de.learnlib.studio.experiment.hooks.OpenSymbol")
+	node SULMembershipOracleSymbol {
+		prime symbol::Symbol as symbolReference
+		
+		attr SULMebembershipOracleSymbolType as symbolType := Normal
+	}
+	
+	@palette("Membership Oracles")
+	@style(complexNode, "Complex Membership Oracle")
+	container ComplexOracle extends Oracle {
+		containableElements (NonComplexOracle [1, *])
+	}
+	
+	/* Oracle Filter */
+	abstract node Filter extends Oracle {
+        outgoingEdges (QueryEdge [0, 1])
+	}
+	
+	abstract node NonComplexFilter extends Filter {
+    }
+	
+    @palette("Filter")
+    @style(labeledNode, "Cache")
+    node CacheFilter extends NonComplexFilter {
+    }
+    
+    @palette("Filter")
+    @style(labeledNode, "Query Counter")
+    node QueryCounterFilter extends NonComplexFilter {
+        attr EString as name := ""
+    }
+    
+    @palette("Filter")
+    @style(complexNode, "Complex Filter")
+    container ComplexFilter extends Filter {
+    	containableElements (NonComplexFilter[1, *])
+    }
+
+	/* Learners */
+	abstract node Learner {
+		incomingEdges (StartEdge[0, *], ModelEdge[0, *], WordEdge[0, *])
+		outgoingEdges (QueryEdge[0, 1], ModelEdge[0, 1])
+	}
+	
+	abstract node NonComplexLearner extends Learner {
+	}
+	
+	@palette("Learner")
+	@style(labeledNode, "L*")
+	node LStarAlgorithm extends NonComplexLearner {
+	}
+	
+	@palette("Learner")
+	@style(labeledNode, "Discrimination Tree")
+	node DTAlgorithm extends NonComplexLearner {
+	}
+	
+	@palette("Learner")
+    @style(labeledNode, "Kearns Vazirani")
+    node KVAlgorithm extends NonComplexLearner {
+    }
+    
+	@palette("Learner")
+	@style(labeledNode, "DHC")
+	node DHCAlgorithm extends NonComplexLearner {
+	}
+	
+	@palette("Learner")
+	@style(labeledNode, "TTT")
+	node TTTAlgorithm extends NonComplexLearner {
+	    attr AcexAnalyzer as acexAnalyzer := BinarySearchBackward
+	}
+	
+	@palette("Learner")
+    @style(labeledNode, "ADT")
+    node ADTAlgorithm extends NonComplexLearner {
+    }
+	
+	@palette("Learner")
+	@style(complexNode, "Complex Algorithm")
+	container ComplexLearner extends Learner {
+		containableElements (NonComplexLearner [1, *])
+	}
+	
+	/* EQ Oracles */
+	abstract node EQOracle {
+		incomingEdges (ModelEdge[0, *])
+		outgoingEdges (QueryEdge[0, 1], ModelEdge[0, 1], WordEdge[0, 1])
+	}
+	
+	abstract node NonComplexEQOracle extends EQOracle {
+    }
+	
+	@palette("EQ Oracle")
+	@style(labeledNode, "Random Word EQ Oracle")
+	node RandomWordEQOracle extends NonComplexEQOracle {
+		attr EInt as amount := "20"
+		attr EInt as minLength := "5"
+		attr EInt as maxLength := "10"
+	}
+	
+	@palette("EQ Oracle")
+	@style(labeledNode, "W-Method EQ Oracle")
+	node WMethodEQOracle extends NonComplexEQOracle {
+		attr EInt as maxDepth := "5"
+	}
+	
+	@palette("EQ Oracle")
+	@style(labeledNode, "Wp-Method EQ Oracle")
+	node WPMethodEQOracle extends NonComplexEQOracle {
+		attr EInt as minDepth := "1"
+        attr EInt as maxDepth := "5"
+	}
+	
+	@palette("EQ Oracle")
+	@style(labeledNode, "Complete EQ Oracle")
+	node CompleteEQOracle extends NonComplexEQOracle {
+		attr EInt as minDepth := "1"
+		attr EInt as maxDepth := "5"
+	}
+	
+	@palette("EQ Oracle")
+    @style(complexNode, "Complex EQ Oracle")
+    container ComplexEQOracle extends EQOracle {
+        containableElements (NonComplexEQOracle [1, *])
+    }
+	
+	
+	/* Display Nodes */
+	@palette("Results")
+	@style(labeledNode, "Show Model")
+	node ShowModel {
+		incomingEdges (ModelEdge [1, *])
+		outgoingEdges (ModelEdge [0, 1])
+	}
+
+	@palette("Results")
+	@style(labeledNode, "Show Internal Data")
+	node ShowInternalData {
+		incomingEdges (ModelEdge [1, *])
+		outgoingEdges (ModelEdge [0, 1])
+	}
+	
+	@style(commentNode, "${text}")
+	node Comment {
+	    @multiLine
+	    attr EString as text := ""
+	}
+	
+	
+	/* Edges */
+    abstract edge ControlFlow {
+    }
+
+	@style(simpleArrow, "")
+	edge StartEdge extends ControlFlow { 
+	}
+	
+	@style(simpleArrow, "Model")
+	edge ModelEdge extends ControlFlow { 
+	}
+    
+	@style(simpleArrow, "Word")
+	edge WordEdge extends ControlFlow { 
+	}
+	
+	@style(queryEdge, "Query")
+    edge QueryEdge { 
+    }
+	
+}
+

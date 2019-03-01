@@ -1,0 +1,79 @@
+appearance default {
+	lineWidth 2
+	background (245, 245, 245)
+}
+
+appearance labelFont {
+    font ("Sans",10)
+}
+
+nodeStyle activityStyle (1){
+    rectangle {
+        size (200, 45)
+        text {
+            appearance labelFont
+            position (CENTER, TOP 4)  
+            value "%s"
+        }
+    }
+}
+
+nodeStyle listStyle (1) {
+    rectangle {
+        size (200, 30)
+        text {
+            appearance labelFont
+            position (CENTER, TOP 4)  
+            value "%s"
+        }
+	}
+}
+
+nodeStyle port (1){
+	rectangle {
+        appearance {
+            transparency 1.0
+        }
+        size (106, 18)
+        text {
+            position (LEFT 7, MIDDLE)
+            value "%s"          
+        }
+    }
+}
+
+nodeStyle inputPort (2) {
+	rectangle {
+        appearance {
+            transparency 1.0
+        }
+        size (90,18)
+        image {
+            position (LEFT, MIDDLE)
+            size (fix 12, fix 12)
+            path ("icons/inputPort.png")
+        }
+        text {
+            position (LEFT 23, MIDDLE)
+            value "%s: %s"          
+        }
+    }
+}
+
+nodeStyle outputPort (2) {
+	rectangle {
+        appearance {
+            transparency 1.0
+        }
+        size (90, 18)
+        image {
+            position (LEFT, MIDDLE)
+            size (fix 12, fix 12)
+            path ( "icons/outputPort.png" )
+        }
+        text {
+            position (LEFT 23, MIDDLE)
+            value "%s: %s"          
+        }
+    }
+}

@@ -1,0 +1,37 @@
+appearance default {
+	lineWidth 2
+	background (229,229,229)
+}
+
+nodeStyle innerNode(1) {
+	ellipse {
+		appearance default
+		size(60,40)
+		text {
+			position ( CENTER, MIDDLE )
+			value "%s"
+		}
+	}
+}
+
+nodeStyle leafNode(1) {
+	rectangle {
+		appearance default
+		size (65, 65)
+		text {
+			position ( CENTER, MIDDLE )
+			value "%s"
+		}
+	}
+}
+
+edgeStyle arrow {	
+	appearance default
+	
+	decorator {
+		location (1.0) // at the end of the edge
+		ARROW
+		appearance default 
+	}
+}
+

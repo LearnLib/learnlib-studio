@@ -1,0 +1,155 @@
+appearance default {
+	lineWidth 2
+	background (229,229,229)
+}
+
+appearance labelFont {
+    font ("Sans",10)
+}
+
+appearance labelFontItalics {
+    font ("Sans", ITALIC, 10)
+}
+
+nodeStyle start {
+    roundedRectangle {
+        appearance {
+            background (245, 245, 245)
+        }
+        size (100, 65)
+        corner (10, 10)
+        text {
+            appearance labelFontItalics
+            position ( CENTER, TOP 4 )  
+            value "Start"
+        }
+        image {
+            position (CENTER, TOP 24)
+            size (fix 32, fix 32)   
+            path ("icons/startSIB.png")
+        }
+    }
+}
+
+nodeStyle end (1) {
+    roundedRectangle {
+        appearance {
+            background (245, 245, 245)
+        }
+        size (100, 65)
+        corner(10,10)
+        text {
+            appearance labelFont
+            position (CENTER, TOP 4)  
+            value "%s"
+        }
+        image {
+            position (CENTER, TOP 24)
+            size (fix 32, fix 32)   
+            path ("icons/endSIB.png")
+        }
+    }
+}
+
+nodeStyle activity (1){
+	roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        text {
+            appearance labelFont
+            position ( CENTER, TOP 4 )  
+            value "%s"
+        }
+        image {
+            position (CENTER, TOP 24)
+            size (fix 32, fix 32)   
+            path ("icons/atomicSIB.png")
+        }
+        polyline hline {
+            points [ (7, 64) (113, 64) ]
+        }
+    }
+}
+
+nodeStyle inputPort (1) {
+    rectangle {
+        appearance {
+            transparency 1.0
+        }
+        size (90,18)
+        image {
+            position (LEFT, MIDDLE)
+            size (fix 12, fix 12)
+            path ("icons/inputPort.png")
+        }
+        text {
+            position (LEFT 23, MIDDLE)
+            value "%s"          
+        }
+    }
+}
+
+nodeStyle outputPort (1) {
+    rectangle {
+        appearance {
+            transparency 1.0
+        }
+        size (90, 18)
+        image {
+            position (LEFT, MIDDLE)
+            size (fix 12, fix 12)
+            path ( "icons/outputPort.png" )
+        }
+        text {
+            position (LEFT 23, MIDDLE)
+            value "%s"          
+        }
+    }
+}
+
+nodeStyle commentNode (1) {
+    rectangle {
+        appearance {
+            background (255, 255, 0)
+            foreground (  0,   0, 0)
+        }
+        size (120, 65)
+        text {
+            position (LEFT 10, TOP 10)
+            value "%s"
+        }
+    }
+}
+
+edgeStyle controlFlow (1) {
+    appearanceProvider ("de.learnlib.studio.symbol.aps.ControlFlowAppearanceProvider")
+	appearance default
+    
+	decorator {
+        location (0.3)
+        movable
+        text {
+            appearance default
+            value "%s"
+        }
+    }
+	
+	decorator {
+		location (1.0) // at the end of the edge
+		ARROW
+		appearance default 
+	}
+}
+
+edgeStyle dataFlow {	
+	appearance {
+		lineStyle DOT
+		lineWidth 2
+	}
+	
+	decorator {
+		location (1.0) // at the end of the edge
+		ARROW
+		appearance default 
+	}
+}
