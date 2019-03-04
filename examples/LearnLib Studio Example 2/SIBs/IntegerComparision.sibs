@@ -1,0 +1,41 @@
+SibLibrary _ZPWWITOZEemYWtQZ9F78Tw {
+  name "Compare Integers"
+  mavenArtifacts [  ]
+  Activity _Z8nEwDOZEemYWtQZ9F78Tw at 25,25 size 200,280 {
+  	name "CompareIntegers"
+  	code Code _jepbsDOZEemYWtQZ9F78Tw {
+  			code "if (a == b) return Equal;\nif (a < b) return LessThan;\nreturn GreaterThan;"
+  		}
+  	BranchesList _Z81HMTOZEemYWtQZ9F78Tw at 0,50 size 200,104 {
+  		Branch _dVCZITOZEemYWtQZ9F78Tw at 5,35 size 190,18 {
+  			name "LessThan"
+  			error false
+  		}
+  		
+  		Branch _egT5cTOZEemYWtQZ9F78Tw at 5,58 size 190,18 {
+  			name "Equal"
+  			error false
+  		}
+  		
+  		Branch _fhIdQTOZEemYWtQZ9F78Tw at 5,81 size 190,18 {
+  			name "GreaterThan"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _Z828YTOZEemYWtQZ9F78Tw at 0,159 size 200,81 {
+  		InputParameter _g7PDwTOZEemYWtQZ9F78Tw at 5,35 size 190,18 {
+  			dataType Integer
+  			name "a"
+  		}
+  		
+  		InputParameter _hVAOoTOZEemYWtQZ9F78Tw at 5,58 size 190,18 {
+  			dataType Integer
+  			name "b"
+  		}
+  	}
+  	
+  	OutputParametersList _Z84xkTOZEemYWtQZ9F78Tw at 0,245 size 200,30 {
+  	}
+  }
+}

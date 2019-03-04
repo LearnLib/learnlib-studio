@@ -1,0 +1,36 @@
+SibLibrary _fLUXwTibEem3E5apuRswZA {
+  name "TextUtils"
+  mavenArtifacts [  ]
+  Activity _gYWLkTibEem3E5apuRswZA at 25,25 size 200,257 {
+  	name "Contains"
+  	code Code _njs_ADibEem3E5apuRswZA {
+  			code "if (Text.contains(Query)) { return Yes; }\nelse { return No; }"
+  		}
+  	BranchesList _gYadATibEem3E5apuRswZA at 0,50 size 200,81 {
+  		Branch _hvAcgDibEem3E5apuRswZA at 5,35 size 190,18 {
+  			name "Yes"
+  			error false
+  		}
+  		
+  		Branch _i9BHwTibEem3E5apuRswZA at 5,58 size 190,18 {
+  			name "No"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _gYbrITibEem3E5apuRswZA at 0,136 size 200,81 {
+  		InputParameter _jwOtYTibEem3E5apuRswZA at 5,35 size 190,18 {
+  			dataType Text
+  			name "Text"
+  		}
+  		
+  		InputParameter _kHVl0TibEem3E5apuRswZA at 5,58 size 190,18 {
+  			dataType Text
+  			name "Query"
+  		}
+  	}
+  	
+  	OutputParametersList _gYc5QTibEem3E5apuRswZA at 0,222 size 200,30 {
+  	}
+  }
+}

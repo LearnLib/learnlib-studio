@@ -1,0 +1,65 @@
+Mealy _ClQHoOj5Eei7hv4jTWl9Hg {
+  MealyState _JpC6gOj5Eei7hv4jTWl9Hg at 150,50 size 40,40 {
+  	init true
+  	label "0"
+  	-MealyTransition-> _KSYycOj5Eei7hv4jTWl9Hg via (327,45) decorate "" at (0,0) decorate "Text" at (39,-24) {
+  		id _K44KsOj5Eei7hv4jTWl9Hg
+  		output "0"
+  		input "a"
+  	}
+  	
+  	-MealyTransition-> _EnCLMe51Eei3ePoxSgb_jA via (209,176) decorate "" at (0,0) decorate "Text" at (14,24) {
+  		id _MFGfQe51Eei3ePoxSgb_jA
+  		output "0"
+  		input "b"
+  	}
+  }
+  
+  MealyState _KSYycOj5Eei7hv4jTWl9Hg at 460,50 size 40,40 {
+  	init false
+  	label "1"
+  	-MealyTransition-> _JpC6gOj5Eei7hv4jTWl9Hg via (295,105) decorate "" at (0,0) decorate "Text" at (-82,21) {
+  		id _HIxIIe51Eei3ePoxSgb_jA
+  		output "1"
+  		input "a"
+  	}
+  	
+  	-MealyTransition-> _E1TQse51Eei3ePoxSgb_jA via (521,175) decorate "" at (0,0) decorate "Text" at (22,24) {
+  		id _I3vLYe51Eei3ePoxSgb_jA
+  		output "0"
+  		input "b"
+  	}
+  }
+  
+  MealyState _EnCLMe51Eei3ePoxSgb_jA at 150,260 size 40,40 {
+  	init false
+  	label "2"
+  	-MealyTransition-> _E1TQse51Eei3ePoxSgb_jA via (331,239) decorate "" at (0,0) decorate "Text" at (50,-34) {
+  		id _LNTUke51Eei3ePoxSgb_jA
+  		output "0"
+  		input "a"
+  	}
+  	
+  	-MealyTransition-> _JpC6gOj5Eei7hv4jTWl9Hg via (135,172) decorate "" at (0,0) decorate "Text" at (-37,-43) {
+  		id _M3DgoO51Eei3ePoxSgb_jA
+  		output "1"
+  		input "b"
+  	}
+  }
+  
+  MealyState _E1TQse51Eei3ePoxSgb_jA at 460,260 size 40,40 {
+  	init false
+  	label "3"
+  	-MealyTransition-> _KSYycOj5Eei7hv4jTWl9Hg via (424,162) decorate "" at (0,0) decorate "Text" at (-55,-54) {
+  		id _JpIzIe51Eei3ePoxSgb_jA
+  		output "0"
+  		input "b"
+  	}
+  	
+  	-MealyTransition-> _EnCLMe51Eei3ePoxSgb_jA via (314,322) decorate "" at (0,0) decorate "Text" at (-78,24) {
+  		id _KlBMke51Eei3ePoxSgb_jA
+  		output "0"
+  		input "a"
+  	}
+  }
+}

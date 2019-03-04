@@ -1,0 +1,155 @@
+Symbol _H4nvETkkEem0-4HHaC5GYQ {
+  name "Zero Items Left"
+  Start _H4t1sTkkEem0-4HHaC5GYQ at 100,50 size 100,93 {
+  	StartOutputPort _LQXG8TkkEem0-4HHaC5GYQ at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  		-DataFlow-> _KVyVHDkkEem0-4HHaC5GYQ via (80,129) (80,279) decorate "" at (0,0) {
+  			id _O3-G0TkkEem0-4HHaC5GYQ
+  		}
+  	}
+  	-ControlFlow-> _KVxuATkkEem0-4HHaC5GYQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _K58yETkkEem0-4HHaC5GYQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _H4vD0TkkEem0-4HHaC5GYQ at 100,750 size 100,93 {
+  	name "Yes"
+  	EndInputPort _gFhX8DkkEem0-4HHaC5GYQ at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  }
+  
+  SibActivity _KVxuATkkEem0-4HHaC5GYQ at 90,200 size 120,162 {
+  	libraryComponentUID "_TFh9gTRwEemMlsAPAonM5w"
+  	branches [ SibBranch _KVyVEDkkEem0-4HHaC5GYQ {
+  			name "Success"
+  			error false
+  		}, SibBranch _KVyVETkkEem0-4HHaC5GYQ {
+  			name "Timeout"
+  			error true
+  		} ]
+  	SibStaticInputPort _KVyVEzkkEem0-4HHaC5GYQ at 5,93 size 110,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".todo-count"
+  	}
+  	
+  	SibStaticInputPort _KVyVFjkkEem0-4HHaC5GYQ at 5,116 size 110,18 {
+  		dataType Integer
+  		name "MaxWaitTime"
+  		value "1"
+  	}
+  	
+  	SibOutputPort _KVyVGTkkEem0-4HHaC5GYQ at 5,139 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _TSg_kDkkEem0-4HHaC5GYQ via (80,348) (80,479) decorate "" at (0,0) {
+  			id _W3apoTkkEem0-4HHaC5GYQ
+  		}
+  	}
+  	
+  	SibDynamicInputPort _KVyVHDkkEem0-4HHaC5GYQ at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _PRGYgTkkEem0-4HHaC5GYQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _T7jVcTkkEem0-4HHaC5GYQ
+  		label "Timeout"
+  		branches [ "Timeout" ]
+  	}
+  	
+  	-ControlFlow-> _TSg_gTkkEem0-4HHaC5GYQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _Uk7CkTkkEem0-4HHaC5GYQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _PRGYgTkkEem0-4HHaC5GYQ at 450,248 size 151,65 {
+  	name "Timeout"
+  }
+  
+  SibActivity _TSg_gTkkEem0-4HHaC5GYQ at 90,400 size 120,139 {
+  	libraryComponentUID "_MAaU8TRwEemMlsAPAonM5w"
+  	branches [ SibBranch _TSg_iDkkEem0-4HHaC5GYQ {
+  			name "Success"
+  			error false
+  		} ]
+  	SibOutputPort _TSg_ijkkEem0-4HHaC5GYQ at 5,93 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _eDiSETkkEem0-4HHaC5GYQ via (330,502) (330,690) decorate "" at (0,0) {
+  			id _jBYsITkkEem0-4HHaC5GYQ
+  		}
+  		
+  		-DataFlow-> _gFhX8DkkEem0-4HHaC5GYQ via (80,502) (80,829) decorate "" at (0,0) {
+  			id _lYuW8TkkEem0-4HHaC5GYQ
+  		}
+  	}
+  	
+  	SibOutputPort _TSg_jTkkEem0-4HHaC5GYQ at 5,116 size 110,18 {
+  		dataType Text
+  		name "Body"
+  		-DataFlow-> _YTdw5DkkEem0-4HHaC5GYQ via (80,525) (80,679) decorate "" at (0,0) {
+  			id _iVKfUTkkEem0-4HHaC5GYQ
+  		}
+  	}
+  	
+  	SibDynamicInputPort _TSg_kDkkEem0-4HHaC5GYQ at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _YTdJ0TkkEem0-4HHaC5GYQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _Y6HhMTkkEem0-4HHaC5GYQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  SibActivity _YTdJ0TkkEem0-4HHaC5GYQ at 90,600 size 120,116 {
+  	libraryComponentUID "_gYWLkTibEem3E5apuRswZA"
+  	branches [ SibBranch _YTdJ1jkkEem0-4HHaC5GYQ {
+  			name "Yes"
+  			error false
+  		}, SibBranch _YTdJ1zkkEem0-4HHaC5GYQ {
+  			name "No"
+  			error false
+  		} ]
+  	SibStaticInputPort _YTdw4TkkEem0-4HHaC5GYQ at 5,93 size 110,18 {
+  		dataType Text
+  		name "Query"
+  		value "0 items left"
+  	}
+  	
+  	SibDynamicInputPort _YTdw5DkkEem0-4HHaC5GYQ at 5,70 size 110,18 {
+  		dataType Text
+  		name "Text"
+  	}
+  	-ControlFlow-> _H4vD0TkkEem0-4HHaC5GYQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _anY7UTkkEem0-4HHaC5GYQ
+  		label "Yes"
+  		branches [ "Yes" ]
+  	}
+  	
+  	-ControlFlow-> _bo2YUTkkEem0-4HHaC5GYQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _dKw3ATkkEem0-4HHaC5GYQ
+  		label "No"
+  		branches [ "No" ]
+  	}
+  }
+  
+  End _bo2YUTkkEem0-4HHaC5GYQ at 450,611 size 100,93 {
+  	name "No"
+  	EndInputPort _eDiSETkkEem0-4HHaC5GYQ at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  }
+}

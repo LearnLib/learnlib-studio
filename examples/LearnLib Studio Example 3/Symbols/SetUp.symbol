@@ -1,0 +1,45 @@
+Symbol _zOnpkTbQEemghvnbWjei8w {
+  name "Set Up"
+  Start _zO4vUTbQEemghvnbWjei8w at 100,50 size 100,65 {
+  	-ControlFlow-> _aYSzwTbREemghvnbWjei8w  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _bDV74TbREemghvnbWjei8w
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _zO9AwTbQEemghvnbWjei8w at 90,350 size 120,93 {
+  	name "Success"
+  	EndInputPort _f4tIUTbREemghvnbWjei8w at 5,70 size 110,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  }
+  
+  SibActivity _aYSzwTbREemghvnbWjei8w at 90,170 size 120,116 {
+  	libraryComponentUID "_XUgIYP-3Eeihy-AcpCbutQ"
+  	branches [ SibBranch _JcZu0DlMEem0-4HHaC5GYQ {
+  			name "Success"
+  			error false
+  		} ]
+  	SibOutputPort _aYWeITbREemghvnbWjei8w at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _f4tIUTbREemghvnbWjei8w via (80,249) (80,429) decorate "" at (0,0) {
+  			id _hzxt4TbREemghvnbWjei8w
+  		}
+  	}
+  	
+  	SibStaticInputPort _JcdZMTlMEem0-4HHaC5GYQ at 5,93 size 110,18 {
+  		dataType Boolean
+  		name "Headless"
+  		value "true"
+  	}
+  	-ControlFlow-> _zO9AwTbQEemghvnbWjei8w  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _bS0iUTbREemghvnbWjei8w
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+}

@@ -1,0 +1,58 @@
+SibLibrary _ytDgoTU7EemvN4zECoJuXQ {
+  name ""
+  mavenArtifacts [  ]
+  Activity _y-nKsTU7EemvN4zECoJuXQ at 25,25 size 200,239 {
+  	name "SetBoolean"
+  	code Code _6QHpcDU7EemvN4zECoJuXQ {
+  			code "return Success;"
+  		}
+  	BranchesList _y-sDMTU7EemvN4zECoJuXQ at 0,50 size 200,58 {
+  		Branch _zohqYTU7EemvN4zECoJuXQ at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _y-tRUTU7EemvN4zECoJuXQ at 0,113 size 200,58 {
+  		InputParameter _1TKnQTU7EemvN4zECoJuXQ at 5,35 size 190,18 {
+  			dataType Boolean
+  			name "Value"
+  		}
+  	}
+  	
+  	OutputParametersList _y-ufcTU7EemvN4zECoJuXQ at 0,176 size 200,58 {
+  		OutputParameter _1sNZYTU7EemvN4zECoJuXQ at 5,35 size 190,18 {
+  			dataType Boolean
+  			name "Value"
+  		}
+  	}
+  }
+  
+  Activity _zLHVoTU7EemvN4zECoJuXQ at 250,25 size 200,234 {
+  	name "TrueOrFalse"
+  	code Code _Ch3dMDU8EemvN4zECoJuXQ {
+  			code "if (Value) return True;\nelse return False;"
+  		}
+  	BranchesList _zLJx4TU7EemvN4zECoJuXQ at 0,50 size 200,81 {
+  		Branch _9C8WYTU7EemvN4zECoJuXQ at 5,35 size 190,18 {
+  			name "False"
+  			error false
+  		}
+  		
+  		Branch _9aG5MTU7EemvN4zECoJuXQ at 5,58 size 190,18 {
+  			name "True"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _zLLnETU7EemvN4zECoJuXQ at 0,136 size 200,58 {
+  		InputParameter _ARPeYTU8EemvN4zECoJuXQ at 5,35 size 190,18 {
+  			dataType Boolean
+  			name "Value"
+  		}
+  	}
+  	
+  	OutputParametersList _zLMOITU7EemvN4zECoJuXQ at 0,199 size 200,30 {
+  	}
+  }
+}

@@ -1,0 +1,146 @@
+Symbol _Ci1UYTibEem3E5apuRswZA {
+  name "Read Todo"
+  Start _CjKrkTibEem3E5apuRswZA at 100,50 size 100,93 {
+  	StartOutputPort _EYLFYTibEem3E5apuRswZA at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  		-DataFlow-> _JwiRMTibEem3E5apuRswZA via (80,129) (80,279) decorate "" at (0,0) {
+  			id _KRZikTibEem3E5apuRswZA
+  		}
+  	}
+  	-ControlFlow-> _Hedg4DibEem3E5apuRswZA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _IGbf0TibEem3E5apuRswZA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _CjQLITibEem3E5apuRswZA at 100,740 size 100,93 {
+  	name "Success"
+  	EndInputPort _IiOOgTicEem3E5apuRswZA at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  }
+  
+  SibActivity _Hedg4DibEem3E5apuRswZA at 90,200 size 120,162 {
+  	libraryComponentUID "_TFh9gTRwEemMlsAPAonM5w"
+  	branches [ SibBranch _HejngDibEem3E5apuRswZA {
+  			name "Success"
+  			error false
+  		}, SibBranch _HenR4DibEem3E5apuRswZA {
+  			name "Timeout"
+  			error true
+  		} ]
+  	SibStaticInputPort _HeumoTibEem3E5apuRswZA at 5,93 size 110,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".todo-list > li:nth-child(1)"
+  	}
+  	
+  	SibStaticInputPort _Hewb0TibEem3E5apuRswZA at 5,116 size 110,18 {
+  		dataType Integer
+  		name "MaxWaitTime"
+  		value "1"
+  	}
+  	
+  	SibOutputPort _HezfITibEem3E5apuRswZA at 5,139 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _L-L_ETicEem3E5apuRswZA via (80,348) (80,469) decorate "" at (0,0) {
+  			id _MY4-ETicEem3E5apuRswZA
+  		}
+  	}
+  	
+  	SibDynamicInputPort _JwiRMTibEem3E5apuRswZA at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _7kAroDibEem3E5apuRswZA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _82sbgTibEem3E5apuRswZA
+  		label "Timeout"
+  		branches [ "Timeout" ]
+  	}
+  	
+  	-ControlFlow-> _FaqnsTicEem3E5apuRswZA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _F_qLIDicEem3E5apuRswZA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  SibActivity _0FnAYTibEem3E5apuRswZA at 90,550 size 120,116 {
+  	libraryComponentUID "_gYWLkTibEem3E5apuRswZA"
+  	branches [ SibBranch _0FqqwDibEem3E5apuRswZA {
+  			name "Yes"
+  			error false
+  		}, SibBranch _0FrR0DibEem3E5apuRswZA {
+  			name "No"
+  			error false
+  		} ]
+  	SibStaticInputPort _0Fx_gTibEem3E5apuRswZA at 5,93 size 110,18 {
+  		dataType Text
+  		name "Query"
+  		value "Our Test Task"
+  	}
+  	
+  	SibDynamicInputPort _CciCoTicEem3E5apuRswZA at 5,70 size 110,18 {
+  		dataType Text
+  		name "Text"
+  	}
+  	-ControlFlow-> _1QFPcTibEem3E5apuRswZA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _3xrCcTibEem3E5apuRswZA
+  		label "No"
+  		branches [ "No" ]
+  	}
+  	
+  	-ControlFlow-> _CjQLITibEem3E5apuRswZA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _53wlMTibEem3E5apuRswZA
+  		label "Yes"
+  		branches [ "Yes" ]
+  	}
+  }
+  
+  End _1QFPcTibEem3E5apuRswZA at 400,575 size 100,65 {
+  	name "Failed"
+  }
+  
+  End _7kAroDibEem3E5apuRswZA at 390,240 size 100,65 {
+  	name "Timeout"
+  }
+  
+  SibActivity _FaqnsTicEem3E5apuRswZA at 90,390 size 120,139 {
+  	libraryComponentUID "_MAaU8TRwEemMlsAPAonM5w"
+  	branches [ SibBranch _FawHQDicEem3E5apuRswZA {
+  			name "Success"
+  			error false
+  		} ]
+  	SibOutputPort _Fa4qITicEem3E5apuRswZA at 5,93 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _IiOOgTicEem3E5apuRswZA via (80,492) (80,819) decorate "" at (0,0) {
+  			id _KnZyUTicEem3E5apuRswZA
+  		}
+  	}
+  	
+  	SibOutputPort _Fa8UgTicEem3E5apuRswZA at 5,116 size 110,18 {
+  		dataType Text
+  		name "Body"
+  		-DataFlow-> _CciCoTicEem3E5apuRswZA via (80,515) (80,629) decorate "" at (0,0) {
+  			id _INgiwTicEem3E5apuRswZA
+  		}
+  	}
+  	
+  	SibDynamicInputPort _L-L_ETicEem3E5apuRswZA at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _0FnAYTibEem3E5apuRswZA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _GPR7gDicEem3E5apuRswZA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+}

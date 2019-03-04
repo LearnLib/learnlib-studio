@@ -1,0 +1,413 @@
+SibLibrary _VnS_sP-3Eeihy-AcpCbutQ {
+  name "SeleniumSibLibrary"
+  mavenArtifacts [ MavenArtifact _evEhkDRyEemjAczeL4bnYg {
+  		groupId "org.seleniumhq.selenium"
+  		artifactId "selenium-java"
+  		version "3.11.0"
+  	}, MavenArtifact _XvwLoDYKEemLqPJyN5Wb8Q {
+  		groupId "org.seleniumhq.selenium"
+  		artifactId "selenium-chrome-driver"
+  		version "3.11.0"
+  	}, MavenArtifact _JcOpYDYPEembboOowq0gMw {
+  		groupId "org.apache.commons"
+  		artifactId "commons-text"
+  		version "1.6"
+  	} ]
+  Activity _XUgIYP-3Eeihy-AcpCbutQ at 25,25 size 200,239 {
+  	name "CreateBrowser"
+  	code Code _x6Ly8DRvEemMlsAPAonM5w {
+  			code "//final org.openqa.selenium.firefox.FirefoxBinary binary = new org.openqa.selenium.firefox.FirefoxBinary();\n//WebDriver = new org.openqa.selenium.firefox.FirefoxDriver(\n//                new org.openqa.selenium.firefox.GeckoDriverService.Builder()\n//                        .usingFirefoxBinary(binary)\n//                        .build()\n//);\n\nfinal org.openqa.selenium.chrome.ChromeOptions chromeOptions = new org.openqa.selenium.chrome.ChromeOptions();\nif (Headless) {\n    chromeOptions.setHeadless(true);\n}\nfinal org.openqa.selenium.chrome.ChromeDriverService service = new org.openqa.selenium.chrome.ChromeDriverService.Builder()\n                .usingAnyFreePort()\n.build();\nWebDriver = new org.openqa.selenium.chrome.ChromeDriver(service, chromeOptions);\n\n((org.openqa.selenium.WebDriver) WebDriver).manage().timeouts().pageLoadTimeout(10, java.util.concurrent.TimeUnit.SECONDS);\n((org.openqa.selenium.WebDriver) WebDriver).manage().timeouts().setScriptTimeout(10, java.util.concurrent.TimeUnit.SECONDS);\nreturn Success;"
+  		}
+  	BranchesList _XbKxEP-3Eeihy-AcpCbutQ at 0,50 size 200,58 {
+  		Branch _BpoFcf-5EeiuiJX9tKTo6w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _XbPCgP-3Eeihy-AcpCbutQ at 0,113 size 200,58 {
+  		InputParameter _BVFpcTlMEem0-4HHaC5GYQ at 5,35 size 190,18 {
+  			dataType Boolean
+  			name "Headless"
+  		}
+  	}
+  	
+  	OutputParametersList _XbSs4P-3Eeihy-AcpCbutQ at 0,176 size 200,58 {
+  		OutputParameter _nzIzMCrnEembN-YkAOVBiQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _JjioAf-5EeiuiJX9tKTo6w at 250,25 size 200,211 {
+  	name "DeleteBrowser"
+  	code Code _yrFEYDRvEemMlsAPAonM5w {
+  			code "((org.openqa.selenium.WebDriver) WebDriver).quit();\nreturn Success;"
+  		}
+  	BranchesList _Jjouof-5EeiuiJX9tKTo6w at 0,50 size 200,58 {
+  		Branch _J3HEQf-5EeiuiJX9tKTo6w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _Jjqj0P-5EeiuiJX9tKTo6w at 0,113 size 200,58 {
+  		InputParameter _rCqDMSrnEembN-YkAOVBiQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  	
+  	OutputParametersList _Jjrx8f-5EeiuiJX9tKTo6w at 0,176 size 200,30 {
+  	}
+  }
+  
+  Activity _hxcWgSrnEembN-YkAOVBiQ at 475,25 size 200,285 {
+  	name "GoToURL"
+  	code Code _zEkicDRvEemMlsAPAonM5w {
+  			code "try {\n    ((org.openqa.selenium.WebDriver) WebDriver).navigate().to(URL);\n    return Success;\n} catch (Exception e) {\n    return PageNotFound;\n}"
+  		}
+  	BranchesList _hxojwCrnEembN-YkAOVBiQ at 0,50 size 200,81 {
+  		Branch _iRkoECrnEembN-YkAOVBiQ at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _jdyjkSrnEembN-YkAOVBiQ at 5,58 size 190,18 {
+  			name "PageNotFound"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _hxrAASrnEembN-YkAOVBiQ at 0,136 size 200,81 {
+  		InputParameter _mR9UUCrnEembN-YkAOVBiQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		InputParameter _pmlGwSrnEembN-YkAOVBiQ at 5,58 size 190,18 {
+  			dataType Text
+  			name "URL"
+  		}
+  	}
+  	
+  	OutputParametersList _hxtcQSrnEembN-YkAOVBiQ at 0,222 size 200,58 {
+  		OutputParameter _GOeA8TRvEem3Kp9k_FCzhQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _zcfTMTRvEemMlsAPAonM5w at 700,25 size 200,308 {
+  	name "Click"
+  	code Code _n9e8cDRzEemjAczeL4bnYg {
+  			code "try {\n    final org.openqa.selenium.WebElement element = ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.cssSelector(ElementSelector));\n    if (DoubleClick) {\n        new org.openqa.selenium.interactions.Actions((org.openqa.selenium.WebDriver) WebDriver).doubleClick(element).build().perform();\n    } else {\n        element.click();\n    }\n    return Success;\n} catch (org.openqa.selenium.NoSuchElementException e) {\n    return ElementNotFound;\n}"
+  		}
+  	BranchesList _zcsHgTRvEemMlsAPAonM5w at 0,50 size 200,81 {
+  		Branch _0m2NgTRvEemMlsAPAonM5w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _02yuATRvEemMlsAPAonM5w at 5,58 size 190,18 {
+  			name "ElementNotFound"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _zct8sTRvEemMlsAPAonM5w at 0,136 size 200,104 {
+  		InputParameter _3TOUMTRvEemMlsAPAonM5w at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		InputParameter _4wEssTRvEemMlsAPAonM5w at 5,58 size 190,18 {
+  			dataType Text
+  			name "ElementSelector"
+  		}
+  		
+  		InputParameter _wP1CMTkKEemsrLWuX-VaxQ at 5,81 size 190,18 {
+  			dataType Boolean
+  			name "DoubleClick"
+  		}
+  	}
+  	
+  	OutputParametersList _zcvK0DRvEemMlsAPAonM5w at 0,245 size 200,58 {
+  		OutputParameter _8Q-AkTRvEemMlsAPAonM5w at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _CJc24TRwEemMlsAPAonM5w at 925,25 size 200,308 {
+  	name "Fill"
+  	code Code _Gj6BMDU6EemvN4zECoJuXQ {
+  			code "try {\n    final org.openqa.selenium.WebElement element = ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.cssSelector(ElementSelector));\n    element.sendKeys(Value);\n    return Success;\n} catch (org.openqa.selenium.NoSuchElementException e) {\n    return ElementNotFound;\n}"
+  		}
+  	BranchesList _CJesETRwEemMlsAPAonM5w at 0,50 size 200,81 {
+  		Branch _YvugMTRwEemMlsAPAonM5w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _4yX9UTRwEemjAczeL4bnYg at 5,58 size 190,18 {
+  			name "ElementNotFound"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _CJfTITRwEemMlsAPAonM5w at 0,136 size 200,104 {
+  		InputParameter _gBqjETU8EemvN4zECoJuXQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		InputParameter _hby-wTU8EemvN4zECoJuXQ at 5,58 size 190,18 {
+  			dataType Text
+  			name "ElementSelector"
+  		}
+  		
+  		InputParameter _jkhl0TU8EemvN4zECoJuXQ at 5,81 size 190,18 {
+  			dataType Text
+  			name "Value"
+  		}
+  	}
+  	
+  	OutputParametersList _CJghQDRwEemMlsAPAonM5w at 0,245 size 200,58 {
+  		OutputParameter _lUZA8TU8EemvN4zECoJuXQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _CUiFgTRwEemMlsAPAonM5w at 1150,25 size 200,308 {
+  	name "PressKey"
+  	code Code _HJD8sDU6EemvN4zECoJuXQ {
+  			code "try {\n    final org.openqa.selenium.WebElement element = ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.cssSelector(ElementSelector));\n    final String unescapedKey = org.apache.commons.text.StringEscapeUtils.unescapeJava(Key);\n    final org.openqa.selenium.Keys keyToPress = org.openqa.selenium.Keys.getKeyFromUnicode(unescapedKey.toCharArray()[0]);\n    element.sendKeys(keyToPress);\n    return Success;\n} catch (org.openqa.selenium.NoSuchElementException e) {\n    return ElementNotFound;\n}"
+  		}
+  	BranchesList _CUqoYTRwEemMlsAPAonM5w at 0,50 size 200,81 {
+  		Branch _bQXQ8TRwEemMlsAPAonM5w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _Zv_UMTU9EemmBck2b0hHvA at 5,58 size 190,18 {
+  			name "ElementNotFound"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _CUr2gTRwEemMlsAPAonM5w at 0,136 size 200,104 {
+  		InputParameter _ApFhMTU9EemmBck2b0hHvA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		InputParameter _A66RATU9EemmBck2b0hHvA at 5,58 size 190,18 {
+  			dataType Text
+  			name "ElementSelector"
+  		}
+  		
+  		InputParameter _DKr7QTU9EemmBck2b0hHvA at 5,81 size 190,18 {
+  			dataType Text
+  			name "Key"
+  		}
+  	}
+  	
+  	OutputParametersList _CUtEoTRwEemMlsAPAonM5w at 0,245 size 200,58 {
+  		OutputParameter _DcSooTU9EemmBck2b0hHvA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _Fl5voTRwEemMlsAPAonM5w at 1375,25 size 200,331 {
+  	name "MoveMouse"
+  	code Code _c7yIgDVCEemmBck2b0hHvA {
+  			code "try {\n    final org.openqa.selenium.interactions.Actions actions = new org.openqa.selenium.interactions.Actions((org.openqa.selenium.WebDriver) WebDriver);\n    final org.openqa.selenium.WebElement element = ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.cssSelector(ElementSelector));\n    actions.moveToElement(element, offsetX, offsetY).build().perform();\n    return Success;\n} catch (org.openqa.selenium.NoSuchElementException e) {\n    return ElementNotFound;\n}"
+  		}
+  	BranchesList _FmCSgTRwEemMlsAPAonM5w at 0,50 size 200,81 {
+  		Branch _dGnA4TRwEemMlsAPAonM5w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _sKF1wTXyEem2Ft2r_8pS7g at 5,58 size 190,18 {
+  			name "ElementNotFound"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _FmC5kTRwEemMlsAPAonM5w at 0,136 size 200,127 {
+  		InputParameter _bXt1ETU_EemmBck2b0hHvA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		InputParameter _gAeI4TU_EemmBck2b0hHvA at 5,58 size 190,18 {
+  			dataType Text
+  			name "ElementSelector"
+  		}
+  		
+  		InputParameter _hHOVkTU_EemmBck2b0hHvA at 5,81 size 190,18 {
+  			dataType Integer
+  			name "offsetX"
+  		}
+  		
+  		InputParameter _hYsgETU_EemmBck2b0hHvA at 5,104 size 190,18 {
+  			dataType Integer
+  			name "offsetY"
+  		}
+  	}
+  	
+  	OutputParametersList _FmEHsTRwEemMlsAPAonM5w at 0,268 size 200,58 {
+  		OutputParameter _bpYM0TU_EemmBck2b0hHvA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _GJAcsTRwEemMlsAPAonM5w at 1600,25 size 200,285 {
+  	name "ClickLinkByText"
+  	code Code _nE8fEDieEemoJ_Kxu2Qd7Q {
+  			code "try {\n    ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.linkText(LinkText)).click();\n    return Success;\n} catch(org.openqa.selenium.NoSuchElementException e) {\n    return ElementNotFound;\n}"
+  		}
+  	BranchesList _GJCR4TRwEemMlsAPAonM5w at 0,50 size 200,81 {
+  		Branch _gHSjoTRwEemMlsAPAonM5w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _2JsD0TRwEemjAczeL4bnYg at 5,58 size 190,18 {
+  			name "ElementNotFound"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _GJCR4zRwEemMlsAPAonM5w at 0,136 size 200,81 {
+  		InputParameter _rUawMTieEemoJ_Kxu2Qd7Q at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		InputParameter _rqsiMTieEemoJ_Kxu2Qd7Q at 5,58 size 190,18 {
+  			dataType Text
+  			name "LinkText"
+  		}
+  	}
+  	
+  	OutputParametersList _GJC48TRwEemMlsAPAonM5w at 0,222 size 200,58 {
+  		OutputParameter _tFQbsTieEemoJ_Kxu2Qd7Q at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _MAaU8TRwEemMlsAPAonM5w at 1825,25 size 200,262 {
+  	name "GetBody"
+  	code Code _crPyQDicEem3E5apuRswZA {
+  			code "Body = ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.cssSelector(\"body\")).getText();\nreturn Success;"
+  		}
+  	BranchesList _MAiQwDRwEemMlsAPAonM5w at 0,50 size 200,58 {
+  		Branch _fMQewTRwEemMlsAPAonM5w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _MAje4TRwEemMlsAPAonM5w at 0,113 size 200,58 {
+  		InputParameter _WJKawTibEem3E5apuRswZA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  	
+  	OutputParametersList _MAlUETRwEemMlsAPAonM5w at 0,176 size 200,81 {
+  		OutputParameter _XzM6sTibEem3E5apuRswZA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		OutputParameter _ZgqiETibEem3E5apuRswZA at 5,58 size 190,18 {
+  			dataType Text
+  			name "Body"
+  		}
+  	}
+  }
+  
+  Activity _TFh9gTRwEemMlsAPAonM5w at 2050,25 size 200,308 {
+  	name "WaitForNode"
+  	code Code _vmPcgDVCEemmBck2b0hHvA {
+  			code "final org.openqa.selenium.support.ui.WebDriverWait wait = new org.openqa.selenium.support.ui.WebDriverWait(((org.openqa.selenium.WebDriver) WebDriver), MaxWaitTime);\ntry {\n    wait.until(wd -> {\n        try {\n            ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.cssSelector(ElementSelector));\n            return true;\n        } catch (Exception e) {\n            return false;\n        }\n    });\n} catch (Exception e) {\n    // Nothing to do\n}\n\ntry{\n    wait.until(wd -> ((org.openqa.selenium.WebDriver) WebDriver).findElement(org.openqa.selenium.By.cssSelector(ElementSelector)).isDisplayed());\n    return Success;\n} catch (Exception e) {\n    return Timeout;\n}\n"
+  		}
+  	BranchesList _TFm2ATRwEemMlsAPAonM5w at 0,50 size 200,81 {
+  		Branch _d616MDRwEemMlsAPAonM5w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _ylinoTRwEemjAczeL4bnYg at 5,58 size 190,18 {
+  			name "Timeout"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _TFndETRwEemMlsAPAonM5w at 0,136 size 200,104 {
+  		InputParameter _-L8ecDU-EemmBck2b0hHvA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  		
+  		InputParameter _-YS4YTU-EemmBck2b0hHvA at 5,58 size 190,18 {
+  			dataType Text
+  			name "ElementSelector"
+  		}
+  		
+  		InputParameter _IoNpATU_EemmBck2b0hHvA at 5,81 size 190,18 {
+  			dataType Integer
+  			name "MaxWaitTime"
+  		}
+  	}
+  	
+  	OutputParametersList _TFoEITRwEemMlsAPAonM5w at 0,245 size 200,58 {
+  		OutputParameter _KJ8hgTU_EemmBck2b0hHvA at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+  
+  Activity _4zY5sTbQEemghvnbWjei8w at 2275,25 size 200,239 {
+  	name "Reset"
+  	code Code _-tij8DbQEemghvnbWjei8w {
+  			code "((org.openqa.selenium.WebDriver) WebDriver).manage().deleteAllCookies();\nif (WebDriver instanceof org.openqa.selenium.JavascriptExecutor) {\n    try {\n        final org.openqa.selenium.JavascriptExecutor js = (org.openqa.selenium.JavascriptExecutor) WebDriver;\n        js.executeScript(\"window.localStorage.clear();\");\n        js.executeScript(\"window.sessionStorage.clear();\");\n    } catch (Exception e) {}\n}\nreturn Success;"
+  		}
+  	BranchesList _4zrNkTbQEemghvnbWjei8w at 0,50 size 200,58 {
+  		Branch _6HwEkTbQEemghvnbWjei8w at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _4zsbsTbQEemghvnbWjei8w at 0,113 size 200,58 {
+  		InputParameter _7Vg4MTbQEemghvnbWjei8w at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  	
+  	OutputParametersList _4ztCwTbQEemghvnbWjei8w at 0,176 size 200,58 {
+  		OutputParameter _7hb0UTbQEemghvnbWjei8w at 5,35 size 190,18 {
+  			dataType Object
+  			name "WebDriver"
+  		}
+  	}
+  }
+}

@@ -1,0 +1,159 @@
+Symbol _oKCecDkYEemqPd5oYbV-7A {
+  name "Clear Completed"
+  Start _oKEToTkYEemqPd5oYbV-7A at 100,50 size 100,93 {
+  	StartOutputPort _o3BgQTkYEemqPd5oYbV-7A at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  		-DataFlow-> _tA4RkTkYEemqPd5oYbV-7A via (80,129) (80,279) decorate "" at (0,0) {
+  			id _te6RYTkYEemqPd5oYbV-7A
+  		}
+  	}
+  	-ControlFlow-> _rpaIUTkYEemqPd5oYbV-7A  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _sIJ50TkYEemqPd5oYbV-7A
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _oKE6sTkYEemqPd5oYbV-7A at 100,760 size 100,116 {
+  	name "Success"
+  	EndInputPort _7yDm4TkYEemqPd5oYbV-7A at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  	
+  	EndInputPort _8OXvcTkYEemqPd5oYbV-7A at 5,93 size 90,18 {
+  		dataType Boolean
+  		scope Query
+  		name "TodoCreated"
+  	}
+  }
+  
+  SibActivity _rpaIUTkYEemqPd5oYbV-7A at 90,200 size 120,162 {
+  	libraryComponentUID "_TFh9gTRwEemMlsAPAonM5w"
+  	branches [ SibBranch _rpb9gDkYEemqPd5oYbV-7A {
+  			name "Success"
+  			error false
+  		}, SibBranch _rpb9gTkYEemqPd5oYbV-7A {
+  			name "Timeout"
+  			error true
+  		} ]
+  	SibStaticInputPort _rpdysTkYEemqPd5oYbV-7A at 5,93 size 110,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".clear-completed"
+  	}
+  	
+  	SibStaticInputPort _rpfn4TkYEemqPd5oYbV-7A at 5,116 size 110,18 {
+  		dataType Integer
+  		name "MaxWaitTime"
+  		value "1"
+  	}
+  	
+  	SibOutputPort _rphdETkYEemqPd5oYbV-7A at 5,139 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _1BpDATkYEemqPd5oYbV-7A via (80,348) (80,478) decorate "" at (0,0) {
+  			id _1xbhMTkYEemqPd5oYbV-7A
+  		}
+  	}
+  	
+  	SibDynamicInputPort _tA4RkTkYEemqPd5oYbV-7A at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _vh6D4TkYEemqPd5oYbV-7A  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _wNuBATkYEemqPd5oYbV-7A
+  		label "Timeout"
+  		branches [ "Timeout" ]
+  	}
+  	
+  	-ControlFlow-> _zr-QkTkYEemqPd5oYbV-7A  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _2A8j4TkYEemqPd5oYbV-7A
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _vh6D4TkYEemqPd5oYbV-7A at 400,248 size 100,65 {
+  	name "Timeout"
+  }
+  
+  SibActivity _zr-QkTkYEemqPd5oYbV-7A at 90,399 size 120,162 {
+  	libraryComponentUID "_zcfTMTRvEemMlsAPAonM5w"
+  	branches [ SibBranch _zsAs0DkYEemqPd5oYbV-7A {
+  			name "Success"
+  			error false
+  		}, SibBranch _zsAs0TkYEemqPd5oYbV-7A {
+  			name "ElementNotFound"
+  			error true
+  		} ]
+  	SibStaticInputPort _zsE-QTkYEemqPd5oYbV-7A at 5,93 size 110,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".clear-completed"
+  	}
+  	
+  	SibStaticInputPort _zsIooTkYEemqPd5oYbV-7A at 5,116 size 110,18 {
+  		dataType Boolean
+  		name "DoubleClick"
+  		value "false"
+  	}
+  	
+  	SibOutputPort _zsLr8TkYEemqPd5oYbV-7A at 5,139 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _7yDm4TkYEemqPd5oYbV-7A via (80,547) (80,839) decorate "" at (0,0) {
+  			id _90q-4TkYEemqPd5oYbV-7A
+  		}
+  	}
+  	
+  	SibDynamicInputPort _1BpDATkYEemqPd5oYbV-7A at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _53qWwTkYEemqPd5oYbV-7A  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _6mbhQTkYEemqPd5oYbV-7A
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  	
+  	-ControlFlow-> _B6zGwTkZEemqPd5oYbV-7A  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _EtFBIDkZEemqPd5oYbV-7A
+  		label "ElementNotFound"
+  		branches [ "ElementNotFound" ]
+  	}
+  }
+  
+  SibActivity _53qWwTkYEemqPd5oYbV-7A at 90,600 size 120,116 {
+  	libraryComponentUID "_y-nKsTU7EemvN4zECoJuXQ"
+  	branches [ SibBranch _53rk4DkYEemqPd5oYbV-7A {
+  			name "Success"
+  			error false
+  		} ]
+  	SibStaticInputPort _53sL8TkYEemqPd5oYbV-7A at 5,70 size 110,18 {
+  		dataType Boolean
+  		name "Value"
+  		value "false"
+  	}
+  	
+  	SibOutputPort _53uBITkYEemqPd5oYbV-7A at 5,93 size 110,18 {
+  		dataType Boolean
+  		name "Value"
+  		-DataFlow-> _8OXvcTkYEemqPd5oYbV-7A via (80,702) (80,862) decorate "" at (0,0) {
+  			id __jeDATkYEemqPd5oYbV-7A
+  		}
+  	}
+  	-ControlFlow-> _oKE6sTkYEemqPd5oYbV-7A  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _60LCUTkYEemqPd5oYbV-7A
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _B6zGwTkZEemqPd5oYbV-7A at 400,447 size 151,65 {
+  	name "ElementNotFound"
+  }
+}

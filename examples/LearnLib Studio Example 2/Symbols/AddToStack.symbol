@@ -1,0 +1,134 @@
+Symbol _kdH9wSukEemwEPKgfVvK1Q {
+  name "Add To Stack"
+  Start _MIl8QTOOEemkv9Ci8AMUkQ at 200,50 size 151,116 {
+  	StartOutputPort _NKI40TOOEemkv9Ci8AMUkQ at 5,70 size 141,18 {
+  		dataType Object
+  		scope Query
+  		name "Stack"
+  		-DataFlow-> _TmsTQDOTEemzps-xmmnOWg via (190,129) (190,669) decorate "" at (0,0) {
+  			id _UQCLMTOTEemzps-xmmnOWg
+  		}
+  		
+  		-DataFlow-> _y4mBMTOZEemYWtQZ9F78Tw via (190,129) (190,299) decorate "" at (0,0) {
+  			id _THw3YDOaEemYWtQZ9F78Tw
+  		}
+  	}
+  	
+  	StartOutputPort _MOD40TOTEemzps-xmmnOWg at 5,93 size 141,18 {
+  		dataType Integer
+  		scope Property
+  		name "stackSize"
+  		-DataFlow-> _Qo9xUTOoEemEc_qOlzLj_Q via (190,152) (190,512) decorate "" at (0,0) {
+  			id _UZbLMTOoEemEc_qOlzLj_Q
+  		}
+  	}
+  	-ControlFlow-> _yJQO8TOZEemYWtQZ9F78Tw  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _-qT7wTOZEemYWtQZ9F78Tw
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  SibActivity _SKFLUTOTEemzps-xmmnOWg at 215,590 size 120,139 {
+  	libraryComponentUID "_IIT-8SuREem3ybM4_I5adQ"
+  	branches [ SibBranch _SKVC8DOTEemzps-xmmnOWg {
+  			name "Success"
+  			error false
+  		} ]
+  	SibStaticInputPort _SKc-wTOTEemzps-xmmnOWg at 5,93 size 110,18 {
+  		dataType Integer
+  		name "Element"
+  		value "42"
+  	}
+  	
+  	SibOutputPort _SKez8TOTEemzps-xmmnOWg at 5,116 size 110,18 {
+  		dataType Object
+  		name "Stack"
+  		-DataFlow-> _cJ5DYTOTEemzps-xmmnOWg via (190,715) (190,899) decorate "" at (0,0) {
+  			id _Q1cPMTQ5EemQp-Yhu8Qvig
+  		}
+  	}
+  	
+  	SibDynamicInputPort _TmsTQDOTEemzps-xmmnOWg at 5,70 size 110,18 {
+  		dataType Object
+  		name "Stack"
+  	}
+  	-ControlFlow-> _Ws0WsTOTEemzps-xmmnOWg  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _mtFDYTOVEem6FoYFYorl4g
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _Ws0WsTOTEemzps-xmmnOWg at 200,820 size 151,93 {
+  	name "Success"
+  	EndInputPort _cJ5DYTOTEemzps-xmmnOWg at 5,70 size 141,18 {
+  		dataType Object
+  		scope Query
+  		name "Stack"
+  	}
+  }
+  
+  SibActivity _yJQO8TOZEemYWtQZ9F78Tw at 215,220 size 120,116 {
+  	libraryComponentUID "_0BTX8SuREemvnL14raFhhQ"
+  	branches [ SibBranch _yJW8oDOZEemYWtQZ9F78Tw {
+  			name "Success"
+  			error false
+  		} ]
+  	SibOutputPort _yJh7wTOZEemYWtQZ9F78Tw at 5,93 size 110,18 {
+  		dataType Integer
+  		name "Size"
+  		-DataFlow-> _QUcS0TOoEemEc_qOlzLj_Q via (210,322) (210,489) decorate "" at (0,0) {
+  			id _TsB5sTOoEemEc_qOlzLj_Q
+  		}
+  	}
+  	
+  	SibDynamicInputPort _y4mBMTOZEemYWtQZ9F78Tw at 5,70 size 110,18 {
+  		dataType Object
+  		name "Stack"
+  	}
+  	-ControlFlow-> _r8SEcTObEemI6cDa8jb59g  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _swxccTObEemI6cDa8jb59g
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _0ObywTOZEemYWtQZ9F78Tw at 520,430 size 100,65 {
+  	name "StackIsFull"
+  }
+  
+  SibActivity _r8SEcTObEemI6cDa8jb59g at 216,410 size 120,116 {
+  	libraryComponentUID "_Z8nEwDOZEemYWtQZ9F78Tw"
+  	branches [ SibBranch _r8anUDObEemI6cDa8jb59g {
+  			name "LessThan"
+  			error false
+  		}, SibBranch _r8ccgDObEemI6cDa8jb59g {
+  			name "Equal"
+  			error false
+  		}, SibBranch _r8dDkDObEemI6cDa8jb59g {
+  			name "GreaterThan"
+  			error false
+  		} ]
+  	SibDynamicInputPort _QUcS0TOoEemEc_qOlzLj_Q at 5,70 size 110,18 {
+  		dataType Integer
+  		name "a"
+  	}
+  	
+  	SibDynamicInputPort _Qo9xUTOoEemEc_qOlzLj_Q at 5,93 size 110,18 {
+  		dataType Integer
+  		name "b"
+  	}
+  	-ControlFlow-> _0ObywTOZEemYWtQZ9F78Tw  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _tz8wsTObEemI6cDa8jb59g
+  		label "Equal, GreaterThan"
+  		branches [ "Equal", "GreaterThan" ]
+  	}
+  	
+  	-ControlFlow-> _SKFLUTOTEemzps-xmmnOWg  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _um0_ITObEemI6cDa8jb59g
+  		label "LessThan"
+  		branches [ "LessThan" ]
+  	}
+  }
+}

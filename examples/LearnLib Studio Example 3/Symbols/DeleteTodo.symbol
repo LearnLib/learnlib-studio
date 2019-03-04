@@ -1,0 +1,257 @@
+Symbol _BQ7rsTU6EemvN4zECoJuXQ {
+  name "Delete Todo"
+  Start _BQ-H8DU6EemvN4zECoJuXQ at 100,50 size 151,93 {
+  	StartOutputPort _cFTJQTU-EemmBck2b0hHvA at 5,70 size 141,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  		-DataFlow-> _SETwADU_EemmBck2b0hHvA via (90,129) (90,325) decorate "" at (0,0) {
+  			id _ShNHYTU_EemmBck2b0hHvA
+  		}
+  	}
+  	-ControlFlow-> _PxjDMTU_EemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _TpXpUTU_EemmBck2b0hHvA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _BQ_9ITU6EemvN4zECoJuXQ at 100,1200 size 151,116 {
+  	name "Success"
+  	EndInputPort _eUyfoTU-EemmBck2b0hHvA at 5,70 size 141,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  	
+  	EndInputPort _BeySwDVAEemmBck2b0hHvA at 5,93 size 141,18 {
+  		dataType Boolean
+  		scope Query
+  		name "TodoCreated"
+  	}
+  }
+  
+  SibActivity _PxjDMTU_EemmBck2b0hHvA at 100,200 size 151,162 {
+  	libraryComponentUID "_TFh9gTRwEemMlsAPAonM5w"
+  	branches [ SibBranch _U9fqYEHGEemAx-tGZ9V5uA {
+  			name "Success"
+  			error false
+  		}, SibBranch _U9hfkEHGEemAx-tGZ9V5uA {
+  			name "Timeout"
+  			error true
+  		} ]
+  	SibStaticInputPort _PxnUoTU_EemmBck2b0hHvA at 5,70 size 141,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".todo-list > li:nth-child(1) > div > label"
+  	}
+  	
+  	SibStaticInputPort _PxpJ0TU_EemmBck2b0hHvA at 5,93 size 141,18 {
+  		dataType Integer
+  		name "MaxWaitTime"
+  		value "1"
+  	}
+  	
+  	SibOutputPort _PxrmETU_EemmBck2b0hHvA at 5,139 size 141,18 index 3 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _qRd3kTU_EemmBck2b0hHvA via (90,348) (90,502) decorate "" at (0,0) {
+  			id _ql4oYTU_EemmBck2b0hHvA
+  		}
+  	}
+  	
+  	SibDynamicInputPort _SETwADU_EemmBck2b0hHvA at 5,116 size 141,18 index 2 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _n24EcTU_EemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _oz5tYTU_EemmBck2b0hHvA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  	
+  	-ControlFlow-> _IFZaYTVAEemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _PXpgATVAEemmBck2b0hHvA
+  		label "Timeout"
+  		branches [ "Timeout" ]
+  	}
+  }
+  
+  SibActivity _n24EcTU_EemmBck2b0hHvA at 95,400 size 161,185 {
+  	libraryComponentUID "_Fl5voTRwEemMlsAPAonM5w"
+  	branches [ SibBranch _chuGQEHFEemeV6THBkrhLg {
+  			name "Success"
+  			error false
+  		}, SibBranch _chwigEHFEemeV6THBkrhLg {
+  			name "ElementNotFound"
+  			error true
+  		} ]
+  	SibStaticInputPort _n26gsTU_EemmBck2b0hHvA at 5,70 size 151,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".todo-list > li:nth-child(1) > div > label"
+  	}
+  	
+  	SibStaticInputPort _n27HwTU_EemmBck2b0hHvA at 5,116 size 151,18 index 2 {
+  		dataType Integer
+  		name "offsetX"
+  		value "10"
+  	}
+  	
+  	SibStaticInputPort _n28V4TU_EemmBck2b0hHvA at 5,139 size 151,18 index 3 {
+  		dataType Integer
+  		name "offsetY"
+  		value "10"
+  	}
+  	
+  	SibOutputPort _n29kATU_EemmBck2b0hHvA at 5,162 size 151,18 index 4 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _x-LEkTU_EemmBck2b0hHvA via (90,571) (90,765) decorate "" at (0,0) {
+  			id _zvwW8TU_EemmBck2b0hHvA
+  		}
+  	}
+  	
+  	SibDynamicInputPort _qRd3kTU_EemmBck2b0hHvA at 5,93 size 151,18 index 1 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _IFZaYTVAEemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _8v048TXyEem2Ft2r_8pS7g
+  		label "ElementNotFound"
+  		branches [ "ElementNotFound" ]
+  	}
+  	
+  	-ControlFlow-> _vOYdgTU_EemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _OxI5AUHKEemC9KWEm6D_WA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  SibActivity _vOYdgTU_EemmBck2b0hHvA at 100,640 size 151,162 {
+  	libraryComponentUID "_TFh9gTRwEemMlsAPAonM5w"
+  	branches [ SibBranch _vTxTMEHJEemKbtZ7mTq05Q {
+  			name "Success"
+  			error false
+  		}, SibBranch _vT2LsEHJEemKbtZ7mTq05Q {
+  			name "Timeout"
+  			error true
+  		} ]
+  	SibStaticInputPort _vOhncTU_EemmBck2b0hHvA at 5,70 size 141,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".todo-list > li:nth-child(1) > div > button"
+  	}
+  	
+  	SibStaticInputPort _vOkDsTU_EemmBck2b0hHvA at 5,93 size 141,18 {
+  		dataType Integer
+  		name "MaxWaitTime"
+  		value "1"
+  	}
+  	
+  	SibOutputPort _vOmf8TU_EemmBck2b0hHvA at 5,139 size 141,18 index 3 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _RJLBUDkMEemULY-_1KY_vQ via (90,788) (90,909) decorate "" at (0,0) {
+  			id _Rsz54TkMEemULY-_1KY_vQ
+  		}
+  	}
+  	
+  	SibDynamicInputPort _x-LEkTU_EemmBck2b0hHvA at 5,116 size 141,18 index 2 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _IFZaYTVAEemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _Oy3X8TVAEemmBck2b0hHvA
+  		label "Timeout"
+  		branches [ "Timeout" ]
+  	}
+  	
+  	-ControlFlow-> _Lxa5gTkMEemULY-_1KY_vQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _MwcMkUHKEemC9KWEm6D_WA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  SibActivity _65RXUTU_EemmBck2b0hHvA at 115,1030 size 120,116 {
+  	libraryComponentUID "_y-nKsTU7EemvN4zECoJuXQ"
+  	branches [ SibBranch _65VBsDU_EemmBck2b0hHvA {
+  			name "Success"
+  			error false
+  		} ]
+  	SibStaticInputPort _65YFATU_EemmBck2b0hHvA at 5,70 size 110,18 {
+  		dataType Boolean
+  		name "Value"
+  		value "false"
+  	}
+  	
+  	SibOutputPort _65dkkTU_EemmBck2b0hHvA at 5,93 size 110,18 {
+  		dataType Boolean
+  		name "Value"
+  		-DataFlow-> _BeySwDVAEemmBck2b0hHvA via (90,1132) (90,1302) decorate "" at (0,0) {
+  			id _Du-zwTVAEemmBck2b0hHvA
+  		}
+  	}
+  	-ControlFlow-> _BQ_9ITU6EemvN4zECoJuXQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _93kUcTU_EemmBck2b0hHvA
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _IFZaYTVAEemmBck2b0hHvA at 550,720 size 100,65 {
+  	name "Timeout"
+  }
+  
+  End _JMvc8TVAEemmBck2b0hHvA at 529,887 size 141,65 {
+  	name "ElementNotFound"
+  }
+  
+  SibActivity _Lxa5gTkMEemULY-_1KY_vQ at 116,830 size 120,162 {
+  	libraryComponentUID "_zcfTMTRvEemMlsAPAonM5w"
+  	branches [ SibBranch _LxkqgDkMEemULY-_1KY_vQ {
+  			name "Success"
+  			error false
+  		}, SibBranch _LxlRkDkMEemULY-_1KY_vQ {
+  			name "ElementNotFound"
+  			error true
+  		} ]
+  	SibStaticInputPort _LxzUATkMEemULY-_1KY_vQ at 5,93 size 110,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".todo-list > li:nth-child(1) > div > button"
+  	}
+  	
+  	SibStaticInputPort _Lx2-YTkMEemULY-_1KY_vQ at 5,116 size 110,18 {
+  		dataType Boolean
+  		name "DoubleClick"
+  		value "false"
+  	}
+  	
+  	SibOutputPort _Lx6BsTkMEemULY-_1KY_vQ at 5,139 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _eUyfoTU-EemmBck2b0hHvA via (90,978) (90,1279) decorate "" at (0,0) {
+  			id _TNDkoTkMEemULY-_1KY_vQ
+  		}
+  	}
+  	
+  	SibDynamicInputPort _RJLBUDkMEemULY-_1KY_vQ at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _65RXUTU_EemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _PVHCsTkMEemULY-_1KY_vQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  	
+  	-ControlFlow-> _JMvc8TVAEemmBck2b0hHvA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _QpAZkUHKEemC9KWEm6D_WA
+  		label "ElementNotFound"
+  		branches [ "ElementNotFound" ]
+  	}
+  }
+}

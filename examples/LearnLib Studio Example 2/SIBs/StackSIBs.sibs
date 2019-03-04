@@ -1,0 +1,122 @@
+SibLibrary _DXvL4SuREem3ybM4_I5adQ {
+  name "Stack"
+  mavenArtifacts [  ]
+  Activity _IAb1USuREem3ybM4_I5adQ at 25,25 size 200,211 {
+  	name "NewStack"
+  	code Code _7IWXQDOhEem3wMONwlX_Tg {
+  			code "Stack = new java.util.Stack();\nreturn Success;"
+  		}
+  	BranchesList _IAjKECuREem3ybM4_I5adQ at 0,50 size 200,58 {
+  		Branch _LdAC0SuREem3ybM4_I5adQ at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _IAjxISuREem3ybM4_I5adQ at 0,113 size 200,30 {
+  	}
+  	
+  	OutputParametersList _IAkYMSuREem3ybM4_I5adQ at 0,148 size 200,58 {
+  		OutputParameter _vCCBkSuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "Stack"
+  		}
+  	}
+  }
+  
+  Activity _IIT-8SuREem3ybM4_I5adQ at 250,25 size 200,262 {
+  	name "Push"
+  	code Code _F5HLIDOiEem3wMONwlX_Tg {
+  			code "((java.util.Stack) Stack).push(Element);\nreturn Success;"
+  		}
+  	BranchesList _IIWbMSuREem3ybM4_I5adQ at 0,50 size 200,58 {
+  		Branch _M3MI4SuREem3ybM4_I5adQ at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _IIXpUSuREem3ybM4_I5adQ at 0,113 size 200,81 {
+  		InputParameter _nLJk4CuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "Stack"
+  		}
+  		
+  		InputParameter _rRw08SuREemvnL14raFhhQ at 5,58 size 190,18 {
+  			dataType Integer
+  			name "Element"
+  		}
+  	}
+  	
+  	OutputParametersList _IIY3cSuREem3ybM4_I5adQ at 0,199 size 200,58 {
+  		OutputParameter _tmqPwCuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "Stack"
+  		}
+  	}
+  }
+  
+  Activity _IQBJcSuREem3ybM4_I5adQ at 475,25 size 200,285 {
+  	name "Pop"
+  	code Code _LMaQwDOiEem3wMONwlX_Tg {
+  			code "try {\n    Element = (Integer) ((java.util.Stack) Stack).pop();\n    return Success;\n} catch (java.util.EmptyStackException e) {\n    return StackEmpty;\n}"
+  		}
+  	BranchesList _IQEMwSuREem3ybM4_I5adQ at 0,50 size 200,81 {
+  		Branch _N8Jl0SuREem3ybM4_I5adQ at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  		
+  		Branch _cvQWETOaEemYWtQZ9F78Tw at 5,58 size 190,18 {
+  			name "StackEmpty"
+  			error true
+  		}
+  	}
+  	
+  	InputParametersList _IQGB8CuREem3ybM4_I5adQ at 0,136 size 200,58 {
+  		InputParameter _wWesASuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "Stack"
+  		}
+  	}
+  	
+  	OutputParametersList _IQGpASuREem3ybM4_I5adQ at 0,199 size 200,81 {
+  		OutputParameter _xhY_8SuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "Stack"
+  		}
+  		
+  		OutputParameter _xzQzESuREemvnL14raFhhQ at 5,58 size 190,18 {
+  			dataType Integer
+  			name "Element"
+  		}
+  	}
+  }
+  
+  Activity _0BTX8SuREemvnL14raFhhQ at 700,25 size 200,239 {
+  	name "Size"
+  	code Code _Lxt9QDOiEem3wMONwlX_Tg {
+  			code "Size = ((java.util.Stack) Stack).size();\nreturn Success;"
+  		}
+  	BranchesList _0BbTwSuREemvnL14raFhhQ at 0,50 size 200,58 {
+  		Branch _1dykESuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			name "Success"
+  			error false
+  		}
+  	}
+  	
+  	InputParametersList _0Bch4SuREemvnL14raFhhQ at 0,113 size 200,58 {
+  		InputParameter _2Y6IgSuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			dataType Object
+  			name "Stack"
+  		}
+  	}
+  	
+  	OutputParametersList _0BeXESuREemvnL14raFhhQ at 0,176 size 200,58 {
+  		OutputParameter _2y2SgSuREemvnL14raFhhQ at 5,35 size 190,18 {
+  			dataType Integer
+  			name "Size"
+  		}
+  	}
+  }
+}

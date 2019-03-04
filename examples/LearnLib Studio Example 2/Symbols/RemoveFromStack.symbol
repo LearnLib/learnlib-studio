@@ -1,0 +1,70 @@
+Symbol _mdfTASukEemwEPKgfVvK1Q {
+  name "Remove from Stack"
+  Start _ZYHdUDOpEemTEfBLjMhZ7A at 200,50 size 100,93 {
+  	StartOutputPort _7XjXQTOpEemX5f5gusdKvQ at 5,70 size 90,18 {
+  		dataType Object
+  		scope Query
+  		name "Stack"
+  		-DataFlow-> __3jXsTOpEemX5f5gusdKvQ via (180,129) (180,269) decorate "" at (0,0) {
+  			id _BDLdUDOqEemX5f5gusdKvQ
+  		}
+  	}
+  	-ControlFlow-> _-IGMQTOpEemX5f5gusdKvQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _DmzQoTOqEemX5f5gusdKvQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _Z9ATETOpEemTEfBLjMhZ7A at 200,410 size 100,93 {
+  	name "Success"
+  	EndInputPort _BtSxUTOqEemX5f5gusdKvQ at 5,70 size 90,18 {
+  		dataType Object
+  		scope Query
+  		name "Stack"
+  	}
+  }
+  
+  SibActivity _-IGMQTOpEemX5f5gusdKvQ at 190,190 size 120,139 {
+  	libraryComponentUID "_IQBJcSuREem3ybM4_I5adQ"
+  	branches [ SibBranch _-IKdsDOpEemX5f5gusdKvQ {
+  			name "Success"
+  			error false
+  		}, SibBranch _-ILr0DOpEemX5f5gusdKvQ {
+  			name "StackEmpty"
+  			error true
+  		} ]
+  	SibOutputPort _-IPWMTOpEemX5f5gusdKvQ at 5,93 size 110,18 {
+  		dataType Object
+  		name "Stack"
+  		-DataFlow-> _BtSxUTOqEemX5f5gusdKvQ via (180,292) (180,489) decorate "" at (0,0) {
+  			id _I-E3UTOqEemX5f5gusdKvQ
+  		}
+  	}
+  	
+  	SibOutputPort _-IRLYTOpEemX5f5gusdKvQ at 5,116 size 110,18 {
+  		dataType Integer
+  		name "Element"
+  	}
+  	
+  	SibDynamicInputPort __3jXsTOpEemX5f5gusdKvQ at 5,70 size 110,18 {
+  		dataType Object
+  		name "Stack"
+  	}
+  	-ControlFlow-> _Z9ATETOpEemTEfBLjMhZ7A  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _DUupMTOqEemX5f5gusdKvQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  	
+  	-ControlFlow-> _FeZrcTOqEemX5f5gusdKvQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _F672cTOqEemX5f5gusdKvQ
+  		label "StackEmpty"
+  		branches [ "StackEmpty" ]
+  	}
+  }
+  
+  End _FeZrcTOqEemX5f5gusdKvQ at 490,220 size 100,65 {
+  	name "StackEmpty"
+  }
+}

@@ -1,0 +1,128 @@
+Symbol _D0-GQCroEembN-YkAOVBiQ {
+  name "Reset"
+  Start _ETzXUCroEembN-YkAOVBiQ at 68,10 size 164,93 {
+  	StartOutputPort _QxppoTbREemghvnbWjei8w at 5,70 size 154,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  		-DataFlow-> _WNyiMTbREemghvnbWjei8w via (60,89) (60,219) decorate "" at (0,0) {
+  			id _XMdJ4TbREemghvnbWjei8w
+  		}
+  	}
+  	-ControlFlow-> _UM2lMTbREemghvnbWjei8w  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _VnKAATbREemghvnbWjei8w
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _F5uzUCroEembN-YkAOVBiQ at 66,670 size 167,116 {
+  	name "Success"
+  	EndInputPort _Gy0-gCroEembN-YkAOVBiQ at 5,70 size 157,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  	
+  	EndInputPort _aZRCETU6EemvN4zECoJuXQ at 5,93 size 157,18 {
+  		dataType Boolean
+  		scope Query
+  		name "TodoCreated"
+  	}
+  }
+  
+  SibActivity _OT7aQTRxEemjAczeL4bnYg at 69,290 size 161,139 {
+  	libraryComponentUID "_hxcWgSrnEembN-YkAOVBiQ"
+  	branches [ SibBranch _OT92gDRxEemjAczeL4bnYg {
+  			name "Success"
+  			error false
+  		}, SibBranch _OT-dkDRxEemjAczeL4bnYg {
+  			name "PageNotFound"
+  			error true
+  		} ]
+  	SibStaticInputPort _OUKDwTRxEemjAczeL4bnYg at 5,93 size 110,18 {
+  		dataType Text
+  		name "URL"
+  		value "http://localhost:8000/examples/angularjs/"
+  	}
+  	
+  	SibOutputPort _OUMgATRxEemjAczeL4bnYg at 5,116 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _Gy0-gCroEembN-YkAOVBiQ via (60,415) (60,749) decorate "" at (0,0) {
+  			id _Uv9CgTRxEemjAczeL4bnYg
+  		}
+  	}
+  	
+  	SibDynamicInputPort _YxtnwTRxEemjAczeL4bnYg at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _iQGNwTRxEemjAczeL4bnYg  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _jqUwETRxEemjAczeL4bnYg
+  		label "PageNotFound"
+  		branches [ "PageNotFound" ]
+  	}
+  	
+  	-ControlFlow-> _I10ukTU8EemvN4zECoJuXQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _JybgwTU8EemvN4zECoJuXQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _iQGNwTRxEemjAczeL4bnYg at 420,327 size 131,65 {
+  	name "PageNotFound"
+  }
+  
+  SibActivity _I10ukTU8EemvN4zECoJuXQ at 90,490 size 120,116 {
+  	libraryComponentUID "_y-nKsTU7EemvN4zECoJuXQ"
+  	branches [ SibBranch _I194gDU8EemvN4zECoJuXQ {
+  			name "Success"
+  			error false
+  		} ]
+  	SibStaticInputPort _I2DYETU8EemvN4zECoJuXQ at 5,70 size 110,18 {
+  		dataType Boolean
+  		name "Value"
+  		value "false"
+  	}
+  	
+  	SibOutputPort _I2HpgTU8EemvN4zECoJuXQ at 5,93 size 110,18 {
+  		dataType Boolean
+  		name "Value"
+  		-DataFlow-> _aZRCETU6EemvN4zECoJuXQ via (60,592) (60,772) decorate "" at (0,0) {
+  			id _MmHwYTU8EemvN4zECoJuXQ
+  		}
+  	}
+  	-ControlFlow-> _F5uzUCroEembN-YkAOVBiQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _KY0yYTU8EemvN4zECoJuXQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  SibActivity _UM2lMTbREemghvnbWjei8w at 90,140 size 120,116 {
+  	libraryComponentUID "_4zY5sTbQEemghvnbWjei8w"
+  	branches [ SibBranch _UM-hADbREemghvnbWjei8w {
+  			name "Success"
+  			error false
+  		} ]
+  	SibOutputPort _UNHD4TbREemghvnbWjei8w at 5,93 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _YxtnwTRxEemjAczeL4bnYg via (60,242) (60,369) decorate "" at (0,0) {
+  			id _ZJHq4TbREemghvnbWjei8w
+  		}
+  	}
+  	
+  	SibDynamicInputPort _WNyiMTbREemghvnbWjei8w at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _OT7aQTRxEemjAczeL4bnYg  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _YcGz4TbREemghvnbWjei8w
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+}

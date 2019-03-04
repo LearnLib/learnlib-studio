@@ -1,0 +1,127 @@
+Symbol _lAc0ITkUEemULY-_1KY_vQ {
+  name "Toogle Done All"
+  Start _lAhsoTkUEemULY-_1KY_vQ at 100,50 size 100,93 {
+  	StartOutputPort _4Hk2ATkUEemULY-_1KY_vQ at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  		-DataFlow-> _5qnWEDkUEemULY-_1KY_vQ via (80,129) (80,259) decorate "" at (0,0) {
+  			id _6FukwTkUEemULY-_1KY_vQ
+  		}
+  	}
+  	-ControlFlow-> _nEz4kTkUEemULY-_1KY_vQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _3zgqgTkUEemULY-_1KY_vQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _lAkI4TkUEemULY-_1KY_vQ at 100,570 size 100,93 {
+  	name "Success"
+  	EndInputPort _soQ6ETkUEemULY-_1KY_vQ at 5,70 size 90,18 {
+  		dataType Object
+  		scope Global
+  		name "WebDriver"
+  	}
+  }
+  
+  SibActivity _nEz4kTkUEemULY-_1KY_vQ at 90,180 size 120,162 {
+  	libraryComponentUID "_TFh9gTRwEemMlsAPAonM5w"
+  	branches [ SibBranch _nE1twDkUEemULY-_1KY_vQ {
+  			name "Success"
+  			error false
+  		}, SibBranch _nE1twTkUEemULY-_1KY_vQ {
+  			name "Timeout"
+  			error true
+  		} ]
+  	SibStaticInputPort _nE4KATkUEemULY-_1KY_vQ at 5,93 size 110,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".main > label:nth-child(2)"
+  	}
+  	
+  	SibStaticInputPort _nE5_MTkUEemULY-_1KY_vQ at 5,116 size 110,18 {
+  		dataType Integer
+  		name "MaxWaitTime"
+  		value "1"
+  	}
+  	
+  	SibOutputPort _nE70YTkUEemULY-_1KY_vQ at 5,139 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _rq558TkUEemULY-_1KY_vQ via (80,328) (80,459) decorate "" at (0,0) {
+  			id _sOvm0TkUEemULY-_1KY_vQ
+  		}
+  	}
+  	
+  	SibDynamicInputPort _5qnWEDkUEemULY-_1KY_vQ at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	-ControlFlow-> _1pg4ITkUEemULY-_1KY_vQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _3ApDITkUEemULY-_1KY_vQ
+  		label "Timeout"
+  		branches [ "Timeout" ]
+  	}
+  	
+  	-ControlFlow-> _p-Pj0TkUEemULY-_1KY_vQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _3f2usTkUEemULY-_1KY_vQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  SibActivity _p-Pj0TkUEemULY-_1KY_vQ at 90,380 size 120,162 {
+  	libraryComponentUID "_zcfTMTRvEemMlsAPAonM5w"
+  	branches [ SibBranch _p-RZADkUEemULY-_1KY_vQ {
+  			name "Success"
+  			error false
+  		}, SibBranch _p-SAEDkUEemULY-_1KY_vQ {
+  			name "ElementNotFound"
+  			error true
+  		} ]
+  	SibStaticInputPort _p-YGsTkUEemULY-_1KY_vQ at 5,116 size 110,18 {
+  		dataType Boolean
+  		name "DoubleClick"
+  		value "false"
+  	}
+  	
+  	SibOutputPort _p-ai8TkUEemULY-_1KY_vQ at 5,139 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  		-DataFlow-> _soQ6ETkUEemULY-_1KY_vQ via (80,528) (80,649) decorate "" at (0,0) {
+  			id _uTH5YDkUEemULY-_1KY_vQ
+  		}
+  	}
+  	
+  	SibDynamicInputPort _rq558TkUEemULY-_1KY_vQ at 5,70 size 110,18 {
+  		dataType Object
+  		name "WebDriver"
+  	}
+  	
+  	SibStaticInputPort _YphIITkeEem0-4HHaC5GYQ at 5,93 size 110,18 {
+  		dataType Text
+  		name "ElementSelector"
+  		value ".main > label:nth-child(2)"
+  	}
+  	-ControlFlow-> _zip5UTkUEemULY-_1KY_vQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _3QL7ATkUEemULY-_1KY_vQ
+  		label "ElementNotFound"
+  		branches [ "ElementNotFound" ]
+  	}
+  	
+  	-ControlFlow-> _lAkI4TkUEemULY-_1KY_vQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _836YgTkUEemULY-_1KY_vQ
+  		label "Success"
+  		branches [ "Success" ]
+  	}
+  }
+  
+  End _zip5UTkUEemULY-_1KY_vQ at 450,428 size 151,65 {
+  	name "ElementNotFound"
+  }
+  
+  End _1pg4ITkUEemULY-_1KY_vQ at 450,228 size 100,65 {
+  	name "Timeout"
+  }
+}

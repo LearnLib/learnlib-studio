@@ -1,0 +1,39 @@
+Symbol __PiyACuREemvnL14raFhhQ {
+  name "Reset Stack"
+  Start __5Lk4CuREemvnL14raFhhQ at 200,50 size 100,65 {
+  	-ControlFlow-> _QORcoSuVEemWJrWAVdStdw  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _QpZ5cSuVEemWJrWAVdStdw
+  		label "Success"
+  		branches [  ]
+  	}
+  }
+  
+  End _CoTdkCuSEemvnL14raFhhQ at 189,300 size 121,93 {
+  	name "Success"
+  	EndInputPort _UNN-cSuVEemWJrWAVdStdw at 5,70 size 111,18 {
+  		dataType Object
+  		scope Query
+  		name "Stack"
+  	}
+  }
+  
+  SibActivity _QORcoSuVEemWJrWAVdStdw at 190,150 size 120,93 {
+  	libraryComponentUID "_IAb1USuREem3ybM4_I5adQ"
+  	branches [ SibBranch _QOUf8CuVEemWJrWAVdStdw {
+  			name "Success"
+  			error false
+  		} ]
+  	SibOutputPort _QOWVISuVEemWJrWAVdStdw at 5,70 size 110,18 {
+  		dataType Object
+  		name "Stack"
+  		-DataFlow-> _UNN-cSuVEemWJrWAVdStdw via (180,229) (180,379) decorate "" at (0,0) {
+  			id _WSeawSuVEemWJrWAVdStdw
+  		}
+  	}
+  	-ControlFlow-> _CoTdkCuSEemvnL14raFhhQ  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _qEtGwSujEemwEPKgfVvK1Q
+  		label "[Success]"
+  		branches [ "Success" ]
+  	}
+  }
+}
