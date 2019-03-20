@@ -20,6 +20,13 @@ Choose the *example* folder as root directory, *Select all*, Check *Copy project
 
 The 3rd example is designed for a [ToDoMVC](http://todomvc.com/) running on port 8000 and Chrome and Chromedriver executable on the system.
 
+## Build a Standalone
+
+- Have a working Development Set-Up
+- Run `./build.sh` (only tested on Linux). You can select the desired platforms by adding *linux64*, *win64*, or *macosx*.
+  Defaults to all platforms.
+- Enjoy the standalone versions in *de.learnlib.studio.product/target/products*.
+
 
 ## Used Technologies / Frameworks / Libraries / ...
 

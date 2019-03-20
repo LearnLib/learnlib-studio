@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <wizard
+            name="Import Mealy"
+            icon="icons/sample.gif"
+            category="de.jabc.cinco.meta.core.wizards.category.cinco"
+            class="de.learnlib.studio.wizards.mealy.importWizards.MealyImportWizard"
+            id="info.scce.cinco.product.learnlibstudio.wizards.mealy.importWizards.MealyImportWizard">
+         <description>
+            Import a file from the local file system into the workspace.
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            canFinishEarly="false"
+            category="de.jabc.cinco.meta.core.wizards.category.cinco"
+            class="de.learnlib.studio.wizards.experiments.ExperimentWizard"
+            finalPerspective="info.scce.cinco.product.learnlibstudio.experiment.editor.graphiti.experimentperspective"
+            icon="icons/sample.gif"
+            id="info.scce.cinco.product.learnlibstudio.wizards.experiments.SampleNewWizard"
+            name="New Experiment (Wizard)">
+         <description>
+            Create a new Experiment with guidance.
+         </description>
+      </wizard>
+   </extension>
+
+</plugin>

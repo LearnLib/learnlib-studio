@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="LearnLib Views"
+            id="info.scce.cinco.product.learnlibstudio.tracer">
+      </category>
+      <view
+            name="Tracer View"
+            icon="icons/sample.gif"
+            category="info.scce.cinco.product.learnlibstudio.tracer"
+            class="de.learnlib.studio.tracer.views.TracerView"
+            id="info.scce.cinco.product.learnlibstudio.tracer.views.TracerView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="info.scce.cinco.product.learnlibstudio.tracer.views.TracerView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

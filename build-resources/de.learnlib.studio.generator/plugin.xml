@@ -1,0 +1,13 @@
+<plugin><extension
+point="de.jabc.cinco.meta.plugin.generator.runtime.registry">
+<!--@MetaPlugin Generatable Experiment-->
+<graphmodel
+      class="de.learnlib.studio.experiment.experiment.Experiment">
+</graphmodel>
+<generator
+bundle_id="de.learnlib.studio.generator"
+class="de.learnlib.studio.experiment.codegen.Generator"
+outlet="/src-gen/">
+</generator>
+</extension>
+</plugin>
