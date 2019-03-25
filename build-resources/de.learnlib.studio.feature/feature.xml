@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="de.learnlib.studio.feature"
+      label="de.learnlib.studio Feature "
+      version="1.0.1.qualifier">
+
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.e4.core.services"/>
+      <import plugin="org.eclipse.e4.ui.di"/>
+      <import plugin="com.google.guava"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.eclipse.xtend.lib"/>
+      <import plugin="org.eclipse.xtend.lib.macro"/>
+      <import plugin="de.jabc.cinco.meta.runtime"/>
+      <import plugin="org.eclipse.swt"/>
+      <import plugin="de.jabc.cinco.meta.plugin.gratext.runtime"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import plugin="org.eclipse.ui.editors"/>
+      <import plugin="org.eclipse.compare"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.xtext.xbase.lib" version="2.14.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="org.eclipse.emf.common"/>
+      <import plugin="org.eclipse.gef"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="de.jabc.cinco.meta.core.ui"/>
+      <import plugin="org.eclipse.emf.mwe2.launch"/>
+      <import plugin="de.jabc.cinco.meta.core.mgl.model"/>
+      <import plugin="org.eclipse.xtext.xbase.ide"/>
+      <import plugin="de.jabc.cinco.meta.core.utils"/>
+      <import plugin="org.eclipse.xtext.ide"/>
+      <import plugin="org.antlr.runtime"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.eclipse.xtext"/>
+      <import plugin="org.eclipse.ui.navigator"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.graphiti.mm"/>
+      <import plugin="org.eclipse.graphiti"/>
+      <import plugin="org.eclipse.graphiti.ui"/>
+      <import plugin="de.jabc.cinco.meta.core.ge.style.generator.runtime"/>
+      <import plugin="de.jabc.cinco.meta.util"/>
+      <import plugin="de.learnlib.studio.libraries" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.jabc.cinco.meta.core.ge.style.generator.runtime" version="1.1.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.apache.commons.lang"/>
+      <import plugin="de.jabc.cinco.meta.libraries"/>
+      <import plugin="de.jabc.cinco.meta.core.pluginregistry"/>
+      <import plugin="de.jabc.cinco.meta.core.ge.style.model"/>
+      <import plugin="de.jabc.cinco.meta.core.referenceregistry"/>
+      <import plugin="de.jabc.cinco.meta.core.ge.style"/>
+      <import plugin="org.eclipse.jface"/>
+      <import plugin="org.eclipse.xtend.typesystem.emf"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="de.jabc.cinco.meta.core.ge.style.generator"/>
+      <import plugin="de.jabc.cinco.meta.core.wizards"/>
+      <import plugin="javax.el"/>
+      <import plugin="com.sun.el"/>
+   </requires>
+
+   <plugin
+         id="de.jabc.cinco.meta.plugin.mcam.runtime"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.siblibrary.gratext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.discriminationtree.gratext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.symbol.primeviewer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.mealy.gratext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.symbol.gratext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.generator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.tracer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.discriminationtree.gratext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.mealy.gratext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.wizards"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.siblibrary.gratext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.jabc.cinco.meta.plugin.generator.runtime"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.symbol.gratext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.jabc.cinco.meta.plugin.mcam"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.discriminationtree.editor.graphiti"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.experiment.editor.graphiti"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.experiment.gratext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.experiment.gratext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.libraries"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.mcam.views"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.mealy.editor.graphiti"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.siblibrary.editor.graphiti"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.learnlib.studio.symbol.editor.graphiti"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

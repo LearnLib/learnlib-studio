@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: de.learnlib.studio.mealy.editor.graphiti; singlet
+ on:=true
+Export-Package: de.learnlib.studio.editor.graphiti,
+ de.learnlib.studio.mealy.editor.graphiti,
+ de.learnlib.studio.mealy.editor.graphiti.api,
+ de.learnlib.studio.mealy.editor.graphiti.expression,
+ de.learnlib.studio.mealy.editor.graphiti.features.add,
+ de.learnlib.studio.mealy.editor.graphiti.features.create,
+ de.learnlib.studio.mealy.editor.graphiti.features.delete,
+ de.learnlib.studio.mealy.editor.graphiti.features.layout,
+ de.learnlib.studio.mealy.editor.graphiti.features.move,
+ de.learnlib.studio.mealy.editor.graphiti.features.reconnect,
+ de.learnlib.studio.mealy.editor.graphiti.features.resize,
+ de.learnlib.studio.mealy.editor.graphiti.features.update,
+ de.learnlib.studio.mealy.editor.graphiti.property.view,
+ de.learnlib.studio.mealy.editor.graphiti.wizard
+Bundle-Name: de.learnlib.studio.mealy.editor.graphiti
+Bundle-Version: 1.0.1.qualifier
+Require-Bundle:  org.eclipse.emf.transaction,org.eclipse.graphiti,org.
+ eclipse.graphiti.mm,org.eclipse.graphiti.ui,org.eclipse.core.resource
+ s,org.eclipse.ui,org.eclipse.ui.ide,org.eclipse.ui.navigator,org.ecli
+ pse.ui.views.properties.tabbed,org.eclipse.gef,org.eclipse.xtext.ui,o
+ rg.eclipse.xtext.xbase.lib,de.jabc.cinco.meta.core.ge.style.model,de.
+ jabc.cinco.meta.core.ge.style.generator,de.jabc.cinco.meta.core.refer
+ enceregistry,de.jabc.cinco.meta.core.ui,de.jabc.cinco.meta.util,de.ja
+ bc.cinco.meta.runtime,de.jabc.cinco.meta.core.utils,de.jabc.cinco.met
+ a.core.wizards,javax.el,com.sun.el,de.jabc.cinco.meta.core.ge.style.g
+ enerator.runtime,de.learnlib.studio
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ClassPath: .
+

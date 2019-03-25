@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+<extension
+	point="org.eclipse.graphiti.ui.diagramTypeProviders">
+<!--@CincoGen Experiment-->
+	<diagramTypeProvider
+		class="de.learnlib.studio.experiment.editor.graphiti.ExperimentDiagramTypeProvider"
+		description="This is the generated editor for the Experiment"
+		id="de.learnlib.studio.experiment.editor.graphiti.ExperimentDiagramTypeProvider"
+		name=".Experiment Diagram Editor">
+		<diagramType
+			id="de.learnlib.studio.experiment.editor.graphiti.ExperimentDiagramType">
+		</diagramType>
+		<imageProvider
+			id="de.learnlib.studio.experiment.editor.graphiti.ExperimentImageProvider">
+		</imageProvider>
+	</diagramTypeProvider>
+</extension>
+
+<extension 
+	point="org.eclipse.graphiti.ui.diagramTypes">
+<!--@CincoGen Experiment-->
+	<diagramType
+		description="This is the generated diagram Type for Experiment"
+		id="de.learnlib.studio.experiment.editor.graphiti.ExperimentDiagramType"
+		name="Experiment Graphiti Diagram Type"
+		type="Experiment">
+	</diagramType>
+</extension>
+
+<extension
+	point="org.eclipse.ui.editors">
+<!--@CincoGen Experiment-->
+	<editor
+		class="de.learnlib.studio.experiment.editor.graphiti.ExperimentDiagramEditor"
+		contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+		default="false"
+		id="de.learnlib.studio.experiment.editor.graphiti.ExperimentEditor"
+		matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+		name="Experiment Editor">
+		<contentTypeBinding
+			contentTypeId="de.learnlib.studio.experiment.editor.graphiti.ExperimentContentType">
+		</contentTypeBinding>
+		<contentTypeBinding
+			contentTypeId="org.eclipse.graphiti.content.diagram">
+		</contentTypeBinding>
+	</editor>
+</extension>
+
+<extension
+	point="org.eclipse.graphiti.ui.imageProviders">
+<!--@CincoGen Experiment-->
+	<imageProvider
+		class="de.learnlib.studio.experiment.editor.graphiti.ExperimentImageProvider"
+		id="de.learnlib.studio.experiment.editor.graphiti.ExperimentImageProvider">
+	</imageProvider>
+</extension>
+
+<extension
+	point="org.eclipse.ui.newWizards">
+<!--@CincoGen Experiment-->
+	<wizard
+		category="de.jabc.cinco.meta.core.wizards.category.cinco"
+		class="de.learnlib.studio.experiment.editor.graphiti.wizard.ExperimentDiagramWizard"
+		id="de.learnlib.studio.experiment.editor.graphiti.wizard.experiment"
+		name="New Experiment">
+	</wizard>
+</extension>
+
+<extension
+	point="org.eclipse.core.contenttype.contentTypes">
+<!--@CincoGen Experiment-->
+	<content-type
+		file-extensions="ll"
+		id="de.learnlib.studio.experiment.editor.graphiti.ExperimentContentType"
+		name="Experiment Content Type"
+		priority="normal">
+	</content-type>
+</extension>
+
+<extension
+	point="org.eclipse.ui.navigator.navigatorContent">
+<!--@CincoGen Experiment-->
+	<commonWizard
+		menuGroupId="mgl"
+		type="new"
+		wizardId="de.learnlib.studio.experiment.editor.graphiti.wizard.experiment">
+		<enablement></enablement>
+	</commonWizard>
+</extension>
+
+
+<extension
+	point="de.jabc.cinco.meta.core.referenceregistry">
+<!--@CincoGen Experiment-->
+	<FileExtensionsRegistry
+		class="de.learnlib.studio.experiment.editor.graphiti.ExperimentFileExtensions">
+	</FileExtensionsRegistry>
+</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen Experiment-->
+	<perspective
+		class="de.learnlib.studio.experiment.editor.graphiti.ExperimentPerspectiveFactory"
+		fixed="false"
+		id="de.learnlib.studio.experiment.editor.graphiti.experimentperspective"
+		name="Experiment Perspective">
+	</perspective>
+</extension>
+
+<extension
+      point="org.eclipse.emf.ecore.content_parser">
+<!--@CincoGen Experiment-->
+   <parser
+         class="de.learnlib.studio.experiment.editor.graphiti.ExperimentAPIParser"
+         contentTypeIdentifier="de.learnlib.studio.experiment.editor.graphiti.ExperimentContentType">
+   </parser>
+</extension>
+
+<extension
+	point="org.eclipse.emf.ecore.factory_override">
+<!--@CincoGen Experiment-->
+   		<factory
+        	class="de.learnlib.studio.experiment.editor.graphiti.ExperimentFactory"
+        	uri="http://learnlib.de/learnlib-studio/experiment">
+   		</factory>
+	</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen LEARNLIBSTUDIO-->
+	<perspective
+		class="de.learnlib.studio.editor.graphiti.LearnLibStudioPerspective"
+		fixed="false"
+		id="de.learnlib.studio.learnlibstudioperspective"
+		name="LearnLibStudio Perspective">
+	</perspective>
+</extension></plugin>

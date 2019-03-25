@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tracer
 Bundle-SymbolicName: de.learnlib.studio.tracer;singleton:=true
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: de.learnlib.studio.tracer.Activator
 Require-Bundle: org.eclipse.core.resources,
  org.eclipse.core.runtime,

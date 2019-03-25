@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+	
+<plugin>
+	<extension
+		point="org.eclipse.ui.navigator.navigatorContent">
+		<navigatorContent
+	    	activeByDefault="true"
+	        contentProvider="de.learnlib.studio.symbol.primeviewer.siblibrary.ActivityContentProvider"
+	        id="de.learnlib.studio.symbol.primeviewer.siblibrary.ActivityContentProvider"
+	        labelProvider="de.learnlib.studio.symbol.primeviewer.siblibrary.ActivityLabelProvider"
+	        name="ExpandPrimesForSymbol"
+	        priority="highest">
+	        <enablement>
+	        	<instanceof
+	            	value="org.eclipse.core.resources.IResource">
+	            </instanceof>
+			</enablement>
+		</navigatorContent>
+	</extension>
+	<extension
+		point="org.eclipse.ui.navigator.viewer">
+		  <viewerContentBinding
+			viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+			<includes>
+<contentExtension
+	pattern="de.learnlib.studio.symbol.primeviewer.siblibrary.ActivityContentProvider">
+</contentExtension>
+			</includes>
+		</viewerContentBinding>
+	</extension>
+</plugin>

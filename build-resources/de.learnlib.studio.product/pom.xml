@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>de.learnlib.studio.product</artifactId>
+
+  <parent>
+  	<groupId>de.learnlib.studio</groupId>
+  	<artifactId>de.learnlib.studio.parent</artifactId>
+  	<version>1.0.1-SNAPSHOT</version>
+	<relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <packaging>eclipse-repository</packaging>
+
+  <properties>
+	<build.version>${unqualifiedVersion}.${buildQualifier}</build.version>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-repository-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <includeAllDependencies>true</includeAllDependencies>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-p2-director-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <id>materialize-products</id>
+            <goals>
+              <goal>materialize-products</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>archive-products</id>
+            <goals>
+              <goal>archive-products</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <products>
+            <product>
+              <id>de.learnlib.studio.product.id</id>
+              <rootFolder>LearnLib-Studio-${build.version}</rootFolder>
+            </product>
+          </products>
+        </configuration>
+      </plugin>
+      <!-- workaround for naming the zip file. there seems to be no easier way... see http://stackoverflow.com/a/8584420 -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>${antrun.version}</version>
+        <executions>
+          <!-- Rename the ZIP files -->
+          <execution>
+            <id>update-zip-files</id>
+            <phase>package</phase>
+            <configuration>
+              <target>
+                <!-- Rename the products -->
+                <move verbose="true" todir="${project.build.directory}/products">
+                  <mapper type="regexp" from="^(de.learnlib.studio.product.id-)(.*)$$" to="LearnLib-Studio-${build.version}-\2" />
+                  <fileset dir="${project.build.directory}/products">
+                    <include name="*.zip" />
+                  </fileset>
+                </move>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+

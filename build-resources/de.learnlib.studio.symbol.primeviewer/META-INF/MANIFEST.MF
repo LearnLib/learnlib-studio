@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.learnlib.studio.symbol.primeviewer
+Bundle-SymbolicName: de.learnlib.studio.symbol.primeviewer; singleton:=true
+Bundle-Version: 1.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: de.learnlib.studio.symbol.primeviewer.Activator
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.ui,
+ org.eclipse.ui.navigator,
+ org.eclipse.core.runtime,
+ de.learnlib.studio,
+ org.eclipse.core.resources,
+ org.eclipse.emf.common
+Export-Package: de.learnlib.studio.symbol.primeviewer,
+ de.learnlib.studio.symbol.primeviewer.siblibrary
+Bundle-ClassPath: .

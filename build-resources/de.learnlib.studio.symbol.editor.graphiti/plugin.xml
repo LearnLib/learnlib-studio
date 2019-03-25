@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+<extension
+	point="org.eclipse.graphiti.ui.diagramTypeProviders">
+<!--@CincoGen Symbol-->
+	<diagramTypeProvider
+		class="de.learnlib.studio.symbol.editor.graphiti.SymbolDiagramTypeProvider"
+		description="This is the generated editor for the Symbol"
+		id="de.learnlib.studio.symbol.editor.graphiti.SymbolDiagramTypeProvider"
+		name=".Symbol Diagram Editor">
+		<diagramType
+			id="de.learnlib.studio.symbol.editor.graphiti.SymbolDiagramType">
+		</diagramType>
+		<imageProvider
+			id="de.learnlib.studio.symbol.editor.graphiti.SymbolImageProvider">
+		</imageProvider>
+	</diagramTypeProvider>
+</extension>
+
+<extension 
+	point="org.eclipse.graphiti.ui.diagramTypes">
+<!--@CincoGen Symbol-->
+	<diagramType
+		description="This is the generated diagram Type for Symbol"
+		id="de.learnlib.studio.symbol.editor.graphiti.SymbolDiagramType"
+		name="Symbol Graphiti Diagram Type"
+		type="Symbol">
+	</diagramType>
+</extension>
+
+<extension
+	point="org.eclipse.ui.editors">
+<!--@CincoGen Symbol-->
+	<editor
+		class="de.learnlib.studio.symbol.editor.graphiti.SymbolDiagramEditor"
+		contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+		default="false"
+		id="de.learnlib.studio.symbol.editor.graphiti.SymbolEditor"
+		matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+		name="Symbol Editor">
+		<contentTypeBinding
+			contentTypeId="de.learnlib.studio.symbol.editor.graphiti.SymbolContentType">
+		</contentTypeBinding>
+		<contentTypeBinding
+			contentTypeId="org.eclipse.graphiti.content.diagram">
+		</contentTypeBinding>
+	</editor>
+</extension>
+
+<extension
+	point="org.eclipse.graphiti.ui.imageProviders">
+<!--@CincoGen Symbol-->
+	<imageProvider
+		class="de.learnlib.studio.symbol.editor.graphiti.SymbolImageProvider"
+		id="de.learnlib.studio.symbol.editor.graphiti.SymbolImageProvider">
+	</imageProvider>
+</extension>
+
+<extension
+	point="org.eclipse.ui.newWizards">
+<!--@CincoGen Symbol-->
+	<wizard
+		category="de.jabc.cinco.meta.core.wizards.category.cinco"
+		class="de.learnlib.studio.symbol.editor.graphiti.wizard.SymbolDiagramWizard"
+		id="de.learnlib.studio.symbol.editor.graphiti.wizard.symbol"
+		name="New Symbol">
+	</wizard>
+</extension>
+
+<extension
+	point="org.eclipse.core.contenttype.contentTypes">
+<!--@CincoGen Symbol-->
+	<content-type
+		file-extensions="symbol"
+		id="de.learnlib.studio.symbol.editor.graphiti.SymbolContentType"
+		name="Symbol Content Type"
+		priority="normal">
+	</content-type>
+</extension>
+
+<extension
+	point="org.eclipse.ui.navigator.navigatorContent">
+<!--@CincoGen Symbol-->
+	<commonWizard
+		menuGroupId="mgl"
+		type="new"
+		wizardId="de.learnlib.studio.symbol.editor.graphiti.wizard.symbol">
+		<enablement></enablement>
+	</commonWizard>
+</extension>
+
+
+<extension
+	point="de.jabc.cinco.meta.core.referenceregistry">
+<!--@CincoGen Symbol-->
+	<FileExtensionsRegistry
+		class="de.learnlib.studio.symbol.editor.graphiti.SymbolFileExtensions">
+	</FileExtensionsRegistry>
+</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen Symbol-->
+	<perspective
+		class="de.learnlib.studio.symbol.editor.graphiti.SymbolPerspectiveFactory"
+		fixed="false"
+		id="de.learnlib.studio.symbol.editor.graphiti.symbolperspective"
+		name="Symbol Perspective">
+	</perspective>
+</extension>
+
+<extension
+      point="org.eclipse.emf.ecore.content_parser">
+<!--@CincoGen Symbol-->
+   <parser
+         class="de.learnlib.studio.symbol.editor.graphiti.SymbolAPIParser"
+         contentTypeIdentifier="de.learnlib.studio.symbol.editor.graphiti.SymbolContentType">
+   </parser>
+</extension>
+
+<extension
+	point="org.eclipse.emf.ecore.factory_override">
+<!--@CincoGen Symbol-->
+   		<factory
+        	class="de.learnlib.studio.symbol.editor.graphiti.SymbolFactory"
+        	uri="http://learnlib.de/learnlib-stuido/symbol/symbol">
+   		</factory>
+	</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen LEARNLIBSTUDIO-->
+	<perspective
+		class="de.learnlib.studio.editor.graphiti.LearnLibStudioPerspective"
+		fixed="false"
+		id="de.learnlib.studio.learnlibstudioperspective"
+		name="LearnLibStudio Perspective">
+	</perspective>
+</extension></plugin>

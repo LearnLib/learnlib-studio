@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+<extension
+	point="org.eclipse.graphiti.ui.diagramTypeProviders">
+<!--@CincoGen Mealy-->
+	<diagramTypeProvider
+		class="de.learnlib.studio.mealy.editor.graphiti.MealyDiagramTypeProvider"
+		description="This is the generated editor for the Mealy"
+		id="de.learnlib.studio.mealy.editor.graphiti.MealyDiagramTypeProvider"
+		name=".Mealy Diagram Editor">
+		<diagramType
+			id="de.learnlib.studio.mealy.editor.graphiti.MealyDiagramType">
+		</diagramType>
+		<imageProvider
+			id="de.learnlib.studio.mealy.editor.graphiti.MealyImageProvider">
+		</imageProvider>
+	</diagramTypeProvider>
+</extension>
+
+<extension 
+	point="org.eclipse.graphiti.ui.diagramTypes">
+<!--@CincoGen Mealy-->
+	<diagramType
+		description="This is the generated diagram Type for Mealy"
+		id="de.learnlib.studio.mealy.editor.graphiti.MealyDiagramType"
+		name="Mealy Graphiti Diagram Type"
+		type="Mealy">
+	</diagramType>
+</extension>
+
+<extension
+	point="org.eclipse.ui.editors">
+<!--@CincoGen Mealy-->
+	<editor
+		class="de.learnlib.studio.mealy.editor.graphiti.MealyDiagramEditor"
+		contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+		default="false"
+		id="de.learnlib.studio.mealy.editor.graphiti.MealyEditor"
+		matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+		name="Mealy Editor">
+		<contentTypeBinding
+			contentTypeId="de.learnlib.studio.mealy.editor.graphiti.MealyContentType">
+		</contentTypeBinding>
+		<contentTypeBinding
+			contentTypeId="org.eclipse.graphiti.content.diagram">
+		</contentTypeBinding>
+	</editor>
+</extension>
+
+<extension
+	point="org.eclipse.graphiti.ui.imageProviders">
+<!--@CincoGen Mealy-->
+	<imageProvider
+		class="de.learnlib.studio.mealy.editor.graphiti.MealyImageProvider"
+		id="de.learnlib.studio.mealy.editor.graphiti.MealyImageProvider">
+	</imageProvider>
+</extension>
+
+<extension
+	point="org.eclipse.ui.newWizards">
+<!--@CincoGen Mealy-->
+	<wizard
+		category="de.jabc.cinco.meta.core.wizards.category.cinco"
+		class="de.learnlib.studio.mealy.editor.graphiti.wizard.MealyDiagramWizard"
+		id="de.learnlib.studio.mealy.editor.graphiti.wizard.mealy"
+		name="New Mealy">
+	</wizard>
+</extension>
+
+<extension
+	point="org.eclipse.core.contenttype.contentTypes">
+<!--@CincoGen Mealy-->
+	<content-type
+		file-extensions="mealy"
+		id="de.learnlib.studio.mealy.editor.graphiti.MealyContentType"
+		name="Mealy Content Type"
+		priority="normal">
+	</content-type>
+</extension>
+
+<extension
+	point="org.eclipse.ui.navigator.navigatorContent">
+<!--@CincoGen Mealy-->
+	<commonWizard
+		menuGroupId="mgl"
+		type="new"
+		wizardId="de.learnlib.studio.mealy.editor.graphiti.wizard.mealy">
+		<enablement></enablement>
+	</commonWizard>
+</extension>
+
+
+<extension
+	point="de.jabc.cinco.meta.core.referenceregistry">
+<!--@CincoGen Mealy-->
+	<FileExtensionsRegistry
+		class="de.learnlib.studio.mealy.editor.graphiti.MealyFileExtensions">
+	</FileExtensionsRegistry>
+</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen Mealy-->
+	<perspective
+		class="de.learnlib.studio.mealy.editor.graphiti.MealyPerspectiveFactory"
+		fixed="false"
+		id="de.learnlib.studio.mealy.editor.graphiti.mealyperspective"
+		name="Mealy Perspective">
+	</perspective>
+</extension>
+
+<extension
+      point="org.eclipse.emf.ecore.content_parser">
+<!--@CincoGen Mealy-->
+   <parser
+         class="de.learnlib.studio.mealy.editor.graphiti.MealyAPIParser"
+         contentTypeIdentifier="de.learnlib.studio.mealy.editor.graphiti.MealyContentType">
+   </parser>
+</extension>
+
+<extension
+	point="org.eclipse.emf.ecore.factory_override">
+<!--@CincoGen Mealy-->
+   		<factory
+        	class="de.learnlib.studio.mealy.editor.graphiti.MealyFactory"
+        	uri="http://learnlib.de/learnlib-studio/mealy">
+   		</factory>
+	</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen LEARNLIBSTUDIO-->
+	<perspective
+		class="de.learnlib.studio.editor.graphiti.LearnLibStudioPerspective"
+		fixed="false"
+		id="de.learnlib.studio.learnlibstudioperspective"
+		name="LearnLibStudio Perspective">
+	</perspective>
+</extension></plugin>

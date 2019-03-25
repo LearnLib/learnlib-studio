@@ -27,25 +27,25 @@ hs_err_pid*
 
 .metadata/
 
-de.learnlib.studio.libraries/lib/
+/de.learnlib.studio.libraries/lib/
 
-de.learnlib.studio.discriminationtree.editor.graphiti/
-de.learnlib.studio.discriminationtree.gratext/
-de.learnlib.studio.discriminationtree.gratext.ui/
-de.learnlib.studio.experiment.editor.graphiti/
-de.learnlib.studio.experiment.gratext/
-de.learnlib.studio.experiment.gratext.ui/
-de.learnlib.studio.feature/
-de.learnlib.studio.mcam.views/
-de.learnlib.studio.mealy.editor.graphiti/
-de.learnlib.studio.mealy.gratext/
-de.learnlib.studio.mealy.gratext.ui/
-de.learnlib.studio.product/
-de.learnlib.studio.siblibrary.editor.graphiti/
-de.learnlib.studio.siblibrary.gratext/
-de.learnlib.studio.siblibrary.gratext.ui/
-de.learnlib.studio.symbol.editor.graphiti/
-de.learnlib.studio.symbol.gratext/
-de.learnlib.studio.symbol.gratext.ui/
-de.learnlib.studio.symbol.primeviewer/
+/de.learnlib.studio.discriminationtree.editor.graphiti/
+/de.learnlib.studio.discriminationtree.gratext/
+/de.learnlib.studio.discriminationtree.gratext.ui/
+/de.learnlib.studio.experiment.editor.graphiti/
+/de.learnlib.studio.experiment.gratext/
+/de.learnlib.studio.experiment.gratext.ui/
+/de.learnlib.studio.feature/
+/de.learnlib.studio.mcam.views/
+/de.learnlib.studio.mealy.editor.graphiti/
+/de.learnlib.studio.mealy.gratext/
+/de.learnlib.studio.mealy.gratext.ui/
+/de.learnlib.studio.product/
+/de.learnlib.studio.siblibrary.editor.graphiti/
+/de.learnlib.studio.siblibrary.gratext/
+/de.learnlib.studio.siblibrary.gratext.ui/
+/de.learnlib.studio.symbol.editor.graphiti/
+/de.learnlib.studio.symbol.gratext/
+/de.learnlib.studio.symbol.gratext.ui/
+/de.learnlib.studio.symbol.primeviewer/
 

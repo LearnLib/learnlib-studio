@@ -20,7 +20,7 @@ Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.xtext.ui,
  de.jabc.cinco.meta.core.utils,
  de.jabc.cinco.meta.libraries,
- de.learnlib.studio.libraries;bundle-version="1.0.0",
+ de.learnlib.studio.libraries,
  de.jabc.cinco.meta.plugin.mcam.runtime
 Bundle-ActivationPolicy: lazy
 Bundle-ManifestVersion: 2
@@ -111,7 +111,7 @@ Export-Package: de.learnlib.studio,
  de.learnlib.studio.symbol.utils,
  de.learnlib.studio.utils
 Bundle-Name: %pluginName
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1.qualifier
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 

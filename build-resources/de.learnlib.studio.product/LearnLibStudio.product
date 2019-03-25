@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="LearnLib Studio" uid="de.learnlib.studio.product.id" id="de.learnlib.studio.product.product" application="org.eclipse.ui.ide.workbench" version="1.0.1.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <text>
+         This is the LearnLib Studio. The easy way to use the LearnLib for Active Automata Learning.
+      </text>
+   </aboutInfo>
+
+   <configIni use="">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-perspective de.learnlib.studio.learnlibstudioperspective
+      </programArgs>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <splash
+      location="de.learnlib.studio"
+      startupProgressRect="37,289,190,10"
+      startupMessageRect="37,280,190,18"
+      startupForegroundColor="000000" />
+   <launcher name="learnlibstudio">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="de.learnlib.studio.feature"/>
+      <feature id="org.eclipse.sdk"/>
+      <feature id="org.eclipse.equinox.p2.core.feature"/>
+      <feature id="org.eclipse.e4.rcp"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.help"/>
+      <feature id="org.eclipse.help.source"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.rcp.source"/>
+      <feature id="org.eclipse.pde.source"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature"/>
+      <feature id="org.eclipse.equinox.p2.user.ui"/>
+      <feature id="org.eclipse.equinox.p2.rcp.feature.source"/>
+      <feature id="org.eclipse.jdt.source"/>
+      <feature id="org.eclipse.jdt"/>
+      <feature id="org.eclipse.rcp"/>
+      <feature id="org.eclipse.e4.rcp.source"/>
+      <feature id="org.eclipse.equinox.p2.user.ui.source"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.platform.source"/>
+      <feature id="org.eclipse.equinox.p2.core.feature.source"/>
+      <feature id="org.eclipse.pde"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature"/>
+      <feature id="org.eclipse.xtext.sdk"/>
+      <feature id="org.eclipse.emf.sdk"/>
+      <feature id="org.eclipse.xtend.sdk"/>
+      <feature id="org.eclipse.emf.mapping"/>
+      <feature id="org.eclipse.emf.codegen.ecore.ui"/>
+      <feature id="org.eclipse.emf.codegen.ui.source"/>
+      <feature id="org.eclipse.equinox.p2.extras.feature.source"/>
+      <feature id="org.eclipse.emf.mapping.ui.source"/>
+      <feature id="org.eclipse.xtext.xbase.lib"/>
+      <feature id="org.eclipse.emf.doc"/>
+      <feature id="org.eclipse.emf.ecore.edit.source"/>
+      <feature id="org.eclipse.emf.common.ui.source"/>
+      <feature id="org.eclipse.emf.codegen.ui"/>
+      <feature id="org.eclipse.emf.mapping.ecore.editor.source"/>
+      <feature id="org.eclipse.emf.ecore.editor.source"/>
+      <feature id="org.eclipse.emf.edit.source"/>
+      <feature id="org.eclipse.emf.source"/>
+      <feature id="org.eclipse.emf"/>
+      <feature id="org.eclipse.emf.converter.source"/>
+      <feature id="org.eclipse.emf.edit"/>
+      <feature id="org.eclipse.emf.converter"/>
+      <feature id="org.eclipse.emf.mapping.ecore.source"/>
+      <feature id="org.eclipse.emf.databinding.source"/>
+      <feature id="org.eclipse.emf.mapping.source"/>
+      <feature id="org.eclipse.emf.databinding.edit"/>
+      <feature id="org.eclipse.xtext.examples"/>
+      <feature id="org.eclipse.emf.common.ui"/>
+      <feature id="org.eclipse.emf.ecore.edit"/>
+      <feature id="org.eclipse.emf.mapping.ecore.editor"/>
+      <feature id="org.eclipse.emf.ecore.editor"/>
+      <feature id="org.eclipse.emf.codegen.ecore.source"/>
+      <feature id="org.eclipse.emf.databinding.edit.source"/>
+      <feature id="org.eclipse.emf.codegen.source"/>
+      <feature id="org.eclipse.emf.codegen.ecore"/>
+      <feature id="org.eclipse.emf.databinding"/>
+      <feature id="org.eclipse.xtext.ui"/>
+      <feature id="org.eclipse.xtext.docs"/>
+      <feature id="org.eclipse.xtext.xbase"/>
+      <feature id="org.eclipse.emf.edit.ui"/>
+      <feature id="org.eclipse.emf.codegen.ecore.ui.source"/>
+      <feature id="org.eclipse.emf.mapping.ecore"/>
+      <feature id="org.eclipse.xtext.xtext.ui"/>
+      <feature id="org.eclipse.emf.mapping.ui"/>
+      <feature id="org.eclipse.emf.edit.ui.source"/>
+      <feature id="org.eclipse.xtext.runtime"/>
+      <feature id="org.eclipse.emf.codegen"/>
+      <feature id="org.eclipse.graphiti.feature"/>
+      <feature id="org.eclipse.graphiti.feature.tools"/>
+      <feature id="org.eclipse.graphiti.sdk.feature"/>
+      <feature id="org.eclipse.egit"/>
+      <feature id="org.eclipse.graphiti.feature.examples"/>
+      <feature id="org.eclipse.jgit"/>
+      <feature id="org.eclipse.emf.validation.ocl"/>
+      <feature id="org.eclipse.xsd"/>
+      <feature id="org.eclipse.xsd.edit"/>
+      <feature id="org.eclipse.gef"/>
+      <feature id="org.eclipse.draw2d"/>
+      <feature id="org.eclipse.emf.transaction"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="3" />
+   </configurations>
+
+</product>

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: de.learnlib.studio.feature
+Bundle-SymbolicName: de.learnlib.studio.feature; singleton:=true
+Bundle-Version: 1.0.1.qualifier
+Require-Bundle:  de.learnlib.studio
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8

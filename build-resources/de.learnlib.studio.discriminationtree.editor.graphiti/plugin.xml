@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+<extension
+	point="org.eclipse.graphiti.ui.diagramTypeProviders">
+<!--@CincoGen DiscriminationTree-->
+	<diagramTypeProvider
+		class="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeDiagramTypeProvider"
+		description="This is the generated editor for the DiscriminationTree"
+		id="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeDiagramTypeProvider"
+		name=".DiscriminationTree Diagram Editor">
+		<diagramType
+			id="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeDiagramType">
+		</diagramType>
+		<imageProvider
+			id="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeImageProvider">
+		</imageProvider>
+	</diagramTypeProvider>
+</extension>
+
+<extension 
+	point="org.eclipse.graphiti.ui.diagramTypes">
+<!--@CincoGen DiscriminationTree-->
+	<diagramType
+		description="This is the generated diagram Type for DiscriminationTree"
+		id="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeDiagramType"
+		name="DiscriminationTree Graphiti Diagram Type"
+		type="DiscriminationTree">
+	</diagramType>
+</extension>
+
+<extension
+	point="org.eclipse.ui.editors">
+<!--@CincoGen DiscriminationTree-->
+	<editor
+		class="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeDiagramEditor"
+		contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+		default="false"
+		id="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeEditor"
+		matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+		name="DiscriminationTree Editor">
+		<contentTypeBinding
+			contentTypeId="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeContentType">
+		</contentTypeBinding>
+		<contentTypeBinding
+			contentTypeId="org.eclipse.graphiti.content.diagram">
+		</contentTypeBinding>
+	</editor>
+</extension>
+
+<extension
+	point="org.eclipse.graphiti.ui.imageProviders">
+<!--@CincoGen DiscriminationTree-->
+	<imageProvider
+		class="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeImageProvider"
+		id="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeImageProvider">
+	</imageProvider>
+</extension>
+
+<extension
+	point="org.eclipse.ui.newWizards">
+<!--@CincoGen DiscriminationTree-->
+	<wizard
+		category="de.jabc.cinco.meta.core.wizards.category.cinco"
+		class="de.learnlib.studio.discriminationtree.editor.graphiti.wizard.DiscriminationTreeDiagramWizard"
+		id="de.learnlib.studio.discriminationtree.editor.graphiti.wizard.discriminationtree"
+		name="New DiscriminationTree">
+	</wizard>
+</extension>
+
+<extension
+	point="org.eclipse.core.contenttype.contentTypes">
+<!--@CincoGen DiscriminationTree-->
+	<content-type
+		file-extensions="dt"
+		id="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeContentType"
+		name="DiscriminationTree Content Type"
+		priority="normal">
+	</content-type>
+</extension>
+
+<extension
+	point="org.eclipse.ui.navigator.navigatorContent">
+<!--@CincoGen DiscriminationTree-->
+	<commonWizard
+		menuGroupId="mgl"
+		type="new"
+		wizardId="de.learnlib.studio.discriminationtree.editor.graphiti.wizard.discriminationtree">
+		<enablement></enablement>
+	</commonWizard>
+</extension>
+
+
+<extension
+	point="de.jabc.cinco.meta.core.referenceregistry">
+<!--@CincoGen DiscriminationTree-->
+	<FileExtensionsRegistry
+		class="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeFileExtensions">
+	</FileExtensionsRegistry>
+</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen DiscriminationTree-->
+	<perspective
+		class="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreePerspectiveFactory"
+		fixed="false"
+		id="de.learnlib.studio.discriminationtree.editor.graphiti.discriminationtreeperspective"
+		name="DiscriminationTree Perspective">
+	</perspective>
+</extension>
+
+<extension
+      point="org.eclipse.emf.ecore.content_parser">
+<!--@CincoGen DiscriminationTree-->
+   <parser
+         class="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeAPIParser"
+         contentTypeIdentifier="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeContentType">
+   </parser>
+</extension>
+
+<extension
+	point="org.eclipse.emf.ecore.factory_override">
+<!--@CincoGen DiscriminationTree-->
+   		<factory
+        	class="de.learnlib.studio.discriminationtree.editor.graphiti.DiscriminationTreeFactory"
+        	uri="http://learnlib.de/learnlib-studio/discriminationtree">
+   		</factory>
+	</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen LEARNLIBSTUDIO-->
+	<perspective
+		class="de.learnlib.studio.editor.graphiti.LearnLibStudioPerspective"
+		fixed="false"
+		id="de.learnlib.studio.learnlibstudioperspective"
+		name="LearnLibStudio Perspective">
+	</perspective>
+</extension></plugin>

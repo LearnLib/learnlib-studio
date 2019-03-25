@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+<extension
+	point="org.eclipse.graphiti.ui.diagramTypeProviders">
+<!--@CincoGen SibLibrary-->
+	<diagramTypeProvider
+		class="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryDiagramTypeProvider"
+		description="This is the generated editor for the SibLibrary"
+		id="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryDiagramTypeProvider"
+		name=".SibLibrary Diagram Editor">
+		<diagramType
+			id="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryDiagramType">
+		</diagramType>
+		<imageProvider
+			id="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryImageProvider">
+		</imageProvider>
+	</diagramTypeProvider>
+</extension>
+
+<extension 
+	point="org.eclipse.graphiti.ui.diagramTypes">
+<!--@CincoGen SibLibrary-->
+	<diagramType
+		description="This is the generated diagram Type for SibLibrary"
+		id="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryDiagramType"
+		name="SibLibrary Graphiti Diagram Type"
+		type="SibLibrary">
+	</diagramType>
+</extension>
+
+<extension
+	point="org.eclipse.ui.editors">
+<!--@CincoGen SibLibrary-->
+	<editor
+		class="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryDiagramEditor"
+		contributorClass="org.eclipse.graphiti.ui.editor.DiagramEditorActionBarContributor"
+		default="false"
+		id="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryEditor"
+		matchingStrategy="org.eclipse.graphiti.ui.editor.DiagramEditorMatchingStrategy"
+		name="SibLibrary Editor">
+		<contentTypeBinding
+			contentTypeId="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryContentType">
+		</contentTypeBinding>
+		<contentTypeBinding
+			contentTypeId="org.eclipse.graphiti.content.diagram">
+		</contentTypeBinding>
+	</editor>
+</extension>
+
+<extension
+	point="org.eclipse.graphiti.ui.imageProviders">
+<!--@CincoGen SibLibrary-->
+	<imageProvider
+		class="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryImageProvider"
+		id="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryImageProvider">
+	</imageProvider>
+</extension>
+
+<extension
+	point="org.eclipse.ui.newWizards">
+<!--@CincoGen SibLibrary-->
+	<wizard
+		category="de.jabc.cinco.meta.core.wizards.category.cinco"
+		class="de.learnlib.studio.siblibrary.editor.graphiti.wizard.SibLibraryDiagramWizard"
+		id="de.learnlib.studio.siblibrary.editor.graphiti.wizard.siblibrary"
+		name="New SibLibrary">
+	</wizard>
+</extension>
+
+<extension
+	point="org.eclipse.core.contenttype.contentTypes">
+<!--@CincoGen SibLibrary-->
+	<content-type
+		file-extensions="sibs"
+		id="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryContentType"
+		name="SibLibrary Content Type"
+		priority="normal">
+	</content-type>
+</extension>
+
+<extension
+	point="org.eclipse.ui.navigator.navigatorContent">
+<!--@CincoGen SibLibrary-->
+	<commonWizard
+		menuGroupId="mgl"
+		type="new"
+		wizardId="de.learnlib.studio.siblibrary.editor.graphiti.wizard.siblibrary">
+		<enablement></enablement>
+	</commonWizard>
+</extension>
+
+
+<extension
+	point="de.jabc.cinco.meta.core.referenceregistry">
+<!--@CincoGen SibLibrary-->
+	<FileExtensionsRegistry
+		class="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryFileExtensions">
+	</FileExtensionsRegistry>
+</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen SibLibrary-->
+	<perspective
+		class="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryPerspectiveFactory"
+		fixed="false"
+		id="de.learnlib.studio.siblibrary.editor.graphiti.siblibraryperspective"
+		name="SibLibrary Perspective">
+	</perspective>
+</extension>
+
+<extension
+      point="org.eclipse.emf.ecore.content_parser">
+<!--@CincoGen SibLibrary-->
+   <parser
+         class="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryAPIParser"
+         contentTypeIdentifier="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryContentType">
+   </parser>
+</extension>
+
+<extension
+	point="org.eclipse.emf.ecore.factory_override">
+<!--@CincoGen SibLibrary-->
+   		<factory
+        	class="de.learnlib.studio.siblibrary.editor.graphiti.SibLibraryFactory"
+        	uri="http://learnlib.de/learnlib-studio/siblibrary">
+   		</factory>
+	</extension>
+
+<extension
+	point="org.eclipse.ui.perspectives">
+<!--@CincoGen LEARNLIBSTUDIO-->
+	<perspective
+		class="de.learnlib.studio.editor.graphiti.LearnLibStudioPerspective"
+		fixed="false"
+		id="de.learnlib.studio.learnlibstudioperspective"
+		name="LearnLibStudio Perspective">
+	</perspective>
+</extension></plugin>

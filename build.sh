@@ -1,6 +1,7 @@
 #!/bin/bash
 
-cp -R build-resources/* .
+cp --recursive build-resources/* .
+cp --recursive build-resources/.mvn .
 
 if [ $# -eq 0 ]; then
     ./mvnw package
