@@ -35,7 +35,8 @@ class RunMavenJobFunction extends Observable implements IJobFunction {
         val mvnCmd = if (os.toLowerCase.contains("windows")) { "mvnw.cmd"  }
                      else                                    { "./mvnw" }
         
-        val mavenProcessBuilder = new ProcessBuilder(mvnCmd, "clean", "package")
+        val fullCmd = path.append(mvnCmd).toFile()
+        val mavenProcessBuilder = new ProcessBuilder(fullCmd.absolutePath, "clean", "package")
         mavenProcessBuilder.directory(path.toFile())
         
         try {
