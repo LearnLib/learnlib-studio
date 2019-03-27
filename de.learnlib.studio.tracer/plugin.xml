@@ -27,6 +27,15 @@
                id="info.scce.cinco.product.learnlibstudio.tracer.views.TracerView">
          </view>
       </perspectiveExtension>
+      <perspectiveExtension
+            targetID="de.learnlib.studio.learnlibstudioperspective">
+         <view
+               id="info.scce.cinco.product.learnlibstudio.tracer.views.TracerView"
+               minimized="false"
+               relationship="stack"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+      </perspectiveExtension>
    </extension>
    <extension
          point="org.eclipse.help.contexts">
