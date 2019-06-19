@@ -4,7 +4,9 @@ import "platform:/resource/de.learnlib.studio/model/SibLibrary.mgl" as Siblibrar
 @style("model/Symbol.style")
 @postCreate("de.learnlib.studio.symbol.hooks.SymbolPostCreateHook")
 @contextMenuAction("de.learnlib.studio.symbol.actions.AutofillBranchLabelsAction")
+@contextMenuAction("de.learnlib.studio.symbol.actions.ToggleDataFlowAction")
 @mcam("check")
+@mcam_checkmodule("de.learnlib.studio.symbol.checks.ErrorDataFlowCheck")
 @mcam_checkmodule("de.learnlib.studio.symbol.checks.ControlFlowBranchesCheck")
 @mcam_checkmodule("de.learnlib.studio.symbol.checks.EndCheck")
 @primeviewer
@@ -20,6 +22,9 @@ graphModel Symbol {
 	)
 	
 	attr EString as name := ""
+	
+	@propertiesViewHidden
+	attr EBoolean as showDataFlow := true
 	
 	type SibBranch {
 	    attr EString as name := ""

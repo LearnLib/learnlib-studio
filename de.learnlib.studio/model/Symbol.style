@@ -141,7 +141,9 @@ edgeStyle controlFlow (1) {
 	}
 }
 
-edgeStyle dataFlow {	
+edgeStyle dataFlow {
+	appearanceProvider ("de.learnlib.studio.symbol.aps.DataFlowAppearanceProvider")
+	
 	appearance {
 		lineStyle DOT
 		lineWidth 2

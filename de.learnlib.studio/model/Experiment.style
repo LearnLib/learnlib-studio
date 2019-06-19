@@ -145,7 +145,7 @@ edgeStyle queryEdge (1) {
     
     decorator {
         location (1.0) // at the end of the edge
-        ARROW
-        appearance default 
+        TRIANGLE
+        appearance default
     }
 }
