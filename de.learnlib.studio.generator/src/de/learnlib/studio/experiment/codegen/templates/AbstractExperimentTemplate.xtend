@@ -65,7 +65,7 @@ class AbstractExperimentTemplate extends AbstractSourceTemplate {
                 
                 long time = System.nanoTime() - startTime;
                 System.out.println("Time elapsed (ns): " + time);
-                ResultWriter.writeData("time", "txt", Long.toString(time));
+                ResultWriter.writeData("Time", Long.toString(time));
             }
             
             public void executeOne() {

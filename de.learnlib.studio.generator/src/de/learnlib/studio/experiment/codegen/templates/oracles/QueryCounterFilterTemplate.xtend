@@ -90,7 +90,8 @@ class QueryCounterFilterTemplate
             private MealyCounterOracle oracle;
             
             private long prevSum;
-            private Path file;
+            private int  stepCount;
+            
 
             public « className»(ExperimentOracle delegate, String name) {
                 this.name = name;
@@ -98,6 +99,7 @@ class QueryCounterFilterTemplate
                 this.oracle = new MealyCounterOracle(delegate.getOracle(), name);
                 
                 this.prevSum = 0;
+                this.stepCount = 0;
             }
             
             public Alphabet getAlphabet() {
@@ -114,21 +116,19 @@ class QueryCounterFilterTemplate
                 
                 System.out.println("Query Counter '" + name + "': " + realCount);
                 try {
-                    if (file == null) {
-                        file = ResultWriter.getFile(this.name, "txt");
-                    }
-                    ResultWriter.writeData(file, Long.toString(realCount));
+                    ResultWriter.writeData(this.name, this.stepCount, Long.toString(realCount));
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
                 
                 prevSum = oracle.getCounter().getCount();
+                stepCount++;
             }
 
             
             public void dispose() {
-                System.out.println("Query Counter '" + name + "': " + oracle.getCounter().getCount());
-                ResultWriter.writeData(file, Long.toString(oracle.getCounter().getCount()));
+                System.out.println("Query Counter '" + name + "' (sum): " + oracle.getCounter().getCount());
+                ResultWriter.writeData(this.name, "sum", Long.toString(oracle.getCounter().getCount()));
                 delegate = null;
             }
             

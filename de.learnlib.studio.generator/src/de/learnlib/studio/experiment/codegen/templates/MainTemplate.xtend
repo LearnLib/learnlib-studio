@@ -17,6 +17,9 @@ class MainTemplate extends AbstractSourceTemplate {
         
         import java.util.List;
         import java.util.ArrayList;
+        import java.util.Date;
+        import java.text.DateFormat;
+        import java.text.SimpleDateFormat;
         
         import « reference(CommandLineOptionsTemplate) »;
         import « reference(CommandLineOptionsHandlerTemplate) »;
@@ -27,6 +30,8 @@ class MainTemplate extends AbstractSourceTemplate {
         public class Main {
             
             public static void main(String[] args) {
+                rememberStartDateTime();
+                
                 CommandLineOptionsHandler optionsHandler = new CommandLineOptionsHandler();
                 boolean parsingOk = optionsHandler.parse(args);
                 
@@ -47,6 +52,14 @@ class MainTemplate extends AbstractSourceTemplate {
                         runAllExperiments(experiments);
                     }
                 }
+            }
+            
+            private static void rememberStartDateTime() {
+                Date currentDateTime = new Date();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+                String currentDateTimeAsString = dateFormat.format(currentDateTime);
+                
+                System.setProperty("EXPERIMENT_START_TIME", currentDateTimeAsString);
             }
             
             private static List<AbstractExperiment> createExperiments() {
