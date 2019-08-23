@@ -1,10 +1,10 @@
 appearance default {
-	lineWidth 2
-	background (245, 245, 245)
+    lineWidth 2
+    background (245, 245, 245)
 }
 
 appearance labelFont {
-    font ("Sans",10)
+    font ("Sans", 10)
 }
 
 nodeStyle activityStyle (1){
@@ -26,11 +26,11 @@ nodeStyle listStyle (1) {
             position (CENTER, TOP 4)  
             value "%s"
         }
-	}
+    }
 }
 
 nodeStyle port (1){
-	rectangle {
+    rectangle {
         appearance {
             transparency 1.0
         }
@@ -43,7 +43,7 @@ nodeStyle port (1){
 }
 
 nodeStyle inputPort (2) {
-	rectangle {
+    rectangle {
         appearance {
             transparency 1.0
         }
@@ -51,7 +51,7 @@ nodeStyle inputPort (2) {
         image {
             position (LEFT, MIDDLE)
             size (fix 12, fix 12)
-            path ("icons/inputPort.png")
+            path ("icons/common/inputPort.png")
         }
         text {
             position (LEFT 23, MIDDLE)
@@ -61,7 +61,7 @@ nodeStyle inputPort (2) {
 }
 
 nodeStyle outputPort (2) {
-	rectangle {
+    rectangle {
         appearance {
             transparency 1.0
         }
@@ -69,11 +69,26 @@ nodeStyle outputPort (2) {
         image {
             position (LEFT, MIDDLE)
             size (fix 12, fix 12)
-            path ( "icons/outputPort.png" )
+            path ("icons/common/outputPort.png")
         }
         text {
             position (LEFT 23, MIDDLE)
             value "%s: %s"          
+        }
+    }
+}
+
+nodeStyle commentNode (1) {
+    rectangle {
+        appearance {
+            background (255, 255, 0)
+            foreground (  0,   0, 0)
+        }
+        size (120, 65)
+        
+        multiText {
+            position ( LEFT 4, TOP 4 )
+            value "%s"
         }
     }
 }

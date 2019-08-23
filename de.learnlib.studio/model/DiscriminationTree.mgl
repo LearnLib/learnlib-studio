@@ -1,31 +1,30 @@
 @style("model/DiscriminationTree.style")
 @disable(create)
 graphModel DiscriminationTree {
-	package de.learnlib.studio.discriminationtree
-	nsURI "http://learnlib.de/learnlib-studio/discriminationtree"
-	diagramExtension "dt"
-	
-	abstract node TreeNode {}
-	
-	@style(innerNode, "${label}")
-	node InnerNode extends TreeNode {
-		incomingEdges (Connection)
-		outgoingEdges (Connection[0, *])
-		
-		attr EString as label
-	}	
-	
-	@style(leafNode, "${label}")
-	@disable(resize)
-	node LeafNode extends TreeNode {
-		incomingEdges (Connection)
-		
-		attr EString as label
-	}	
-	
-	@style(arrow)
-	edge Connection {
-	}
-	
+    package de.learnlib.studio.discriminationtree
+    nsURI "http://learnlib.de/learnlib-studio/discriminationtree"
+    diagramExtension "dt"
+    
+    abstract node TreeNode {}
+    
+    @style(innerNode, "${label}")
+    node InnerNode extends TreeNode {
+        incomingEdges (Connection)
+        outgoingEdges (Connection[0, *])
+        
+        attr EString as label
+    }    
+    
+    @style(leafNode, "${label}")
+    @disable(resize)
+    node LeafNode extends TreeNode {
+        incomingEdges (Connection)
+        
+        attr EString as label
+    }    
+    
+    @style(arrow)
+    edge Connection {
+    }
+    
 }
-

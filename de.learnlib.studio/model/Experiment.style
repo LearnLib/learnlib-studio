@@ -1,6 +1,7 @@
+/* Generic Appearances */
 appearance default {
-	lineWidth 2
-	background (245, 245, 245)
+    lineWidth 2
+    background (245, 245, 245)
 }
 
 appearance labelFont {
@@ -11,6 +12,9 @@ appearance labelFontItalics {
     font ("Sans", ITALIC, 10)
 }
 
+
+/* Nodes */
+/* Start */
 nodeStyle start {
     roundedRectangle {
         appearance {
@@ -26,67 +30,211 @@ nodeStyle start {
         image {
             position (CENTER, TOP 24)
             size (fix 32, fix 32)   
-            path ("icons/startSIB.png")
+            path ("icons/common/startSIB.png")
         }
     }
 }
 
-nodeStyle labeledNode (1) {
-    roundedRectangle {
-        size (120, 65)
-        corner (10, 10)
-        text {
-            appearance labelFont
-//            position ( CENTER, TOP 4 )
-            position ( CENTER, MIDDLE )
-            value "%s"
-        }
-        /*
-        image {
-            position (CENTER, TOP 24)
-            size (fix 32, fix 32)   
-            path ("icons/atomicSIB.png")
-        }
-        */
-    }
-}
-
+/* Generic Complex Nodes */
 nodeStyle complexNode (1) {
     roundedRectangle {
-        size (120, 65)
+        size (200, 120)
         corner (10, 10)
+        
         text {
             appearance labelFont
             position ( CENTER, TOP 4 )
             value "%s"
         }
-        /*
-        image {
-            position (CENTER, TOP 24)
-            size (fix 32, fix 32)   
-            path ("icons/atomicSIB.png")
+    }
+}
+
+/* Generic Labeled Node */
+nodeStyle labeledNode (1) {
+    roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%s"
         }
-        */
+    }
+}
+
+
+/* Member Ship Oracles */
+nodeStyle mealySulNode (1) {
+    roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        
+        image {
+            position ( CENTER -60, MIDDLE )
+            size (fix 24, fix 24)   
+            path ("icons/experiment/package.png")
+        }
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%1$s"
+        }
+    }
+}
+
+nodeStyle complexSULNode (1) {
+    roundedRectangle {
+        size (200, 120)
+        corner (10, 10)
+        
+        text {
+            appearance labelFont
+            position ( CENTER, TOP 8 )
+            value "%s"
+        }
+        
+        image {
+            position (CENTER -95, TOP 4 )
+            size (fix 24, fix 24)   
+            path ("icons/experiment/package.png")
+        }
     }
 }
 
 nodeStyle symbol (1) {
-	appearanceProvider ("de.learnlib.studio.experiment.aps.SymbolAppearance")
+    appearanceProvider ("de.learnlib.studio.experiment.aps.SymbolAppearance")
     roundedRectangle {
         size (120, 65)
         corner (10, 10)
+        
         text {
             appearance labelFont
             position ( CENTER, MIDDLE )  
             value "%s"
         }
-        /*
+    }
+}
+
+
+ /* Oracle Filters */
+nodeStyle filterNode (1) {
+    roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        
         image {
-            position (CENTER, TOP 24)
-            size (fix 32, fix 32)   
-            path ("icons/atomicSIB.png")
+            position ( CENTER -40, MIDDLE )
+            size (fix 24, fix 24)   
+            path ("icons/experiment/filter.png")
         }
-        */
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
+    }
+}
+
+nodeStyle queryCounterFilterNode (1) {
+    roundedRectangle {
+        size (162, 65)
+        corner (10, 10)
+        
+        image {
+            position ( CENTER -60, MIDDLE )
+            size (fix 24, fix 24)   
+            path ("icons/experiment/filter.png")
+        }
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
+    }
+}
+
+
+/* Learners */
+nodeStyle learnerNode (1) {
+    roundedRectangle {
+        size (120, 65)
+        corner (10, 10)
+        
+        image {
+            position (CENTER -30, MIDDLE)
+            size (fix 24, fix 24)   
+            path ("icons/experiment/cpu.png")
+        }
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
+    }
+}
+
+nodeStyle largeLearnerNode (1) {
+    roundedRectangle {
+        size (200, 65)
+        corner (10, 10)
+        
+        image {
+            position (CENTER -75, MIDDLE)
+            size (fix 24, fix 24)   
+            path ("icons/experiment/cpu.png")
+        }
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
+    }
+}
+
+
+/* EQ Oracles */
+nodeStyle eqOracleNode (1) {
+    roundedRectangle {
+        size (230, 65)
+        corner (10, 10)
+        
+        image {
+            position ( CENTER -95, MIDDLE )
+            size (fix 24, fix 24)   
+            path ("icons/experiment/user-check.png")
+        }
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
+    }
+}
+
+/* Display Nodes */
+nodeStyle displayNode (1) {
+    roundedRectangle {
+        size (195, 65)
+        corner (10, 10)
+        
+        image {
+            position ( CENTER -80, MIDDLE )
+            size (fix 24, fix 24)   
+            path ("icons/experiment/save.png")
+        }
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
     }
 }
 
@@ -97,29 +245,31 @@ nodeStyle commentNode (1) {
             foreground (  0,   0, 0)
         }
         size (120, 65)
-        text {
-            position (LEFT 10, TOP 10)
+        
+        multiText {
+            position ( LEFT 4, TOP 4 )
             value "%s"
         }
     }
 }
 
-edgeStyle simpleArrow (1) {	
-	appearance default
-	
-	decorator {
-        location (0.5)
+/* Edges */
+edgeStyle simpleArrow (1) {    
+    appearance default
+    
+    decorator {
+        location (0.3)
         text {
             appearance default
             value "%s"
         }
     }
-	
-	decorator {
-		location (1.0) // at the end of the edge
-		ARROW
-		appearance default 
-	}
+    
+    decorator {
+        location (1.0) // at the end of the edge
+        ARROW
+        appearance default 
+    }
 }
 
 edgeStyle queryEdge (1) { 

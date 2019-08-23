@@ -11,41 +11,43 @@ import "platform:/resource/de.learnlib.studio/model/SibLibrary.mgl" as Siblibrar
 @mcam_checkmodule("de.learnlib.studio.symbol.checks.EndCheck")
 @primeviewer
 graphModel Symbol {
-	package de.learnlib.studio.symbol
-	nsURI "http://learnlib.de/learnlib-stuido/symbol/symbol"
-	diagramExtension "symbol"
-	
-	containableElements (
-	    Start [1, 1],
-	    End  [1, *],
-	    Sib
-	)
-	
-	attr EString as name := ""
-	
-	@propertiesViewHidden
-	attr EBoolean as showDataFlow := true
-	
-	type SibBranch {
-	    attr EString as name := ""
-	    attr EBoolean as error := false
-	}
-	
-	enum SymbolView {
-	    Combined
-	    Control
-	    Data
-	}
-	
-	enum DataType {
-	    Text
-	    Integer
-	    Real
-	    Boolean
-	    Object
-	}
-	
-	enum StartParameterScope {
+    package de.learnlib.studio.symbol
+    nsURI "http://learnlib.de/learnlib-stuido/symbol/symbol"
+    iconPath "icons/common/ProcessModel.png"
+    diagramExtension "symbol"
+    
+    containableElements (
+        Start [1, 1],
+        End  [1, *],
+        Sib,
+        Comment
+    )
+    
+    attr EString as name := ""
+    
+    @propertiesViewHidden
+    attr EBoolean as showDataFlow := true
+    
+    type SibBranch {
+        attr EString as name := ""
+        attr EBoolean as error := false
+    }
+    
+    enum SymbolView {
+        Combined
+        Control
+        Data
+    }
+    
+    enum DataType {
+        Text
+        Integer
+        Real
+        Boolean
+        Object
+    }
+    
+    enum StartParameterScope {
         Query
         Global
         Property
@@ -55,30 +57,32 @@ graphModel Symbol {
         Query
         Global
     }
-	
-	@palette("General")
-	@style(start)
-	@postResize("de.learnlib.studio.symbol.hooks.VerticalContainerPostResizeHook")
-	container Start {
-		containableElements (StartOutputPort)
-		
-		outgoingEdges (ControlFlow [1, 1])
-	}
-	
+    
     @palette("General")
-	@style(end, "${name}")
-	@postResize("de.learnlib.studio.symbol.hooks.VerticalContainerPostResizeHook")
-	container End {
-		containableElements (EndInputPort)
-		
-		incomingEdges (ControlFlow [1, *])
-		
-		attr EString as name := "Success"
-	}
-	
-	@postResize("de.learnlib.studio.symbol.hooks.VerticalContainerPostResizeHook")
-	abstract container Sib {
-	    containableElements (SibPort)
+    @icon("icons/common/palette/startSIB.png")
+    @style(start)
+    @postResize("de.learnlib.studio.symbol.hooks.VerticalContainerPostResizeHook")
+    container Start {
+        containableElements (StartOutputPort)
+        
+        outgoingEdges (ControlFlow [1, 1])
+    }
+    
+    @palette("General")
+    @icon("icons/common/palette/endSIB.png")
+    @style(end, "${name}")
+    @postResize("de.learnlib.studio.symbol.hooks.VerticalContainerPostResizeHook")
+    container End {
+        containableElements (EndInputPort)
+        
+        incomingEdges (ControlFlow [1, *])
+        
+        attr EString as name := "Success"
+    }
+    
+    @postResize("de.learnlib.studio.symbol.hooks.VerticalContainerPostResizeHook")
+    abstract container Sib {
+        containableElements (SibPort)
         
         incomingEdges (ControlFlow)
         outgoingEdges (ControlFlow)
@@ -86,35 +90,36 @@ graphModel Symbol {
         @propertiesViewHidden
         attr SibBranch as branches [0, *]
     }
-	
+    
     @style(activity, "${activity.name}")
-	@postCreate("de.learnlib.studio.symbol.hooks.SibActivityPostCreateHook")
-	@contextMenuAction("de.learnlib.studio.symbol.actions.SibActivityUpdateCustomAction")
-	container SibActivity extends Sib {
-		@pvLabel(name)
-		@pvFileExtension("sibs")
-		prime Siblibrary::Activity as activity
-	}
-	
-//	@style(activity, "Symbol")
+    @postCreate("de.learnlib.studio.symbol.hooks.SibActivityPostCreateHook")
+    @contextMenuAction("de.learnlib.studio.symbol.actions.SibActivityUpdateCustomAction")
+    container SibActivity extends Sib {
+        @pvLabel(name)
+        @pvFileExtension("sibs")
+        prime Siblibrary::Activity as activity
+    }
+    
+//    @style(activity, "Symbol")
 //    container SubSymbol extends Sib {
 //        prime this::Symbol as slg
 //    }
-	
-	@disable(move, resize)
-	abstract node Port {
-	}
-	
+    
+    @disable(move, resize)
+    abstract node Port {
+    }
+    
 //    @postCreate("de.learnlib.studio.symbol.hooks.GeneralPortPostCreateHook")
 //    @postDelete("de.learnlib.studio.symbol.hooks.GeneralPortPostDeleteHook")
-	abstract node GeneralPort extends Port {
-	    attr EString as name := ""
+    abstract node GeneralPort extends Port {
+        attr EString as name := ""
         
         attr DataType as dataType := "Text"
-	}
-	
+    }
+    
     @palette("General")
-	@style(outputPort, "${name}: ${dataType}")
+    @icon("icons/common/palette/outputPort.png")
+    @style(outputPort, "${name}: ${dataType}")
     @disable(move, resize)
     @postCreate("de.learnlib.studio.symbol.hooks.StartOutputPortPostCreateHook")
     @postDelete("de.learnlib.studio.symbol.hooks.GeneralPortPostDeleteHook")
@@ -123,9 +128,10 @@ graphModel Symbol {
         
         attr StartParameterScope as scope := Query
     }
-	
+    
     @palette("General")
-	@style(inputPort, "${name}: ${dataType}")
+    @icon("icons/common/palette/inputPort.png")
+    @style(inputPort, "${name}: ${dataType}")
     @disable(move, resize)
     @postCreate("de.learnlib.studio.symbol.hooks.EndInputPortPostCreateHook")
     @postDelete("de.learnlib.studio.symbol.hooks.GeneralPortPostDeleteHook")
@@ -134,60 +140,62 @@ graphModel Symbol {
         
         attr EndParameterScope as scope := Query
     }
-	
-	abstract node SibPort extends Port {
+    
+    abstract node SibPort extends Port {
         @readOnly
         attr EString as name
         
         @readOnly
         attr DataType as dataType
-	}
-	
-	abstract node SibInputPort extends SibPort {}
-	
-	@style(inputPort, "${name}: ${dataType} := ${value}")
-	@disable(create, move, resize, delete)
-	@doubleClickAction("de.learnlib.studio.symbol.actions.SibStaticInputPortMakeDynamicCustomAction")
-	@contextMenuAction("de.learnlib.studio.symbol.actions.SibStaticInputPortMakeDynamicCustomAction")
-	node SibStaticInputPort extends SibInputPort {
-	   attr EString as value := "Value"
-	}
-	
-	@style(inputPort, "${name}: ${dataType}")
+    }
+    
+    abstract node SibInputPort extends SibPort {}
+    
+    @style(inputPort, "${name}: ${dataType} := ${value}")
+    @disable(create, move, resize, delete)
+    @doubleClickAction("de.learnlib.studio.symbol.actions.SibStaticInputPortMakeDynamicCustomAction")
+    @contextMenuAction("de.learnlib.studio.symbol.actions.SibStaticInputPortMakeDynamicCustomAction")
+    node SibStaticInputPort extends SibInputPort {
+       attr EString as value := "Value"
+    }
+    
+    @style(inputPort, "${name}: ${dataType}")
     @disable(create, move, resize, delete)
     @doubleClickAction("de.learnlib.studio.symbol.actions.SibDynamicInputPortMakeStaticCustomAction")
     @contextMenuAction("de.learnlib.studio.symbol.actions.SibDynamicInputPortMakeStaticCustomAction")
     node SibDynamicInputPort extends SibInputPort {
          incomingEdges (DataFlow [1, 1])
     }
-	
-	@style(outputPort, "${name}: ${dataType}")
-	@disable(create, move, resize, delete)
+    
+    @style(outputPort, "${name}: ${dataType}")
+    @disable(create, move, resize, delete)
     node SibOutputPort extends SibPort {
         outgoingEdges (DataFlow)
-	}
-	
-	@style(commentNode, "${text}")
+    }
+    
+    @palette("Documentation")
+    @icon("icons/common/palette/type.png")
+    @style(commentNode, "${text}")
     node Comment {
         @multiLine
         attr EString as text := ""
     }
     
-	
-	// Edges
-	@style(controlFlow, "${label}")
-	@postAttributeChange("de.learnlib.studio.symbol.hooks.ControlFlowPostAttributeChangeHook")
+    
+    // Edges
+    @style(controlFlow, "${label}")
+    @postAttributeChange("de.learnlib.studio.symbol.hooks.ControlFlowPostAttributeChangeHook")
     edge ControlFlow {
-	    @possibleValuesProvider("de.learnlib.studio.symbol.hooks.ControlFlowPossibleValuesProvider")
-		attr EString as label := ""
-		
-		@propertiesViewHidden
-		attr EString as branches [0, *]
-	}
-	
-	@style(dataFlow)
-	@postCreate("de.learnlib.studio.symbol.hooks.DataFlowPostCreateHook")
-	edge DataFlow { 
-	}
-	
+        @possibleValuesProvider("de.learnlib.studio.symbol.hooks.ControlFlowPossibleValuesProvider")
+        attr EString as label := ""
+        
+        @propertiesViewHidden
+        attr EString as branches [0, *]
+    }
+    
+    @style(dataFlow)
+    @postCreate("de.learnlib.studio.symbol.hooks.DataFlowPostCreateHook")
+    edge DataFlow { 
+    }
+    
 }

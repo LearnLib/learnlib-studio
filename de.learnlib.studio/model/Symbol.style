@@ -1,6 +1,6 @@
 appearance default {
-	lineWidth 2
-	background (229,229,229)
+    lineWidth 2
+    background (229,229,229)
 }
 
 appearance labelFont {
@@ -26,7 +26,7 @@ nodeStyle start {
         image {
             position (CENTER, TOP 24)
             size (fix 32, fix 32)   
-            path ("icons/startSIB.png")
+            path ("icons/common/startSIB.png")
         }
     }
 }
@@ -46,13 +46,13 @@ nodeStyle end (1) {
         image {
             position (CENTER, TOP 24)
             size (fix 32, fix 32)   
-            path ("icons/endSIB.png")
+            path ("icons/common/endSIB.png")
         }
     }
 }
 
 nodeStyle activity (1){
-	roundedRectangle {
+    roundedRectangle {
         size (120, 65)
         corner (10, 10)
         text {
@@ -63,7 +63,7 @@ nodeStyle activity (1){
         image {
             position (CENTER, TOP 24)
             size (fix 32, fix 32)   
-            path ("icons/atomicSIB.png")
+            path ("icons/common/atomicSIB.png")
         }
         polyline hline {
             points [ (7, 64) (113, 64) ]
@@ -80,7 +80,7 @@ nodeStyle inputPort (1) {
         image {
             position (LEFT, MIDDLE)
             size (fix 12, fix 12)
-            path ("icons/inputPort.png")
+            path ("icons/common/inputPort.png")
         }
         text {
             position (LEFT 23, MIDDLE)
@@ -98,7 +98,7 @@ nodeStyle outputPort (1) {
         image {
             position (LEFT, MIDDLE)
             size (fix 12, fix 12)
-            path ( "icons/outputPort.png" )
+            path ( "icons/common/outputPort.png" )
         }
         text {
             position (LEFT 23, MIDDLE)
@@ -114,8 +114,9 @@ nodeStyle commentNode (1) {
             foreground (  0,   0, 0)
         }
         size (120, 65)
-        text {
-            position (LEFT 10, TOP 10)
+        
+        multiText {
+            position ( LEFT 4, TOP 4 )
             value "%s"
         }
     }
@@ -123,9 +124,9 @@ nodeStyle commentNode (1) {
 
 edgeStyle controlFlow (1) {
     appearanceProvider ("de.learnlib.studio.symbol.aps.ControlFlowAppearanceProvider")
-	appearance default
+    appearance default
     
-	decorator {
+    decorator {
         location (0.3)
         movable
         text {
@@ -133,25 +134,25 @@ edgeStyle controlFlow (1) {
             value "%s"
         }
     }
-	
-	decorator {
-		location (1.0) // at the end of the edge
-		ARROW
-		appearance default 
-	}
+    
+    decorator {
+        location (1.0) // at the end of the edge
+        ARROW
+        appearance default 
+    }
 }
 
 edgeStyle dataFlow {
-	appearanceProvider ("de.learnlib.studio.symbol.aps.DataFlowAppearanceProvider")
-	
-	appearance {
-		lineStyle DOT
-		lineWidth 2
-	}
-	
-	decorator {
-		location (1.0) // at the end of the edge
-		ARROW
-		appearance default 
-	}
+    appearanceProvider ("de.learnlib.studio.symbol.aps.DataFlowAppearanceProvider")
+    
+    appearance {
+        lineStyle DOT
+        lineWidth 2
+    }
+    
+    decorator {
+        location (1.0) // at the end of the edge
+        ARROW
+        appearance default 
+    }
 }

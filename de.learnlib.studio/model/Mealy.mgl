@@ -3,24 +3,24 @@
 @mcam_checkmodule("de.learnlib.studio.mealy.checks.InitStateCheck")
 @mcam_checkmodule("de.learnlib.studio.mealy.checks.DeterministicCheck")
 graphModel Mealy {
-	package de.learnlib.studio.mealy
-	nsURI "http://learnlib.de/learnlib-studio/mealy"
-	diagramExtension "mealy"
-	
-	@style(labeledCircle, "${label}")
-	@disable(resize)
-	node MealyState {
-		incomingEdges (MealyTransition)
-		outgoingEdges (MealyTransition[1, *])
-		
-		attr EString as label := ""
-		attr EBoolean as init
-	}	
-	
-	@style(labeledArrow, "${input}", "${output}")
-	edge MealyTransition { 
-		attr EString as input  := ""
-		attr EString as output := ""
-	}
-	
+    package de.learnlib.studio.mealy
+    nsURI "http://learnlib.de/learnlib-studio/mealy"
+    diagramExtension "mealy"
+    
+    @style(labeledCircle, "${label}")
+    @disable(resize)
+    node MealyState {
+        incomingEdges (MealyTransition)
+        outgoingEdges (MealyTransition[1, *])
+        
+        attr EString as label := ""
+        attr EBoolean as init
+    }    
+    
+    @style(labeledArrow, "${input}", "${output}")
+    edge MealyTransition { 
+        attr EString as input  := ""
+        attr EString as output := ""
+    }
+    
 }

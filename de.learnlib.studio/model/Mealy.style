@@ -1,35 +1,36 @@
 appearance default {
-	lineWidth 2
-	background (229, 229, 229)
+    lineWidth 2
+    background (229, 229, 229)
 }
 
 nodeStyle labeledCircle(1) {
     appearanceProvider ("de.learnlib.studio.mealy.aps.NodeAppearance")
-	ellipse {
-		appearance default
-		size(40,40)
-		text {
-			position ( CENTER, MIDDLE )
-			value "%s"
-		}
-	}
+    ellipse {
+        appearance default
+        size(40,40)
+        text {
+            position ( CENTER, MIDDLE )
+            value "%s"
+        }
+    }
 }
 
-edgeStyle labeledArrow(2) {	
-	appearance default
-	
-	decorator {
-		location (1.0) // at the end of the edge
-		ARROW
-		appearance default 
-	}
-	
-	decorator {
-		location (0.3)
-		movable
-		text {
-			value "%s / %s"
-		}
-	}
+edgeStyle labeledArrow(2) {    
+    appearance default
+    
+    decorator {
+        location (1.0) // at the end of the edge
+        ARROW
+        appearance default 
+    }
+    
+    decorator {
+        location (0.3)
+        movable
+        text {
+            value "%s / %s"
+        }
+    }
+    
 }
 

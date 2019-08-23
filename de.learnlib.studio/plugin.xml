@@ -102,6 +102,33 @@
       <!-- @generated Experiment -->
       <package class="de.learnlib.studio.experiment.experiment.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/experiment/views"/>
    </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.MealyPackage" uri="http://learnlib.de/learnlib-studio/mealy"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/mealy/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/mealy/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.SiblibraryPackage" uri="http://learnlib.de/learnlib-studio/siblibrary"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.DiscriminationtreePackage" uri="http://learnlib.de/learnlib-studio/discriminationtree"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Symbol -->
       <package class="de.learnlib.studio.symbol.symbol.SymbolPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol"/>
    </extension><extension point="org.eclipse.emf.ecore.generated_package">
@@ -110,6 +137,204 @@
    </extension><extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Symbol -->
       <package class="de.learnlib.studio.symbol.symbol.views.ViewsPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.ExperimentPackage" uri="http://learnlib.de/learnlib-studio/experiment"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/experiment/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/experiment/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.MealyPackage" uri="http://learnlib.de/learnlib-studio/mealy"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/mealy/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/mealy/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.SiblibraryPackage" uri="http://learnlib.de/learnlib-studio/siblibrary"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.DiscriminationtreePackage" uri="http://learnlib.de/learnlib-studio/discriminationtree"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.SymbolPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.internal.InternalPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.views.ViewsPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.ExperimentPackage" uri="http://learnlib.de/learnlib-studio/experiment"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/experiment/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/experiment/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.MealyPackage" uri="http://learnlib.de/learnlib-studio/mealy"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/mealy/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/mealy/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.SiblibraryPackage" uri="http://learnlib.de/learnlib-studio/siblibrary"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.DiscriminationtreePackage" uri="http://learnlib.de/learnlib-studio/discriminationtree"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.SymbolPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.internal.InternalPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.views.ViewsPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.ExperimentPackage" uri="http://learnlib.de/learnlib-studio/experiment"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/experiment/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/experiment/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.MealyPackage" uri="http://learnlib.de/learnlib-studio/mealy"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/mealy/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/mealy/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.SiblibraryPackage" uri="http://learnlib.de/learnlib-studio/siblibrary"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.DiscriminationtreePackage" uri="http://learnlib.de/learnlib-studio/discriminationtree"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.SymbolPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.internal.InternalPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.views.ViewsPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.ExperimentPackage" uri="http://learnlib.de/learnlib-studio/experiment"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/experiment/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/experiment/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.MealyPackage" uri="http://learnlib.de/learnlib-studio/mealy"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/mealy/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Mealy -->
+      <package class="de.learnlib.studio.mealy.mealy.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/mealy/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.SiblibraryPackage" uri="http://learnlib.de/learnlib-studio/siblibrary"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SibLibrary -->
+      <package class="de.learnlib.studio.siblibrary.siblibrary.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/siblibrary/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.DiscriminationtreePackage" uri="http://learnlib.de/learnlib-studio/discriminationtree"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated DiscriminationTree -->
+      <package class="de.learnlib.studio.discriminationtree.discriminationtree.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/discriminationtree/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.SymbolPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.internal.InternalPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Symbol -->
+      <package class="de.learnlib.studio.symbol.symbol.views.ViewsPackage" uri="http://learnlib.de/learnlib-stuido/symbol/symbol/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.ExperimentPackage" uri="http://learnlib.de/learnlib-studio/experiment"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/experiment/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/experiment/views"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.ExperimentPackage" uri="http://learnlib.de/learnlib-studio/experiment"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.internal.InternalPackage" uri="http://learnlib.de/learnlib-studio/experiment/internal"/>
+   </extension><extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Experiment -->
+      <package class="de.learnlib.studio.experiment.experiment.views.ViewsPackage" uri="http://learnlib.de/learnlib-studio/experiment/views"/>
    </extension><extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Mealy -->
       <package class="de.learnlib.studio.mealy.mealy.MealyPackage" uri="http://learnlib.de/learnlib-studio/mealy"/>
