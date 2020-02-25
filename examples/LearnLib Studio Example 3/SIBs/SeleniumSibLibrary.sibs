@@ -3,11 +3,11 @@ SibLibrary _VnS_sP-3Eeihy-AcpCbutQ {
   mavenArtifacts [ MavenArtifact _evEhkDRyEemjAczeL4bnYg {
   		groupId "org.seleniumhq.selenium"
   		artifactId "selenium-java"
-  		version "3.11.0"
+  		version "3.141.59"
   	}, MavenArtifact _XvwLoDYKEemLqPJyN5Wb8Q {
   		groupId "org.seleniumhq.selenium"
   		artifactId "selenium-chrome-driver"
-  		version "3.11.0"
+  		version "3.141.59"
   	}, MavenArtifact _JcOpYDYPEembboOowq0gMw {
   		groupId "org.apache.commons"
   		artifactId "commons-text"
