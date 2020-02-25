@@ -87,10 +87,10 @@ class SymbolTemplate
             « FOR node : symbol.ends »
                 private Block « getNameForNode(node) » = new EndBlock() {
                     public String apply(ExperimentSULContext context, Map<String, Object> localVariables) {
-                        « FOR inputPort : node.endInputPorts »
+                        « FOR inputPort : node.endInputPorts.filter[!isSymbolOutputParameter] »
                                 « writeToStorage(inputPort) »
                         « ENDFOR»
-                        return "« node.name »";
+                        return "« node.name »« FOR p : node.endInputPorts.filter[isSymbolOutputParameter] BEFORE " (\" + "  SEPARATOR " + \", \" + " AFTER " + \")"»localVariables.get("« storageIdFor(getSourcePort(p)) »").toString()« ENDFOR »";
                     }
                 };
             « ENDFOR »
@@ -185,7 +185,7 @@ class SymbolTemplate
     }
     
     private def writeToStorage(EndInputPort inputPort) '''
-        « val dataSource = inputPort.incomingDataFlows.head.sourceElement »
+        « val dataSource = getSourcePort(inputPort) »
         « val name = inputPort.name »
         « val variableName = "valueOf" + name.toFirstUpper »
         « val convertedDataType = convertDataTypeToActualType(inputPort.dataType) »
@@ -197,7 +197,16 @@ class SymbolTemplate
         switch scope {
             case GLOBAL: "context.getGlobalVariables()"
             case QUERY:  "context.getQueryVariables()"
+            default: throw new IllegalArgumentException(scope + " can not be stored.")
         }
+    }
+    
+    private dispatch def getSourcePort(EndInputPort port) {
+    	return port.incomingDataFlows.head.sourceElement
+    }
+    
+    private dispatch def getSourcePort(SibPort port) {
+    	return port.incomingDataFlows.head.sourceElement
     }
     
     private dispatch def storageIdFor(StartOutputPort port) {
@@ -229,6 +238,10 @@ class SymbolTemplate
         }
         
         return result.toString()
+    }
+    
+    private def isSymbolOutputParameter(EndInputPort port) {
+    	return port.scope === EndParameterScope.SYMBOL_OUTPUT
     }
  
 }

@@ -54,6 +54,7 @@ graphModel Symbol {
     }
     
     enum EndParameterScope {
+    	SymbolOutput
         Query
         Global
     }
