@@ -7,11 +7,11 @@ import de.learnlib.studio.experiment.experiment.CompleteEQOracle
 class CompleteEqOracleBlockTemplate extends AbstractEqBlockTemplate<CompleteEQOracle> {
 
      new(GeneratorContext context) {
-        super(context, "Complete", "CompleteExplorationEQOracle", "MealyCompleteExplorationEQOracle")
+        super(context, "Complete", "MealyCompleteExplorationEQOracle")
     }
 
     new(GeneratorContext context, CompleteEQOracle node, int i) {
-        super(context, node, i, "Complete", "CompleteExplorationEQOracle", "MealyCompleteExplorationEQOracle")
+        super(context, node, i, "Complete", "MealyCompleteExplorationEQOracle")
     }
 
     override getAdditionalParameters() {

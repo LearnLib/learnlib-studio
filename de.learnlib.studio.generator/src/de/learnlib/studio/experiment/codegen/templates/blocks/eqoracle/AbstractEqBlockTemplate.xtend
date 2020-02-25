@@ -38,20 +38,17 @@ abstract class AbstractEqBlockTemplate<N extends EQOracle>
     }
     
     
-    val String learnLibParentClass
     val String learnLibClass
     
-    new(GeneratorContext context, String name, String learnLibParentClass, String learnLibClass) {
+    new(GeneratorContext context, String name, String learnLibClass) {
         super(context, "blocks.eqoracles", name + "EqOracle")
         
-        this.learnLibParentClass = learnLibParentClass
         this.learnLibClass = learnLibClass
     }
     
-    new(GeneratorContext context, N node, int i, String name, String learnLibParentClass, String learnLibClass) {
+    new(GeneratorContext context, N node, int i, String name, String learnLibClass) {
         super(context, node, i, "blocks.eqoracles", name + "EqOracle")
         
-        this.learnLibParentClass = learnLibParentClass
         this.learnLibClass = learnLibClass
     }
     
@@ -82,7 +79,7 @@ abstract class AbstractEqBlockTemplate<N extends EQOracle>
         import de.learnlib.api.oracle.EquivalenceOracle.MealyEquivalenceOracle;
         import de.learnlib.api.query.DefaultQuery;
 
-        import de.learnlib.oracle.equivalence.« learnLibParentClass».« learnLibClass »;
+        import de.learnlib.oracle.equivalence.« learnLibClass »;
 
         import net.automatalib.words.Word;
 

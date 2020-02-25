@@ -54,7 +54,7 @@ class SULOracleTemplate
         
         import net.automatalib.words.Alphabet;
                 
-        import net.automatalib.words.impl.SimpleAlphabet;
+        import net.automatalib.words.impl.GrowingMapAlphabet;
         
         import de.learnlib.mapper.ContextExecutableInputSUL.ContextHandler;
         import de.learnlib.mapper.api.SULMapper;
@@ -191,7 +191,7 @@ class SULOracleTemplate
                 « ENDFOR »
                 
                 /* Create Alphabet */
-                alphabet = new SimpleAlphabet<>();
+                alphabet = new GrowingMapAlphabet<>();
                 « FOR symbol : sulOracle.nodes.filter[symbolType == SULMebembershipOracleSymbolType.NORMAL] »
                     alphabet.add("« symbol.symbolReference.name »");
                 « ENDFOR »

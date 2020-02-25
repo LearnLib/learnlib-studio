@@ -8,11 +8,11 @@ import de.learnlib.studio.experiment.codegen.templates.blocks.eqoracle.AbstractE
 class RandomWordEqOracleBlockTemplate extends AbstractEqBlockTemplate<RandomWordEQOracle> {
 
      new(GeneratorContext context) {
-        super(context, "RandomWord", "RandomWordsEQOracle", "MealyRandomWordsEQOracle")
+        super(context, "RandomWord", "MealyRandomWordsEQOracle")
     }
 
     new(GeneratorContext context, RandomWordEQOracle node, int i) {
-        super(context, node, i, "RandomWord", "RandomWordsEQOracle", "MealyRandomWordsEQOracle")
+        super(context, node, i, "RandomWord", "MealyRandomWordsEQOracle")
     }
     
     override getAdditionalParameters() {

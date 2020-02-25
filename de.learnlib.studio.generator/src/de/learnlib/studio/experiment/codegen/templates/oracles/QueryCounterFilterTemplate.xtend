@@ -78,7 +78,7 @@ class QueryCounterFilterTemplate
         import net.automatalib.words.Alphabet;
         import de.learnlib.api.oracle.MembershipOracle.MealyMembershipOracle;
 
-        import de.learnlib.filter.statistic.oracle.CounterOracle.MealyCounterOracle;
+        import de.learnlib.filter.statistic.oracle.MealyCounterOracle;
         
         import « reference(ResultWriterTemplate) »;
 

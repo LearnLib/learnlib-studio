@@ -68,8 +68,8 @@ class MavenTemplate extends AbstractTemplateImpl {
                 <maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
                 
-                <learnlib.version>0.14.0</learnlib.version>
-                <automatalib.version>0.8.0</automatalib.version>
+                <learnlib.version>0.15.0</learnlib.version>
+                <automatalib.version>0.9.0</automatalib.version>
                 
                 <slf4j.version>1.7.25</slf4j.version>
             </properties>

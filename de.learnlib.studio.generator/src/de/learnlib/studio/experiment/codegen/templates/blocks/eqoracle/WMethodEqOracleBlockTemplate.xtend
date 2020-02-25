@@ -7,11 +7,11 @@ import de.learnlib.studio.experiment.codegen.GeneratorContext
 class WMethodEqOracleBlockTemplate extends AbstractEqBlockTemplate<WMethodEQOracle> {
 
      new(GeneratorContext context) {
-        super(context, "WMethod", "WMethodEQOracle", "MealyWMethodEQOracle")
+        super(context, "WMethod", "MealyWMethodEQOracle")
     }
 
     new(GeneratorContext context, WMethodEQOracle node, int i) {
-        super(context, node, i, "WMethod", "WMethodEQOracle", "MealyWMethodEQOracle")
+        super(context, node, i, "WMethod", "MealyWMethodEQOracle")
     }
     
     override getAdditionalParameters() {

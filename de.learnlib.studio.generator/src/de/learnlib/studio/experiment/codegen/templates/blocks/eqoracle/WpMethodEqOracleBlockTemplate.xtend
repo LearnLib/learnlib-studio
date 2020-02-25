@@ -7,11 +7,11 @@ import de.learnlib.studio.experiment.experiment.WPMethodEQOracle
 class WpMethodEqOracleBlockTemplate extends AbstractEqBlockTemplate<WPMethodEQOracle> {
 
      new(GeneratorContext context) {
-        super(context, "WpMethod", "WpMethodEQOracle", "MealyWpMethodEQOracle")
+        super(context, "WpMethod", "MealyWpMethodEQOracle")
     }
 
     new(GeneratorContext context, WPMethodEQOracle node, int i) {
-        super(context, node, i,  "WpMethod", "WpMethodEQOracle", "MealyWpMethodEQOracle")
+        super(context, node, i,  "WpMethod", "MealyWpMethodEQOracle")
     }
 
     override getAdditionalParameters() {
