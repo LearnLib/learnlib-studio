@@ -2,22 +2,13 @@ package de.learnlib.studio.experiment.codegen.templates.oracles
 
 import de.learnlib.studio.experiment.codegen.GeneratorContext
 import de.learnlib.studio.experiment.codegen.templates.AbstractSourceTemplate
-import de.learnlib.studio.experiment.codegen.providers.LearnLibArtifactProvider
-import de.learnlib.studio.experiment.experiment.Oracle
 
-
-class ExperimentOracleInterfaceTemplate
-        extends AbstractSourceTemplate
-        implements LearnLibArtifactProvider<Oracle> {
+class ExperimentOracleInterfaceTemplate extends AbstractSourceTemplate {
 	
 	new(GeneratorContext context) {
 		super(context, "oracles", "ExperimentOracle")
 	}
 	
-	override learnLibArtifacts() {
-        #["learnlib-membership-oracles"]
-    }
-    
 	override template() '''
 		package « package »;
 		
@@ -27,7 +18,7 @@ class ExperimentOracleInterfaceTemplate
 		
 		public interface « className » {
 			
-			Alphabet getAlphabet();
+			Alphabet<String> getAlphabet();
 			
 			MealyMembershipOracle<String, String> getOracle();
 			

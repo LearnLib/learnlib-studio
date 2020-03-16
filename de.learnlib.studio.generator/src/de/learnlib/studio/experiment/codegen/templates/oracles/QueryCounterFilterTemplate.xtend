@@ -7,7 +7,6 @@ import de.learnlib.studio.experiment.experiment.QueryCounterFilter
 import de.learnlib.studio.experiment.experiment.QueryEdge
 import de.learnlib.studio.experiment.codegen.GeneratorContext
 import de.learnlib.studio.experiment.codegen.providers.OracleInformationProvider
-import de.learnlib.studio.experiment.codegen.providers.LearnLibArtifactProvider
 import de.learnlib.studio.experiment.codegen.templates.PerNodeTemplate
 import de.learnlib.studio.experiment.codegen.templates.AbstractSourceTemplate
 
@@ -15,12 +14,10 @@ import de.learnlib.studio.experiment.codegen.templates.utils.ResultWriterTemplat
 
 import static extension de.learnlib.studio.experiment.utils.ExperimentExtensions.isChildOfAComplexNode
 
-
 class QueryCounterFilterTemplate
         extends AbstractSourceTemplate
         implements PerNodeTemplate<QueryCounterFilter>,
-                   OracleInformationProvider<QueryCounterFilter>,
-                   LearnLibArtifactProvider<QueryCounterFilter> {
+                   OracleInformationProvider<QueryCounterFilter> {
 
     val QueryCounterFilter filter
     val int i
@@ -34,11 +31,7 @@ class QueryCounterFilterTemplate
         this.filter  = filter
         this.i       = i
 	}
-	
-    override learnLibArtifacts() {
-        return #["learnlib-statistics"]
-    }
-    
+	    
     override getConstructorParameters() {
         val delegateNode = getOutgoing(QueryEdge).head.targetElement
         return #[delegateNode, node.name]

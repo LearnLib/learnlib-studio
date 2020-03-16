@@ -7,7 +7,6 @@ import de.learnlib.studio.experiment.experiment.CacheFilter
 import de.learnlib.studio.experiment.experiment.QueryEdge
 import de.learnlib.studio.experiment.codegen.GeneratorContext
 import de.learnlib.studio.experiment.codegen.providers.OracleInformationProvider
-import de.learnlib.studio.experiment.codegen.providers.LearnLibArtifactProvider
 import de.learnlib.studio.experiment.codegen.templates.PerNodeTemplate
 import de.learnlib.studio.experiment.codegen.templates.AbstractSourceTemplate
 
@@ -17,8 +16,7 @@ import static extension de.learnlib.studio.experiment.utils.ExperimentExtensions
 class CacheFilterTemplate
         extends AbstractSourceTemplate
         implements PerNodeTemplate<CacheFilter>,
-                   OracleInformationProvider<CacheFilter>,
-                   LearnLibArtifactProvider<CacheFilter> {
+                   OracleInformationProvider<CacheFilter> {
 
     val GeneratorContext context
     val CacheFilter filter
@@ -35,11 +33,6 @@ class CacheFilterTemplate
         this.i       = i
 	}
 	
-    override learnLibArtifacts() {
-        return #["learnlib-cache"]
-    }
-    
-
     override getConstructorParameters() {
         val delegateNode = getOutgoing(QueryEdge).head.targetElement
         return #[delegateNode]

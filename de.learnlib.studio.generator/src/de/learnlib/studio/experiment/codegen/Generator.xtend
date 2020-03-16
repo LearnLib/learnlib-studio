@@ -13,6 +13,7 @@ import org.reflections.util.ConfigurationBuilder
 import de.jabc.cinco.meta.plugin.generator.runtime.IGenerator
 
 import de.learnlib.studio.experiment.codegen.templates.PerNodeTemplate
+import de.learnlib.studio.experiment.codegen.utils.EscapeUtils
 import de.learnlib.studio.experiment.experiment.Experiment
 import de.learnlib.studio.experiment.codegen.templates.Template
 import de.learnlib.studio.experiment.codegen.templates.NodeRelatedTemplate
@@ -22,13 +23,18 @@ import de.learnlib.studio.experiment.codegen.providers.GeneratorInformationProvi
 
 import static de.learnlib.studio.experiment.codegen.utils.ReflectionUtils.getAllInterfaces
 import static de.learnlib.studio.experiment.codegen.utils.ReflectionUtils.getGenericTypeParameter
-
+import de.jabc.cinco.meta.core.utils.projects.ProjectCreator
+import org.eclipse.core.resources.IProject
+import org.eclipse.core.resources.IFolder
+import de.jabc.cinco.meta.core.utils.EclipseFileUtils
+import de.learnlib.studio.experiment.codegen.templates.automata.MealyAutomatonGenerator
 
 class Generator implements IGenerator<Experiment> {
 	
 	val Reflections   reflections
 	val ObjectFactory objectFactory
 	
+	protected extension EscapeUtils = new EscapeUtils
 	
 	new() {
 	    val bundle = Platform.getBundle("de.learnlib.studio.generator")
@@ -42,14 +48,26 @@ class Generator implements IGenerator<Experiment> {
         this.objectFactory = new ObjectFactory()
 	}
 	
-	override generate(Experiment model, IPath targetDir, IProgressMonitor progressMonitor) {
+	override generate(Experiment model, IPath targetDir, IProgressMonitor monitor) {
 		val context = new GeneratorContext(model)
 		
 		findCreateAndRegisterProviders(context)
 		
 		val templateObjects = findAndCreateTemplateObjects(model, context)
-		templateObjects.forEach[o | o.generate(model, targetDir, progressMonitor)]
+		templateObjects.forEach[o | o.generate(model, targetDir, monitor)]
+				
+		val IProject project = ProjectCreator.getProject(model.eResource())
+		val IFolder mainFolder = project.getFolder("/src-gen")
+		val IFolder sourceFolder = mainFolder.getFolder("/src/main/java/" + model.package.replaceAll("\\.", "/"));
 		
+		val IFolder automataFolder = sourceFolder.getFolder("/automata")
+		EclipseFileUtils.mkdirs(automataFolder, monitor)
+				
+		model.mealyAutomatons.forEach[a|
+			val CharSequence generatedDeclarations = new MealyAutomatonGenerator(context, model.package + ".automata").generate(a)
+			EclipseFileUtils.writeToFile(automataFolder.getFile("MealyAutomaton" + a.id.escapeId + ".java"), generatedDeclarations)
+		]
+						
 		//objectFactory.printStatistics()
 		objectFactory.clear()
 	}

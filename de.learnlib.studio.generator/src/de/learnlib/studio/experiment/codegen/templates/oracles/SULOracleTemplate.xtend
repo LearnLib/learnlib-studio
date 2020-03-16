@@ -8,14 +8,12 @@ import de.learnlib.studio.experiment.codegen.templates.PerNodeTemplate
 import de.learnlib.studio.experiment.codegen.templates.AbstractSourceTemplate
 import de.learnlib.studio.experiment.codegen.providers.OracleInformationProvider
 import de.learnlib.studio.experiment.codegen.GeneratorContext
-import de.learnlib.studio.experiment.codegen.providers.LearnLibArtifactProvider
 
 import static de.learnlib.studio.experiment.codegen.templates.oracles.symbols.SymbolTemplate.sanitizeName
 
-
 class SULOracleTemplate 
             extends AbstractSourceTemplate
-            implements OracleInformationProvider<SULMembershipOracle>, PerNodeTemplate<SULMembershipOracle>, LearnLibArtifactProvider<SULMembershipOracle> {
+            implements OracleInformationProvider<SULMembershipOracle>, PerNodeTemplate<SULMembershipOracle> {
 
     val SULMembershipOracle sulOracle
 
@@ -40,10 +38,6 @@ class SULOracleTemplate
         return #[fullName]
     }
     
-    override learnLibArtifacts() {
-        return #["learnlib-mapper", "learnlib-membership-oracles"]
-    }
-
     override template() '''
         package « package »;
         

@@ -22,7 +22,9 @@ graphModel Experiment {
                          Learner,
                          EQOracle,
                          ShowModel, ShowInternalData,
-                         Comment
+                         Comment,
+                         SUL,
+                         Automaton
     )
     
     attr EString as Name
@@ -50,7 +52,7 @@ graphModel Experiment {
         attr EString as name := ""
         attr EString as value := ""
     }
-    
+ 
     
     /* Nodes */
     /* Start */
@@ -69,12 +71,88 @@ graphModel Experiment {
     
     abstract node NonComplexOracle extends Oracle {
     }
-
-    @style(mealySulNode, "Mealy Membership Oracle")
+    
+    
+     
+    /* 
+     * =====================================
+     * 	Automata
+     * =====================================
+     */
+      
+    enum AutomatonTextFormat {
+		DOT
+		TAF
+	}
+    
+    abstract node Automaton {
+    	outgoingEdges (ModelEdge[0,*])  	
+    }
+    
+    abstract node MealyAutomaton extends Automaton {   
+    }
+    
+    @palette("Automata")
+    @style(mealyAutomaton, "Mealy File Automaton")
     @contextMenuAction("de.learnlib.studio.experiment.hooks.OpenMealy")
     @doubleClickAction("de.learnlib.studio.experiment.hooks.OpenMealy")
-    node MealyMembershipOracle extends NonComplexOracle {
-        prime mealy::Mealy as mealyReference
+    node MealyFileAutomaton extends MealyAutomaton {
+    	prime mealy::Mealy as automaton
+    }
+    
+    @palette("Automata")
+    @style(mealyAutomaton, "Mealy Text Automaton")
+    node MealyTextAutomaton extends MealyAutomaton {
+		@multiLine
+		attr EString as automaton := "" 
+		attr AutomatonTextFormat as format := DOT
+    }
+    
+    
+    
+    /* 
+     * =====================================
+     * 	SULs
+     * =====================================
+     */
+         
+    @style(simpleArrow, "")
+    edge SULEdge {}
+    
+    abstract node SUL {
+    	incomingEdges (SULEdge[1, *])
+    }
+    
+    @palette("SULs")
+    @style(complexNode, "Complex SUL")
+    container ComplexSUL extends SUL {	
+    	containableElements (SUL[1,*])
+    }
+    
+    abstract node NonComplexSUL extends SUL {
+    }
+
+	@palette("SULs")
+	@style(mealySulNode, "Mealy Simulator SUL")
+	node MealySimulatorSUL extends NonComplexSUL {
+		incomingEdges (ModelEdge[1,1])
+	}
+
+
+
+
+
+	/* 
+     * =====================================
+     * 	Membership Oracles
+     * =====================================
+     */
+
+	@palette("Membership Oracles")
+	@icon("icons/experiment/palette/package.png")
+    @style(mealySulNode, "Mealy Membership Oracle")
+    node MealySULMembershipOracle extends NonComplexOracle {
+        outgoingEdges (SULEdge[1,1])
     }
     
     @palette("Membership Oracles")
@@ -82,7 +160,7 @@ graphModel Experiment {
     @style(complexSULNode, "SUL Membership Oracle")
     container SULMembershipOracle extends NonComplexOracle {
         containableElements (SULMembershipOracleSymbol)
-        
+  
         attr EnvironmentProperty as properties [0, *]
     }
     
@@ -130,7 +208,14 @@ graphModel Experiment {
         containableElements (NonComplexFilter[1, *])
     }
 
-    /* Learners */
+
+
+    /* 
+     * =====================================
+     * 	Learner
+     * =====================================
+     */
+     
     abstract node Learner {
         incomingEdges (StartEdge[0, *], ModelEdge[0, *], WordEdge[0, *])
         outgoingEdges (QueryEdge[0, 1], ModelEdge[0, 1])
@@ -183,7 +268,14 @@ graphModel Experiment {
         containableElements (NonComplexLearner [1, *])
     }
     
-    /* EQ Oracles */
+    
+    
+    /* 
+     * =====================================
+     * 	Equivalence Oracles
+     * =====================================
+     */
+    
     abstract node EQOracle {
         incomingEdges (ModelEdge[0, *])
         outgoingEdges (QueryEdge[0, 1], ModelEdge[0, 1], WordEdge[0, 1])
@@ -199,6 +291,13 @@ graphModel Experiment {
         attr EInt as amount := "20"
         attr EInt as minLength := "5"
         attr EInt as maxLength := "10"
+        attr EInt as seed := "42"
+    }
+    
+    @palette("EQ Oracle")
+    @icon("icons/experiment/palette/user-check.png")
+    @style(eqOracleNode, "Mealy Simulator EQ Oracle")
+    node MealySimulatorEQOracle extends NonComplexEQOracle {  	
     }
     
     @palette("EQ Oracle")
@@ -232,14 +331,22 @@ graphModel Experiment {
     }
     
     
-    /* Display Nodes */
+   
+   	/* 
+     * =====================================
+     * 	Display Nodes
+     * =====================================
+     */
+   
     @palette("Results")
     @icon("icons/experiment/palette/save.png")
     @style(displayNode, "Show Model")
     node ShowModel {
         incomingEdges (ModelEdge [1, *])
-        outgoingEdges (ModelEdge [0, 1])
+        
+        attr AutomatonTextFormat as format := DOT
     }
+
 
     @palette("Results")
     @icon("icons/experiment/palette/save.png")
@@ -249,6 +356,14 @@ graphModel Experiment {
         outgoingEdges (ModelEdge [0, 1])
     }
     
+    
+    
+    /* 
+     * =====================================
+     * 	Misc
+     * =====================================
+     */
+    
     @palette("Documentation")
     @icon("icons/common/palette/type.png")
     @style(commentNode, "${text}")
@@ -256,12 +371,11 @@ graphModel Experiment {
         @multiLine
         attr EString as text := ""
     }
-    
-    
+       
     /* Edges */
     abstract edge ControlFlow {
     }
-
+    
     @style(simpleArrow, "")
     edge StartEdge extends ControlFlow { 
     }
@@ -270,7 +384,7 @@ graphModel Experiment {
     edge ModelEdge extends ControlFlow { 
     }
     
-    @style(simpleArrow, "Counter Example")
+    @style(simpleArrow, "Counterexample")
     edge WordEdge extends ControlFlow { 
     }
     

@@ -4,7 +4,6 @@ import java.util.List
 
 import de.learnlib.studio.experiment.codegen.GeneratorContext
 import de.learnlib.studio.experiment.experiment.Learner
-import de.learnlib.studio.experiment.codegen.providers.LearnLibArtifactProvider
 import de.learnlib.studio.experiment.codegen.templates.blocks.BlockInterfaceTemplate
 import de.learnlib.studio.experiment.codegen.templates.ExperimentDataTemplate
 import de.learnlib.studio.experiment.codegen.templates.oracles.ExperimentOracleInterfaceTemplate
@@ -12,10 +11,8 @@ import de.learnlib.studio.experiment.codegen.templates.blocks.AbstractBlockTempl
 import de.learnlib.studio.experiment.codegen.templates.blocks.AbstractBlockInterfaceImplTemplate
 import de.learnlib.studio.experiment.experiment.QueryEdge
 
-
 abstract class AbstractLearnerBlockTemplate<L extends Learner>
-			extends AbstractBlockTemplate<L>
-			implements LearnLibArtifactProvider<L> {
+			extends AbstractBlockTemplate<L> {
 
     val String learnLibArtifact
     val String learnLibPackage
@@ -33,11 +30,7 @@ abstract class AbstractLearnerBlockTemplate<L extends Learner>
         this.statePackage = statePackage
         this.stateClass = stateClass
     }
-    
-    override learnLibArtifacts() {
-        #[this.learnLibArtifact]
-    }
-    
+        
     override getConstructorParameters() {
         var oracleNode = getOutgoing(QueryEdge).head.targetElement
         return #[name, oracleNode]

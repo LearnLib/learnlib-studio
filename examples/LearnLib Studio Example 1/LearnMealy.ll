@@ -1,51 +1,56 @@
-Experiment _1xwykOjuEeiqDpGFnTsWVQ {
-  Package "de.learnlib.studio.examples"
-  Name "LearnMealy"
-  Start _yt_3oO51Eei3ePoxSgb_jA at 150,50 size 100,65 {
-  	-StartEdge-> _zYYRYO51Eei3ePoxSgb_jA  decorate "Text" at (0,0) decorate "" at (0,0) {
-  		id _z7tn8O51Eei3ePoxSgb_jA
+Experiment _A5mq8GeSEeqwOMumdKukOA {
+  Start _A57bEGeSEeqwOMumdKukOA at 750,140 size 100,65 {
+  	-StartEdge-> _EGjvIGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _EoL1gGeSEeqwOMumdKukOA
   	}
   }
   
-  LStarAlgorithm _zYYRYO51Eei3ePoxSgb_jA at 140,200 size 120,65 {
-  	-ModelEdge-> _0PhUwO51Eei3ePoxSgb_jA  decorate "Text" at (0,0) decorate "" at (0,0) {
-  		id _1a7X8O51Eei3ePoxSgb_jA
-  	}
-  	
-  	-QueryEdge-> _7evUgO51Eei3ePoxSgb_jA  decorate "Text" at (0,0) decorate "" at (0,0) decorate "" at (0,0) {
-  		id _9KfrsO51Eei3ePoxSgb_jA
-  	}
-  }
-  
-  RandomWordEQOracle _0PhUwO51Eei3ePoxSgb_jA at 99,350 size 201,65 {
-  	amount 20
-  	minLength 5
-  	maxLength 10
-  	-WordEdge-> _zYYRYO51Eei3ePoxSgb_jA via (49,381) (49,233) decorate "Text" at (0,0) decorate "" at (0,0) {
-  		id _2OlpgO51Eei3ePoxSgb_jA
-  	}
-  	
-  	-ModelEdge-> _5AFgwO51Eei3ePoxSgb_jA  decorate "Text" at (0,0) decorate "" at (0,0) {
-  		id _62lvYe51Eei3ePoxSgb_jA
-  	}
-  	
-  	-QueryEdge-> _7evUgO51Eei3ePoxSgb_jA via (550,382) decorate "Text" at (0,0) decorate "" at (0,0) decorate "" at (0,0) {
-  		id _9c4cMe51Eei3ePoxSgb_jA
-  	}
-  }
-  
-  ShowModel _5AFgwO51Eei3ePoxSgb_jA at 140,500 size 120,65 {
-  }
-  
-  MealyMembershipOracle _7evUgO51Eei3ePoxSgb_jA at 450,200 size 201,65 {
+  MealyFileAutomaton _DHh7EGeSEeqwOMumdKukOA at 1130,480 size 310,65 {
   	libraryComponentUID "_ClQHoOj5Eei7hv4jTWl9Hg"
+  	-ModelEdge-> _KB7hYGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _LBp5AWeSEeqwOMumdKukOA
+  	}
+  	
+  	-ModelEdge-> _FPOAUGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _NXGGYWeSEeqwOMumdKukOA
+  	}
   }
   
-  Comment _DnMpYe52Eei3ePoxSgb_jA at 610,240 size 311,35 {
-  	text "Reference to '01-Mealy.mealy'. Double click to open the link."
+  TTTAlgorithm _EGjvIGeSEeqwOMumdKukOA at 740,300 size 120,65 {
+  	acexAnalyzer BinarySearchBackward
+  	-ModelEdge-> _FPOAUGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _Gvv-8GeSEeqwOMumdKukOA
+  	}
+  	
+  	-QueryEdge-> _JhtJMGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) decorate "" at (0,0) {
+  		id _LRlLYGeSEeqwOMumdKukOA
+  	}
   }
   
-  Comment _5B4JIe54EeiMH6hO2z1V0w at 44,10 size 311,31 {
-  	text "Simple experiment to learn an already exsiting Mealy machine. "
+  MealySimulatorEQOracle _FPOAUGeSEeqwOMumdKukOA at 685,500 size 230,65 {
+  	-ModelEdge-> _GGm7UGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _HD8GQWeSEeqwOMumdKukOA
+  	}
+  	
+  	-QueryEdge-> _JhtJMGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) decorate "" at (0,0) {
+  		id _Lx9UkWeSEeqwOMumdKukOA
+  	}
+  	
+  	-WordEdge-> _EGjvIGeSEeqwOMumdKukOA via (595,422) decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _MZE-8GeSEeqwOMumdKukOA
+  	}
+  }
+  
+  ShowModel _GGm7UGeSEeqwOMumdKukOA at 705,660 size 195,65 {
+  	format DOT
+  }
+  
+  MealySULMembershipOracle _JhtJMGeSEeqwOMumdKukOA at 1190,208 size 120,65 {
+  	-SULEdge-> _KB7hYGeSEeqwOMumdKukOA  decorate "Text" at (0,0) decorate "" at (0,0) {
+  		id _KaJ0IGeSEeqwOMumdKukOA
+  	}
+  }
+  
+  MealySimulatorSUL _KB7hYGeSEeqwOMumdKukOA at 1200,310 size 120,65 {
   }
 }

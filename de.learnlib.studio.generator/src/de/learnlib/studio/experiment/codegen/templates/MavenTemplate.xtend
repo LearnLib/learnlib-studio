@@ -6,25 +6,12 @@ import java.util.List
 import de.learnlib.studio.siblibrary.siblibrary.MavenArtifact
 
 import de.learnlib.studio.experiment.codegen.GeneratorContext
-import de.learnlib.studio.experiment.codegen.providers.LearnLibArtifactProvider
-import de.learnlib.studio.experiment.codegen.providers.AutomataLibArtifactProvider
 import de.learnlib.studio.experiment.codegen.providers.MavenArtifactProvider
-
 
 class MavenTemplate extends AbstractTemplateImpl {
     
     new(GeneratorContext context) {
         super(context, "/", "pom.xml")
-    }
-    
-    private def getAutomataLibArtifacts() {
-        val providers = context.getProviders(AutomataLibArtifactProvider)
-        return providers.map[p | p.automataLibArtifacts as List<String>].flatten.toSet
-    }
-    
-    private def getLearnLibArtifacts() {
-        val providers = context.getProviders(LearnLibArtifactProvider)
-        return providers.map[p | p.learnLibArtifacts as List<String>].flatten.toSet
     }
     
     private def getOtherArtifacts() {
@@ -77,32 +64,21 @@ class MavenTemplate extends AbstractTemplateImpl {
             <dependencies>
                 <!-- LearnLib dependencies -->
                 <dependency>
-                    <groupId>de.learnlib</groupId>
-                    <artifactId>learnlib-api</artifactId>
+                	<groupId>de.learnlib.distribution</groupId>
+                    <artifactId>learnlib-distribution</artifactId>
                     <version>${learnlib.version}</version>
-                </dependency>
-                « FOR a : learnLibArtifacts »
-                    <dependency>
-                        <groupId>de.learnlib</groupId>
-                        <artifactId>« a »</artifactId>
-                        <version>${learnlib.version}</version>
-                    </dependency>
-                « ENDFOR »
+                    <type>pom</type>
+              	</dependency>
         
                 <!-- AutomataLib dependencies -->
                 <dependency>
-                    <groupId>net.automatalib</groupId>
-                    <artifactId>automata-api</artifactId>
+                    <groupId>net.automatalib.distribution</groupId>
+                    <artifactId>automata-distribution</artifactId>
                     <version>${automatalib.version}</version>
-                </dependency>
-                « FOR a : automataLibArtifacts »
-                    <dependency>
-                        <groupId>net.automatalib</groupId>
-                        <artifactId>« a »</artifactId>
-                        <version>${automatalib.version}</version>
-                    </dependency>
-                 « ENDFOR »
-                
+                    <type>pom</type>
+          		</dependency>
+                  
+                <!-- other dependencies -->
                 <dependency>
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>

@@ -64,6 +64,30 @@ nodeStyle labeledNode (1) {
 }
 
 
+nodeStyle mealyAutomaton (1) {
+    roundedRectangle { 
+        appearance {
+        	background (238,238,236)
+        }
+		
+		size (200, 65)
+        corner (10, 10)
+		        
+        image {
+            position ( LEFT 15, MIDDLE )
+            size (fix 32, fix 32)   
+            path ("icons/experiment/graph.png")
+        }
+        
+        text {
+            appearance labelFont
+            position ( CENTER, MIDDLE )
+            value "%1$s"
+        }
+    }
+}
+
+
 /* Member Ship Oracles */
 nodeStyle mealySulNode (1) {
     roundedRectangle {
@@ -71,7 +95,7 @@ nodeStyle mealySulNode (1) {
         corner (10, 10)
         
         image {
-            position ( CENTER -60, MIDDLE )
+            position ( LEFT 10, MIDDLE )
             size (fix 24, fix 24)   
             path ("icons/experiment/package.png")
         }
@@ -205,7 +229,7 @@ nodeStyle eqOracleNode (1) {
         corner (10, 10)
         
         image {
-            position ( CENTER -95, MIDDLE )
+            position ( LEFT 5, MIDDLE )
             size (fix 24, fix 24)   
             path ("icons/experiment/user-check.png")
         }
@@ -225,7 +249,7 @@ nodeStyle displayNode (1) {
         corner (10, 10)
         
         image {
-            position ( CENTER -80, MIDDLE )
+            position ( LEFT 5, MIDDLE )
             size (fix 24, fix 24)   
             path ("icons/experiment/save.png")
         }
@@ -257,8 +281,10 @@ nodeStyle commentNode (1) {
 edgeStyle simpleArrow (1) {    
     appearance default
     
+    
     decorator {
         location (0.3)
+        movable
         text {
             appearance default
             value "%s"

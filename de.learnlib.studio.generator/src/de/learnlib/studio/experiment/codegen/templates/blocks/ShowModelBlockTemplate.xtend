@@ -2,27 +2,20 @@ package de.learnlib.studio.experiment.codegen.templates.blocks
 
 import de.learnlib.studio.experiment.experiment.ShowModel
 import de.learnlib.studio.experiment.codegen.GeneratorContext
-import de.learnlib.studio.experiment.codegen.providers.AutomataLibArtifactProvider
 import de.learnlib.studio.experiment.codegen.templates.ExperimentDataTemplate
 import de.learnlib.studio.experiment.codegen.templates.utils.ResultWriterTemplate
+import de.learnlib.studio.experiment.codegen.templates.PerNodeTemplate
 
-
-class ShowModelBlockTemplate
-        extends AbstractBlockTemplate<ShowModel>
-        implements AutomataLibArtifactProvider<ShowModel> {
+class ShowModelBlockTemplate extends AbstractBlockTemplate<ShowModel> implements PerNodeTemplate<ShowModel> {
 
     new(GeneratorContext context) {
         super(context, "blocks", "ShowModel")
     }
-
+    
     new(GeneratorContext context, ShowModel node, int i) {
         super(context, node, i, "blocks", "ShowModel")
     }
 
-    override automataLibArtifacts() {
-        return #["automata-serialization-taf"]
-    }
-    
     override template() '''
         package «package»;
         
@@ -36,7 +29,7 @@ class ShowModelBlockTemplate
         
         import net.automatalib.automata.transducers.MealyMachine;
         import net.automatalib.serialization.taf.TAFSerializationMealy;
-        
+        import net.automatalib.serialization.dot.GraphDOT;
         
         public class ShowModelBlock extends AbstractBlock {
         	
@@ -52,20 +45,29 @@ class ShowModelBlockTemplate
         	@Override
         	public Block execute(ExperimentData data) {
         		@SuppressWarnings("unchecked")
-        		MealyMachine<Object, String, Object, String> hypothesis = (MealyMachine<Object, String, Object, String>) data.getHypothesis();
+        		final MealyMachine<Object, String, Object, String> hypothesis = (MealyMachine<Object, String, Object, String>) data.getHypothesis();
         		
         		try {
-        		    // creating dummy buffer because the AUTWriter would otherwise close System.out, which is no good
-                    ByteArrayOutputStream out = new ByteArrayOutputStream();
-        			TAFSerializationMealy.getInstance().writeModel(out, hypothesis, data.getAlphabet());
-        			System.out.println(out);
+        			«switch node.format {
+        				case TAF: '''
+        				// creating dummy buffer because the AUTWriter would otherwise close System.out
+        				final ByteArrayOutputStream out = new ByteArrayOutputStream();
+        				TAFSerializationMealy.getInstance().writeModel(out, hypothesis, data.getAlphabet());
+        				System.out.println(out);
+        				'''
+        				case DOT: '''
+						final StringBuilder sb = new StringBuilder();
+						GraphDOT.write(hypothesis, data.getAlphabet(), sb);
+						System.out.println(sb.toString());
+        				'''       
+        			}»
         		} catch (IOException e) {
         			e.printStackTrace();
         		}
         		
         		try {
-        		  Path file = ResultWriter.getFile("model", "mealy");
-        		  FileOutputStream fop = new FileOutputStream(file.toFile());
+        		  final Path file = ResultWriter.getFile("model", "mealy");
+        		  final FileOutputStream fop = new FileOutputStream(file.toFile());
                   TAFSerializationMealy.getInstance().writeModel(fop, hypothesis, data.getAlphabet());
                 } catch (IOException e) {
                     e.printStackTrace();
